@@ -1,0 +1,25 @@
+page-signup {
+	.pageBg{
+		background-image:url('../assets/img/Learning.jpg');
+		background-size:100% 100%;
+	}
+	.center{
+		text-align:center;
+	}
+	.formview{
+		width: 50%;
+		height: 50%;
+		margin:0 auto;
+	}
+	.color{
+		color: darkviolet;
+	}
+	.listbg{
+		background-color: rgba(0, 0, 0, 0.57) !important;	
+	}
+	
+	.transparent{
+		background-color: transparent !important;
+		color: #FFF;
+	}
+}

@@ -5,12 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-	<ion-navbar>
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
-		<ion-title></ion-title>
-	</ion-navbar>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+    <div style="float: right;margin-right: 30px;">
+    	<button ion-button color="light" (click)="gotoLogin()">Login</button>
+    	<button ion-button color="primary" (click)="gotoSignup()">Sign Up</button>
+	</div>
+  </ion-navbar>
 </ion-header>
 
 
