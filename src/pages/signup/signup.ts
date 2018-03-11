@@ -14,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-	userinfo : { u_fname : string, u_lname: string, u_mobile: string,u_altmobile: string, u_email: string} = { u_fname : 'Ankan', u_lname: 'Mukhopadhyay',u_mobile: '9916096639',u_altmobile: '8867315438', u_email: 'ankan@a.com'};
+	userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: ''};
 
 	constructor(public navCtrl: NavController, public navParams: NavParams) {
 	}
+
 }
