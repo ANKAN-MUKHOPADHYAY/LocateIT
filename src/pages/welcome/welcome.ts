@@ -21,5 +21,8 @@ export class WelcomePage {
   gotoLogin(){
   	this.navCtrl.push('LoginPage');
   }
+  gotoSignup(){
+  	this.navCtrl.push('SignupPage');
+  }
 
 }

@@ -12,13 +12,29 @@
     <ion-title></ion-title>
     <div style="float: right;margin-right: 30px;">
     	<button ion-button color="light" (click)="gotoLogin()">Login</button>
-    	<button ion-button color="primary">Sign Up</button>
+    	<button ion-button color="primary" (click)="gotoSignup()">Sign Up</button>
 	</div>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding class="bg">
-<ion-card-content>
-</ion-card-content>
+	<div class="scrolling">
+		<ion-card class="middle" >
+			<ion-card-header>
+				Find best Tutors & institutes Near You
+			</ion-card-header>
+			<ion-card-content>
+				<ion-searchbar (ionInput)="getItems($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
+				<ion-list>
+					<ion-item *ngFor="let item of items">
+						{{ item }}
+					</ion-item>
+				</ion-list>
+				<div>
+				<button ion-button color="Primary" right>FIND</button>
+			</div>
+			</ion-card-content>
+		</ion-card>
+	</div>
 </ion-content>
