@@ -1,0 +1,29 @@
+page-select-location {
+@mixin bgRadialGradient($centerColor,$outerColor){
+		background: $centerColor; /* Old browsers */
+		background: -moz-radial-gradient(center, ellipse cover,  $centerColor 0%, $outerColor 100%); /* FF3.6-15 */
+		background: -webkit-radial-gradient(center, ellipse cover,  $centerColor 0%, $outerColor 100%); /* Chrome10-25,Safari5.1-6 */
+		background: radial-gradient(ellipse at center,  $centerColor 0%, $outerColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$centerColor, endColorstr=$outerColor,GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+
+	.bg{
+		@include bgRadialGradient(#f22205,#930f03);
+	}
+	.scroll-content{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		text-align:center;
+	}
+	.scroll{
+		margin:0px auto;
+		background-color:transparent !important;
+	}
+	button1{
+		text-align:center;
+	}
+	.middle1{
+		background-color: rgba(222, 184, 135, 0.52)
+	}
+}

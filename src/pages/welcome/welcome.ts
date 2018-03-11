@@ -41,5 +41,8 @@ export class WelcomePage {
   gotoSignup(){
   	this.navCtrl.push('SignupPage');
   }
+  locationSearch(){
+    this.navCtrl.push('SelectLocationPage');
+  }
 
 }
