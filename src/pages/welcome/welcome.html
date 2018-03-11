@@ -25,12 +25,12 @@
 				Find best Tutors & institutes Near You
 			</ion-card-header>
 			<ion-card-content>
-				<ion-searchbar (ionInput)="getItems($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
+				<ion-searchbar (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
 				<ion-list>
-					<ion-item *ngFor="let item of items">
-						{{ item }}
-					</ion-item>
-				</ion-list>
+			        <button ion-item *ngFor="let item of currentItems">
+			          <h2>{{item.course_name}}</h2>
+			        </button>
+			      </ion-list>
 				<div>
 				<button ion-button color="Primary" right>FIND</button>
 			</div>
