@@ -5,58 +5,58 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Signup</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>Signup</ion-title>
+	</ion-navbar>
 </ion-header>
 
 
 <ion-content padding class="pageBg">
 	<div class="formview">
-		<form>
-	    	<ion-list class="listbg">
-	    		<div class="radio">
-    		  		<input type="radio" name="institute" [(ngModel)]="institute" [value]="true" [checked]="institute">
-    		  		<label>I am an individual</label>
-    		  		<span>
-    		  			<input type="radio" name="institute" class="marginl" [(ngModel)]="institute" [value]="false" [checked]="!institute"> I run an institute
-    		  		</span>
- 	    		</div>
-    		  <ion-item class="transparent" *ngIf="institute">
-				<ion-label floating>First Name</ion-label>
-	            <ion-input [(ngModel)]="userinfo.u_fname" name="fname" type="text" ></ion-input>
-	      	 </ion-item>
+		<form (submit)="doSignupProcess()">
+			<ion-list class="listbg">
+				<!-- <div class="radio">
+					<input type="radio" name="institute" [(ngModel)]="institute" [value]="true" [checked]="institute">
+					<label>I am an individual</label>
+					<span>
+						<input type="radio" name="institute" class="marginl" [(ngModel)]="institute" [value]="false" [checked]="!institute"> I run an institute
+					</span>
+				</div> -->
+				<ion-item class="transparent">
+					<ion-label floating>First Name</ion-label>
+					<ion-input type="text" [(ngModel)]="userinfo.u_fname" name="fname"  ></ion-input>
+				</ion-item>
 
-	          <ion-item class="transparent" *ngIf="institute">
-	            <ion-label floating>Last Name</ion-label>
-	            <ion-input type="text" name="lname" [(ngModel)]="userinfo.u_lname"></ion-input>
-	          </ion-item>
-	          <ion-item class="transparent" *ngIf="!institute">
-	            <ion-input type="text" name="Iname" [(ngModel)]="userinfo.u_Iname"></ion-input>
-	            <ion-label floating>Institute Name</ion-label>
-	          </ion-item>
-	      		
-	      		<ion-item  class="transparent">
-	      			<ion-label floating>Phone Number</ion-label>
-	      			<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="userinfo.u_mobile"></ion-input>
-	      		</ion-item>
+				<ion-item class="transparent">
+					<ion-label floating>Last Name</ion-label>
+					<ion-input type="text" name="lname" [(ngModel)]="userinfo.u_lname"></ion-input>
+				</ion-item>
+				<!-- <ion-item class="transparent" *ngIf="!institute">
+					<ion-input type="text" name="Iname" [(ngModel)]="userinfo.u_Iname"></ion-input>
+					<ion-label floating>Institute Name</ion-label>
+				</ion-item> -->
 
-	          <ion-item  class="transparent">
-	            <ion-label floating>Alternative Number</ion-label>
-	            <ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="userinfo.u_altmobile"></ion-input>
-	          </ion-item>
-	      		
-	      		<ion-item class="transparent">
-	      			<ion-label floating>Email-id</ion-label>
-	      			<ion-input type="text" name="email" [(ngModel)]="userinfo.u_email"></ion-input>
-	      		</ion-item>
-	          <div style="padding-top: 20px;" class="center">
-	            <button ion-button secondary>Submit</button><br><br>
-	          </div>
-	          <div style="text-align: center; color: #FFF; padding-bottom: 20px;">
-	          	<span> Already a Member? <a>Login </a></span>
-	          </div>
-	    	</ion-list>
-	    </form>
+				<ion-item  class="transparent">
+					<ion-label floating>Phone Number</ion-label>
+					<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="userinfo.u_mobile"></ion-input>
+				</ion-item>
+
+				<ion-item  class="transparent">
+					<ion-label floating>Alternative Number</ion-label>
+					<ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="userinfo.u_altmobile"></ion-input>
+				</ion-item>
+
+				<ion-item class="transparent">
+					<ion-label floating>Email-id</ion-label>
+					<ion-input type="text" name="email" [(ngModel)]="userinfo.u_email"></ion-input>
+				</ion-item>
+				<div style="padding-top: 20px;" class="center">
+					<button ion-button secondary>Submit</button><br><br>
+				</div>
+				<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
+					<span> Already a Member? <a>Login </a></span>
+				</div>
+			</ion-list>
+		</form>
 	</div>
 </ion-content>

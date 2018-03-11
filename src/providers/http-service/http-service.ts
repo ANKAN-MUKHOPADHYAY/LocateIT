@@ -115,7 +115,7 @@ export class HttpServiceProvider {
 	private showLoaderFunc(showLoader:boolean){
 		if(showLoader && this.loading == null){
 			this.loading = this.loader.create({
-				content: 'Please wait ...'
+				content: 'Please wait. We are loading ...'
 			})
 			this.loading.present();
 			setTimeout(()=> {
