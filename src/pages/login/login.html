@@ -5,44 +5,41 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>Login</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg">
-	
-
 	<h1 style="text-align: center; color: white">Member Login</h1>
-	
-	
 	<div class="formView" >
+		<form (submit)="dologinProcess()">		
+			<ion-list>
+				<ion-item class="transparent">
+					<ion-label floating>UserName</ion-label>
+					<ion-input style="color: white" type="text" name="name" [(ngModel)]="logininfo.i_loginparams"></ion-input>
+				</ion-item>
 
-			
+				<ion-item class="transparent">
+					<ion-label floating>Password</ion-label>
+					<ion-input style="color: white" type="password" name="password" [(ngModel)]="logininfo.i_password"></ion-input>
+				</ion-item>
+				<div class="center">
+					<button ion-button secondary>Login</button>
+				</div>
+				<div class="center">
+					<span>
+						<a style="color: white" href="#">Forgotten-Password</a>
+					</span>
+					
+					<div style="font-size: 15px;color: white">Not a Member?Please
+						<span (click)="gotoSignup()">SignUp here</span>
+					</div>
+				</div> 
 
- <ion-list>
- 	
-  		<ion-item class="transparent">
-			<ion-label floating>UserName</ion-label>
-			<ion-input style="color: white" type="text" name="name" [(ngModel)]="userinfo.u_name"></ion-input>
-		</ion-item>
-
-<ion-item class="transparent">
-			<ion-label floating>Password</ion-label>
-			<ion-input style="color: white" type="text" name="password" [(ngModel)]="userinfo.u_password"></ion-input>
-		</ion-item>
-
-    	<span>
-    			<a style="color: white" href="#">Forgotten-Password</a>
-    	</span>
-
-  		<div class="center">
-		<button ion-button secondary>submit</button>
-		</div>
-		<div style="font-size: 15px;color: white">Not a Member?Please<a href="#">SignUp here</a></div>
-
-</ion-list>
-</div>
+			</ion-list>
+		</form>
+	</div>
 
 
 </ion-content>
