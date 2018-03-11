@@ -10,7 +10,39 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg">
+	
+
+	<h1 style="text-align: center; color: white">Member Login</h1>
+	
+	
+	<div class="formView" >
+
+			
+
+ <ion-list>
+ 	
+  		<ion-item class="transparent">
+			<ion-label floating>UserName</ion-label>
+			<ion-input style="color: white" type="text" name="name" [(ngModel)]="userinfo.u_name"></ion-input>
+		</ion-item>
+
+<ion-item class="transparent">
+			<ion-label floating>Password</ion-label>
+			<ion-input style="color: white" type="text" name="password" [(ngModel)]="userinfo.u_password"></ion-input>
+		</ion-item>
+
+    	<span>
+    			<a style="color: white" href="#">Forgotten-Password</a>
+    	</span>
+
+  		<div class="center">
+		<button ion-button secondary>submit</button>
+		</div>
+		<div style="font-size: 15px;color: white">Not a Member?Please<a href="#">SignUp here</a></div>
+
+</ion-list>
+</div>
 
 
 </ion-content>

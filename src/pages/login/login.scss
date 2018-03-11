@@ -1,3 +1,29 @@
-page-login {
+page-login{
+.transparent{
+	background-color:transparent !important;
+}
+
+.center{
+	text-align:center;
+	}
+
+.formView{
+	margin:0px auto;
+	width: 35%;
+	border-radius:1px;
+	box-shadow:0px 0px 2px 2px gray;
+	margin-top: 0;
+	background-color:transparent !important;
 
 }
+
+	.bg{
+		background-image:url(../assets/imgs/loginbg.jpg);
+	}
+
+	
+
+}
+
+
+
