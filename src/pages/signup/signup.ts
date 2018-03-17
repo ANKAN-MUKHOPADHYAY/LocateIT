@@ -30,7 +30,7 @@ export class SignupPage {
 				console.log(resp);
 				if(resp.status){
 					sessionStorage.setItem('enquiry', resp.result.enquiry_id);
-					this.navCtrl.push('HomePage');
+					this.navCtrl.push('MainPage');
 				}
 			});
       });
