@@ -26,11 +26,11 @@ export class LoginPage {
 
   	dologinProcess(data){
 		console.log(this.logininfo);	
-		this._restservice.post('/institute/loginInstitute',JSON.stringify(this.logininfo)).then(logindata=> {
-			console.log(logindata)
-			if(logindata.status){
+		this._restservice.post('/user/loginCandidate',JSON.stringify(this.logininfo)).then( response => {
+			console.log(response);
+			/*if(logindata.status){
 				alert('Login Successful');
-			}
+			}*/
 		});
 	}
 }	

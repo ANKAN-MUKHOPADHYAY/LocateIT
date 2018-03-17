@@ -14,7 +14,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-	userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string, u_type: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: '', u_type: ''};
+	userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string, u_type: string,u_password: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: '', u_type: '',u_password: ''};
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restService: HttpServiceProvider) {
 	}
@@ -23,6 +23,7 @@ export class SignupPage {
 		console.log(this.userinfo);	
 		this.userinfo.u_type = "Student";
 		this._restService.post('/user/adduser',JSON.stringify(this.userinfo)).then(res => {
+			console.log(res);
 			if(res.status){
 				this.navCtrl.push('LoginPage');
 			}
