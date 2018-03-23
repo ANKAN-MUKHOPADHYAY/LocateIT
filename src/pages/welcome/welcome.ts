@@ -44,7 +44,7 @@ export class WelcomePage {
   /*locationSearch(){
     this.navCtrl.push('SelectLocationPage');
   }*/
-  openItem(item: Items) {
+  openItem(item) {
     this.navCtrl.push('SelectLocationPage', {
       selectedCourse : item
     });
