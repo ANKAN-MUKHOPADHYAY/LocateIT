@@ -18,7 +18,7 @@
 </ion-header>
 
 
-<ion-content padding class="bg">
+<!-- <ion-content padding class="bg">
 	<div class="scrolling">
 		<ion-card class="middle" >
 			<ion-card-header>
@@ -37,4 +37,26 @@
 			</ion-card-content>
 		</ion-card>
 	</div>
+</ion-content> -->
+
+
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      Find Training & Courses Near You
+    </div>
+  </div>
+  <ion-content>
+    <div class="find-course">
+      <ion-searchbar (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
+      <ion-list>
+        <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+          <h2>{{item.course_name}}</h2>
+        </button>
+      </ion-list>
+      <button ion-button (click)="locationSearch()">FIND</button>
+    </div>
+  </ion-content>
 </ion-content>

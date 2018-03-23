@@ -1,30 +1,63 @@
 page-welcome {
-
-	@mixin bgRadialGradient($centerColor,$outerColor){
-		background: $centerColor; /* Old browsers */
-		background: -moz-radial-gradient(center, ellipse cover,  $centerColor 0%, $outerColor 100%); /* FF3.6-15 */
-		background: -webkit-radial-gradient(center, ellipse cover,  $centerColor 0%, $outerColor 100%); /* Chrome10-25,Safari5.1-6 */
-		background: radial-gradient(ellipse at center,  $centerColor 0%, $outerColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$centerColor, endColorstr=$outerColor,GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	.splash-bg {
+	    position: relative;
+	    background: url('../assets/img/splashbg.png') no-repeat transparent;
+	    background-size: cover;
+	    height: 45%;
+	    z-index: 1;
+	    background-repeat: repeat-x;
+	    animation: animatedBackground 40s linear infinite;
 	}
 
-	.bg{
-		@include bgRadialGradient(#f22205,#930f03);
+	@keyframes animatedBackground {
+	    from { background-position: 0 0; }
+	    to { background-position: 100% 0; }
 	}
-	.scroll-content{
-		display:flex;
-		flex-direction:column;
-		justify-content:center;
-		text-align:center;
+
+	.splash-info {
+	    position: relative;
+	    z-index: 2;
+	    margin-top: -64px;
+	    text-align: center;
 	}
-	.scrolling{
-		margin:0px auto;
-		background-color:transparent !important;
+	.splash-logo {
+	    margin: auto;
+	    background: url('../assets/img/appicon.png') repeat transparent;
+	    background-size: 100%;
+	    width: 128px;
+	    height: 128px;
 	}
-	button1{
-		text-align:center;
+	.splash-intro {
+	    font-size: 18px;
+	    font-weight: bold;
+	    max-width: 80%;
+	    margin: auto;
 	}
-	.middle{
-		background-color: rgba(222, 184, 135, 0.52)
+	.find-course {
+	    font-size: 18px;
+	    font-weight: bold;
+	    max-width: 80%;
+	    margin: auto;
+	    text-align: center;
+	}
+	.scroll-content {
+	    overflow-y: hidden !important;
+	}
+	.find-button{
+	    font-size: 18px;
+	    font-weight: bold;
+	    max-width: 30%;
+	    margin: auto;
+	    text-align: center;
+	}
+	button.login {
+	    margin-top: 25px;
+	    background-color: white;
+	    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+	    color: #333;
+
+	    &.activated {
+	      background-color: rgb(220, 220, 220);
+	    }
 	}
 }

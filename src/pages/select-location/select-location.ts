@@ -16,6 +16,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 export class SelectLocationPage {
   locations: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider) {
+    console.log(this.navParams);
   }
 
   getLocation(loc){

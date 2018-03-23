@@ -41,8 +41,13 @@ export class WelcomePage {
   gotoSignup(){
   	this.navCtrl.push('SignupPage');
   }
-  locationSearch(){
+  /*locationSearch(){
     this.navCtrl.push('SelectLocationPage');
+  }*/
+  openItem(item: Items) {
+    this.navCtrl.push('SelectLocationPage', {
+      selectedCourse : item
+    });
   }
 
 }
