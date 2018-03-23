@@ -33,4 +33,12 @@ export class SelectLocationPage {
       });
   }
 
+  openSignUp(loc){
+    console.log(loc);
+    this.navCtrl.push('SignupPage',{
+      selectedCourse : this.navParams.data.selectedCourse,
+      selectedLocation: loc
+    });
+  }
+
 }
