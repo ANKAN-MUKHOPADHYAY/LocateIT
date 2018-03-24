@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { HttpServiceProvider } from '../../providers/http-service/http-service';
 /**
  * Generated class for the InstituteLandingPage page.
  *
@@ -14,15 +14,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'institute-landing.html',
 })
 export class InstituteLandingPage {
+	instituteInfos : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
+		console.log(this.navParams.data);
+	}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InstituteLandingPage');
-  }
-  gotoInstituteLanding(){
-  	this.navCtrl.push('institute-landing');
-  }
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad InstituteLandingPage');
+		if(this.navParams.data != undefined || this.navParams.data != null){
+			this._restservice.get('/institute/getInstituteInformation/'+this.navParams.data).then( res => {
+				console.log(res);
+				this.instituteInfos = res.response;
+				console.log(this.instituteInfos);
+			});
+		} else {
+			//this.navCtrl.setRoot('MainPage');
+		}
+		
+	}
+  
 
 }

@@ -19,7 +19,7 @@
 
 <ion-content>
 	<div class="institute-bg"></div>
-	<div class="institute-info">
+	<div class="institute-info" *ngFor="let info of instituteInfos">
 		<ion-grid>
 		  	<ion-row>
 			    <ion-col col-12 col-sm-12 col-md-8 col-lg-8>
@@ -27,11 +27,11 @@
 			      		<ion-grid>
 		  					<ion-row>
 		  						<ion-col col-12 col-sm-12 col-md-4 col-lg-4>
-		  							<img src="https://s3-ap-southeast-1.amazonaws.com/tv-prod/member/photo/1953912-medium190ap.jpg" class="logoSize" />
+		  							<img src="{{info.inst_images}}" />
 		  						</ion-col>
 		  						<ion-col col-12 col-sm-12 col-md-8 col-lg-8>
-		  							<h1>TECHNINZAZ</h1>
-		  							<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">KumaraSwamy Layout, Bangalore</span>
+		  							<h1>{{info.inst_name | uppercase}}</h1>
+		  							<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">{{info.inst_address}}, {{info.inst_city}}</span>
 		  							<div style="margin-top: 10px;">
 		  								<ion-icon name="star" style="color: yellow;"></ion-icon>
 		  								<ion-icon name="star" style="color: yellow;"></ion-icon>

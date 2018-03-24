@@ -22,10 +22,15 @@ export class MainPage {
 
   ionViewDidLoad() {
     this._restservice.get('/user/searchenquiry/'+sessionStorage.getItem('enquiry')).then( res => {
-		console.log(res);
-		this.offeredInstitutes = res.response;
-		console.log(this.offeredInstitutes);
-	});
+  		console.log(res);
+  		this.offeredInstitutes = res.response;
+  		console.log(this.offeredInstitutes);
+  	});
+  }
+
+  gotoInstituteLanding(inst){
+    console.log(inst);
+    this.navCtrl.push('InstituteLandingPage',inst.id);
   }
 
 }
