@@ -16,9 +16,9 @@
 <ion-content padding>
 	<ion-grid>
 	  	<ion-row>
-	    	<ion-col col-4  *ngFor="let institute of offeredInstitutes">
+	    	<ion-col col-12 col-md-4 col-lg-4  *ngFor="let institute of offeredInstitutes">
 	    		<ion-card>
-				  	<img style="height:150px" src="{{institute.inst_images}}" onerror="this.onerror=null;this.src='http://localhost:8100/assets/imgs/error.jpg';" />
+				  	<img style="height:150px" src="{{institute.inst_images}}" onerror="this.onerror=null;this.src='http://192.168.1.10:8100/assets/imgs/error.jpg';" />
 				  	<ion-card-content>
 				    	<ion-card-title>
 				      	{{institute.inst_name}}
