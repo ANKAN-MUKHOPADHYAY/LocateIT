@@ -1,0 +1,29 @@
+page-institute-landing {
+	.institute-bg {
+	    position: relative;
+	    background: url('../assets/img/header-background.jpg') no-repeat transparent;
+	    background-size: cover;
+	    height: 35%;
+	    z-index: 1;
+	    background-repeat: repeat-x;
+	    animation: animatedBackground 40s linear infinite;
+	}
+	@keyframes animatedBackground {
+	    from { background-position: 0 0; }
+	    to { background-position: 100% 0; }
+	}
+	.institute-info {
+	    position: relative;
+	    z-index: 2;
+	    margin-top: -64px;
+	}
+	.logoSize{
+		height:150px;
+		border-radius: 50px;
+	}
+	.institute-details{
+		border-radius: 5px;
+	    box-shadow: 0px 2px 2px 1px mediumslateblue;
+	    background-color: rgba(188, 186, 186, 0.94117647);
+	}
+}
