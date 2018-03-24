@@ -11,10 +11,11 @@
 </ion-header>
 
 <ion-content padding class="bg">
-	<h1 style="text-align: center; color: white">Member Login</h1>
 	<div class="formView" >
 		<form (submit)="dologinProcess()">		
-			<ion-list>
+			<ion-list class="listbg">
+				<h1 style="text-align: center; color: white">User Login</h1>
+			
 				<ion-item class="transparent">
 					<ion-label floating>Email / Phone Number</ion-label>
 					<ion-input style="color: white" type="text" name="login_params" [(ngModel)]="logininfo.i_loginparams"></ion-input>
@@ -27,15 +28,10 @@
 				<div class="center">
 					<button ion-button secondary>Login</button>
 				</div>
-				<div class="center">
-					<span>
-						<a style="color: white" href="#">Forgotten-Password</a>
-					</span>
-					
-					<div style="font-size: 15px;color: white">Not a Member?Please
-						<span (click)="gotoSignup()">SignUp here</span>
-					</div>
-				</div> 
+				<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
+					<p><span> Not a Member? Please <a (click)="gotoSignup()">SignUp here </a></span></p>
+					<p>Forgot Password </p>
+				</div>
 
 			</ion-list>
 		</form>

@@ -7,8 +7,7 @@ page-signup {
 		text-align:center;
 	}
 	.formview{
-		width: 30%;
-		height: 30%;
+		width: 40%;
 		margin: 50px auto;
 	}
 	.color{
@@ -19,6 +18,10 @@ page-signup {
 		border-radius: 9px;
 	}
 	
+	.item-ios {
+		padding-right: 16px;
+	}
+
 	.transparent{
 		background-color: transparent !important;
 		color: #FFF;
@@ -38,7 +41,6 @@ page-signup {
     only screen and (max-width: 480px){ 
     	.formview{
 			width: 90%;
-			height: 90%;
 			margin: 0 auto;
 		}
     }
