@@ -28,9 +28,20 @@ export class LoginPage {
 		console.log(this.logininfo);	
 		this._restservice.post('/user/loginCandidate',JSON.stringify(this.logininfo)).then( response => {
 			console.log(response);
-			/*if(logindata.status){
-				alert('Login Successful');
-			}*/
+			if(response.status){
+				console.log('Login Successful');
+				this._restservice.get('/user/userenquiries/'+response.result.user_id).then( resp => {
+					console.log(resp);
+					if(resp.status){
+						sessionStorage.setItem('enquiry',resp.result.enquiry_id);
+						this.navCtrl.push('MainPage');
+					} else {
+						this.navCtrl.push('WelcomePage');
+					}
+				});
+			} else {
+				alert(response.message);
+			}
 		});
 	}
 }	
