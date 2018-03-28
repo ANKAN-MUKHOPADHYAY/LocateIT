@@ -3,7 +3,7 @@ page-institute-landing {
 	    position: relative;
 	    background: url('../assets/img/header-background.jpg') no-repeat transparent;
 	    background-size: cover;
-	    height: 35%;
+	    height: 30%;
 	    z-index: 1;
 	    background-repeat: repeat-x;
 	    animation: animatedBackground 40s linear infinite;
@@ -15,7 +15,8 @@ page-institute-landing {
 	.institute-info {
 	    position: relative;
 	    z-index: 2;
-	    margin-top: -64px;
+	    margin-top: -120px;
+			padding: 30px;
 	}
 	.logoSize{
 		height:150px;
@@ -25,5 +26,8 @@ page-institute-landing {
 		border-radius: 5px;
 	    box-shadow: 0px 2px 2px 1px mediumslateblue;
 	    background-color: rgba(188, 186, 186, 0.94117647);
+	}
+	.clickables{
+		margin: 10px 0px;
 	}
 }

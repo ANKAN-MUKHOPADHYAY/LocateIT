@@ -1,0 +1,27 @@
+<div class="course-main-container">
+  <ion-item *ngFor="let c of courses; let k=index">
+    <ion-grid>
+        <ion-row>
+              <ion-col col-11>
+                <div class="off-name">{{c.name}}</div>
+              </ion-col>
+              <ion-col col-1 class="delButton buttonstray">
+                <button class="arrow-icon removeGrayBG" *ngIf="!showDesc[k]" (click)="showDescription(k,true)">
+                  <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+                </button>
+
+                <button class="arrow-icon removeGrayBG" *ngIf="showDesc[k]" (click)="showDescription(k,false)">
+                  <ion-icon ios="ios-arrow-up" md="md-arrow-up"></ion-icon>
+                </button>
+              </ion-col>
+        </ion-row>
+        <ion-row *ngIf="showDesc[k]">
+          <ion-col col-12>
+              <div (click)="showOfferingInfo(k)">
+                <div class="smallHeading">{{c.desc}}</div>
+              </div>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-item>
+</div>
