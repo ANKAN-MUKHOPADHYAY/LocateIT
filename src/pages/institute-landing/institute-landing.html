@@ -14,11 +14,11 @@
 <ion-content>
 	<div class="institute-bg"></div>
 	<!-- <div class="institute-info" *ngFor="let info of instituteInfos"> -->
-	<div class="institute-info">
+	<div class="institute-info" padding>
 		<ion-grid>
 		  	<ion-row>
 			    <ion-col col-12 col-sm-12 col-md-8 col-lg-8>
-			      	<div class="institute-details">
+			      	<div class="blockBackground instituteInfo">
 			      		<ion-grid>
 		  						<ion-row>
 				  						<ion-col col-12 col-sm-12 col-md-4 col-lg-4>
@@ -50,13 +50,76 @@
 							<div class="bodyContentArea">
 								  <inst-info *ngIf="this._global.dashboardActiveComponent=='inst-info'"></inst-info>
 									<inst-course *ngIf="this._global.dashboardActiveComponent=='inst-course'"></inst-course>
+									<inst-location *ngIf="this._global.dashboardActiveComponent=='inst-location'"></inst-location>
 							</div>
 
 			    </ion-col>
-			    <ion-col col-12 col-sm-12 col-md-4 col-lg-4 style="height:200px;background-color: lightgreen">
-			      	<div class="share-info">
-
+			    <ion-col col-12 col-sm-12 col-md-4 col-lg-4>
+			      	<div class="blockBackground blockPadding">
+										<div class="subHeading fatbob"> Share this Profile </div>
+										<div class="shareoption">
+											<span>
+												<ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+											</span>
+											<span class="assetFav">
+												<ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+											</span>
+											<span>
+												<ion-icon ios="logo-googleplus" md="logo-googleplus"></ion-icon>
+											</span>
+											<span>
+												<ion-icon ios="ios-share" md="md-share"></ion-icon>
+											</span>
+										</div>
 			      	</div>
+							<div class="blockBackground blockPadding">
+								<div class="subHeading fatbob"> Recommended </div>
+									<div class="parentBlock">
+											<ion-row class="individualOffering">
+													<ion-col col-4>
+															<img src="https://s3-ap-southeast-1.amazonaws.com/tv-prod/member/photo/1953912-medium190ap.jpg"  class="img-thumbnail" alt="Institute Image"/>
+													</ion-col>
+													<ion-col col-8>
+															<div class="subHeading">TechNinzaz</div>
+															<div>
+																<ion-icon name="ios-pin-outline"></ion-icon>
+																<span class="mediumHeading">Banashankari 3rd Stage,Bangalore</span>
+															</div>
+															<div class="smallHeading">10 Reviews</div>
+													</ion-col>
+											</ion-row>
+									</div>
+									<div class="parentBlock">
+											<ion-row class="individualOffering">
+													<ion-col col-4>
+															<img src="https://s3-ap-southeast-1.amazonaws.com/tv-prod/member/photo/3728986-medium190ap.jpg" class="img-thumbnail" alt="Institute Image"/>
+													</ion-col>
+													<ion-col col-8>
+															<div class="subHeading">PositiveEdge Learning Labs</div>
+															<div>
+																<ion-icon name="ios-pin-outline"></ion-icon>
+																<span class="mediumHeading">J P Nagar, Bangalore</span>
+															</div>
+															<div class="smallHeading">5 Reviews</div>
+													</ion-col>
+											</ion-row>
+									</div>
+									<div class="parentBlock">
+											<ion-row class="individualOffering">
+													<ion-col col-4>
+															<img src="https://s3-ap-southeast-1.amazonaws.com/tv-prod/member/photo/2607619-medium190ap.jpg" class="img-thumbnail" alt="Institute Image"/>
+													</ion-col>
+													<ion-col col-8>
+															<div class="subHeading">CourseCube Private Limited</div>
+															<div>
+																<ion-icon name="ios-pin-outline"></ion-icon>
+																<span class="mediumHeading">BTM Layout, Bangalore</span>
+															</div>
+															<div class="smallHeading">No Reviews</div>
+													</ion-col>
+											</ion-row>
+									</div>
+							</div>
 			    </ion-col>
 		  	</ion-row>
 		</ion-grid>

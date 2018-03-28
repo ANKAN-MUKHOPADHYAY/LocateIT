@@ -1,16 +1,16 @@
 <!-- Generated template for the InstOfferingComponent component -->
 <div #container class="nav-container">
         <ion-scroll #scroll id="scroll_content" scrollX="true">
-            <ion-card id="news" [ngClass]="this._global.dashboardActiveComponent=='news' ? 'news selected-nav' : 'news' " (click)="showActiveComponent('inst-info',1)" >
+            <ion-card id="news" [ngClass]="this._global.dashboardActiveComponent=='inst-info' ? 'news selected-nav' : 'news' " (click)="showActiveComponent('inst-info',1)" >
                     <div class="card-subtitle">Information</div>
             </ion-card>
-            <ion-card id="navigate" [ngClass]="this._global.dashboardActiveComponent=='navigate' ? 'navigate selected-nav' : 'navigate' " (click)="showActiveComponent('inst-course',2)">
+            <ion-card id="navigate" [ngClass]="this._global.dashboardActiveComponent=='inst-course' ? 'navigate selected-nav' : 'navigate' " (click)="showActiveComponent('inst-course',2)">
                     <div class="card-subtitle">Course</div>
             </ion-card>
-            <ion-card id="profiles" [ngClass]="this._global.dashboardActiveComponent=='profiles'|| this._global.dashboardActiveComponent=='profile-navigate' ? 'profiles selected-nav' : 'profiles' " (click)="showActiveComponent('inst-location',3)" >
+            <ion-card id="profiles" [ngClass]="this._global.dashboardActiveComponent=='inst-location' ? 'profiles selected-nav' : 'profiles' " (click)="showActiveComponent('inst-location',3)" >
                     <div class="card-subtitle">Location</div>
             </ion-card>
-            <ion-card id="bookmarks" [ngClass]="this._global.dashboardActiveComponent=='bookmarks' ? 'bookmarks selected-nav' : 'bookmarks' " (click)="showActiveComponent('inst-review',4)" >
+            <ion-card id="bookmarks" [ngClass]="this._global.dashboardActiveComponent=='inst-review' ? 'bookmarks selected-nav' : 'bookmarks' " (click)="showActiveComponent('inst-review',4)" >
                     <div class="card-subtitle">Review</div>
             </ion-card>
         </ion-scroll>

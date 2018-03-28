@@ -1,22 +1,37 @@
 import { Component } from '@angular/core';
 
-/**
- * Generated class for the InstLocationComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'inst-location',
   templateUrl: 'inst-location.html'
 })
 export class InstLocationComponent {
 
-  text: string;
+  showDesc=[];
+  locations: any = [{
+    name: "Location 1",
+    desc: "Lorem Ipsum"
+  },{
+    name: "Location 2",
+    desc: "Lorem Ipsum"
+  },{
+    name: "Location 3",
+    desc: "Lorem Ipsum3"
+  },{
+    name: "Location 4",
+    desc: "Lorem Ipsum4"
+  },{
+    name: "Sample 5",
+    desc: "Lorem Ipsum5"
+  }];
 
   constructor() {
     console.log('Hello InstLocationComponent Component');
-    this.text = 'Hello World';
+    this.showDesc.push(false);
+    console.log(this.locations);
+  }
+
+  showDescription(index,button){
+    this.showDesc[index]=button;
   }
 
 }
