@@ -8,16 +8,16 @@ page-signup {
 	}
 	.formview{
 		width: 40%;
-		margin: 50px auto;
+		margin: 100px auto;
 	}
 	.color{
 		color: darkviolet;
 	}
 	.listbg{
-		background-color: rgba(0, 0, 0, 0.7) !important;	
+		background-color: rgba(0, 0, 0, 0.7) !important;
 		border-radius: 9px;
 	}
-	
+
 	.item-ios {
 		padding-right: 16px;
 	}
@@ -38,13 +38,14 @@ page-signup {
 		margin-left: 10px;
 	}
 
-	@media only screen 
-    and (max-device-width: 640px), 
-    only screen and (max-device-width: 667px), 
-    only screen and (max-width: 480px){ 
+	@media only screen
+    and (max-device-width: 640px),
+    only screen and (max-device-width: 667px),
+    only screen and (max-width: 480px){
     	.formview{
-			width: 90%;
-			margin: 0 auto;
-		}
+				width: 90%;
+				margin: 0px auto;
+				margin-top: 20%;
+			}
     }
 }

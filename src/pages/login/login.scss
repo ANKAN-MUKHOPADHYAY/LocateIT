@@ -14,13 +14,13 @@ page-login{
 		padding-right: 16px !important;
 	}
 	.formView{
-		margin:0px auto;
+		margin: 0px auto;
 		width: 40%;
-		margin-top: 0;
+		margin-top: 15%;
 		background-color:transparent !important;
 	}
 	.listbg{
-		background-color: rgba(0, 0, 0, 0.7) !important;	
+		background-color: rgba(0, 0, 0, 0.7) !important;
 		border-radius: 9px;
 	}
 
@@ -29,17 +29,15 @@ page-login{
 		background-size: 100% 100%;
 	}
 
-	@media only screen 
-    and (max-device-width: 640px), 
-    only screen and (max-device-width: 667px), 
-    only screen and (max-width: 480px){ 
+	@media only screen
+    and (max-device-width: 640px),
+    only screen and (max-device-width: 667px),
+    only screen and (max-width: 480px){
     	.formView{
-			width: 90%;
-			margin: 0 auto;
-		}
+				width: 90%;
+				margin: 0px auto;
+				margin-top: 30%;
+			}
     }
 
 }
-
-
-
