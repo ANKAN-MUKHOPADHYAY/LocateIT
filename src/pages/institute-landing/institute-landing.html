@@ -13,8 +13,8 @@
 
 <ion-content>
 	<div class="institute-bg"></div>
-	<!-- <div class="institute-info" *ngFor="let info of instituteInfos"> -->
-	<div class="institute-info" padding>
+	<div class="institute-info" *ngFor="let info of instituteInfos">
+	<!-- <div class="institute-info" padding> -->
 		<ion-grid>
 		  	<ion-row>
 			    <ion-col col-12 col-sm-12 col-md-8 col-lg-8>
@@ -22,11 +22,13 @@
 			      		<ion-grid>
 		  						<ion-row>
 				  						<ion-col col-12 col-sm-12 col-md-4 col-lg-4>
-				  							<img style="height:200px;" src="https://images.template.net/wp-content/uploads/2017/03/22091835/Free-Travel-Company-Logo1.jpg" />
+				  							<!-- <img style="height:200px;" src="https://images.template.net/wp-content/uploads/2017/03/22091835/Free-Travel-Company-Logo1.jpg" /> -->
+												<img style="height200px;" src="{{info.inst_images}}" />
 				  						</ion-col>
 				  						<ion-col col-12 col-sm-12 col-md-8 col-lg-8>
-				  							<h1>Travel Company</h1>
-				  							<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">Bangalore, India</span>
+				  							<!-- <h1>Travel Company</h1> -->
+												<h1>{{info.inst_name}}</h1>
+				  							<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">{{info.inst_address}}, {{info.inst_city}}</span>
 				  							<div style="margin-top: 10px;">
 				  								<ion-icon name="star" style="color: yellow;"></ion-icon>
 				  								<ion-icon name="star" style="color: yellow;"></ion-icon>

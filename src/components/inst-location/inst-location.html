@@ -3,7 +3,7 @@
     <ion-grid>
         <ion-row>
               <ion-col col-11>
-                <div class="off-name">{{l.name}}</div>
+                <div class="off-name">{{l.location_name}}, {{l.location_city}}, {{l.location_pincode}}</div>
               </ion-col>
               <ion-col col-1 class="delButton buttonstray">
                 <button class="arrow-icon removeGrayBG" *ngIf="!showDesc[k]" (click)="showDescription(k,true)">
@@ -18,7 +18,7 @@
         <ion-row *ngIf="showDesc[k]">
           <ion-col col-12>
               <div (click)="showOfferingInfo(k)">
-                <div class="smallHeading">{{l.desc}}</div>
+                <div class="smallHeading">Nearby: {{l.location_nearby}} <span>({{l.location_relevant_name}}), </span> </div>
               </div>
           </ion-col>
         </ion-row>

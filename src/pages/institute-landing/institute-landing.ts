@@ -18,21 +18,22 @@ export class InstituteLandingPage {
 	instituteInfos : any;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider, public _global:GlobalProvider) {
-		console.log(this.navParams.data);
+		//console.log(this.navParams.data);
     this._global.dashboardActiveComponent="inst-info";
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad InstituteLandingPage');
-		// if(this.navParams.data != undefined || this.navParams.data != null){
-		// 	this._restservice.get('/institute/getInstituteInformation/'+this.navParams.data).then( res => {
-		// 		console.log(res);
-		// 		this.instituteInfos = res.response;
-		// 		console.log(this.instituteInfos);
-		// 	});
-		// } else {
-		// 	//this.navCtrl.setRoot('MainPage');
-		// }
+		//console.log('ionViewDidLoad InstituteLandingPage');
+		if(this.navParams.data != undefined || this.navParams.data != null){
+      console.log(this.navParams.data);
+			this._restservice.get('/institute/getInstituteInformation/'+this.navParams.data).then( res => {
+				console.log(res);
+				this.instituteInfos = res.response;
+				console.log(this.instituteInfos);
+			});
+		} else {
+			//this.navCtrl.setRoot('MainPage');
+		}
 
 	}
 

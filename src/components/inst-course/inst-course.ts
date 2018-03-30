@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 @Component({
   selector: 'inst-course',
@@ -42,15 +44,28 @@ export class InstCourseComponent {
     desc: "Lorem Ipsum 11"
   }];
 
-  constructor() {
-    console.log('Hello InstCourseComponent Component');
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
+    //console.log('Hello InstCourseComponent Component');
     this.text = 'Hello World';
     this.showDesc.push(false);
-    //this.courses = data;
-    console.log(this.courses);
+    this.instituteOfferedCourses();
+    //console.log(this.courses);
   }
   showDescription(index,button){
     this.showDesc[index]=button;
+  }
+
+  instituteOfferedCourses() {
+    if(this.navParams.data != undefined || this.navParams.data != null){
+    console.log(this.navParams.data);
+			this._restservice.get('/institute/getInstituteInformation/'+this.navParams.data).then( res => {
+				console.log(res);
+				this.courses = res.response[0].courses;
+				//console.log(this.courses);
+			});
+		} else {
+			//this.navCtrl.setRoot('MainPage');
+		}
   }
 
 }
