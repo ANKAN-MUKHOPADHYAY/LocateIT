@@ -37,8 +37,12 @@
 											<ion-icon name="star" style="color: yellow;"></ion-icon>
 										</div>
 										<div>
-											<button ion-button color="primary"> <ion-icon name="ios-mail-outline" style="margin-right: 10px;"></ion-icon> Message</button>
-											<button ion-button color="primary" style="margin-left: 20px;"> <ion-icon name="ios-call-outline" style="margin-right: 10px;"></ion-icon> Call</button>
+											<a href="mailto:{{info.inst_email}}?Subject=Locate%20IT%20Enquiry"">
+												<button ion-button color="primary"> <ion-icon name="ios-mail-outline" style="margin-right: 10px;"></ion-icon> Send Mail</button>
+											</a>
+											<a href="tel:{{info.inst_contact}}">
+												<button ion-button color="primary" style="margin-left: 20px;"> <ion-icon name="ios-call-outline" style="margin-right: 10px;"></ion-icon> Call</button>
+											</a>
 										</div>
 
 									</ion-col>
