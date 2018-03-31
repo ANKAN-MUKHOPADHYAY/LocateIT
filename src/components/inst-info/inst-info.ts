@@ -12,11 +12,8 @@ import { Component } from '@angular/core';
 })
 export class InstInfoComponent {
 
-  text: string;
-
   constructor() {
-    console.log('Hello InstInfoComponent Component');
-    this.text = 'Hello World';
+    
   }
 
 }

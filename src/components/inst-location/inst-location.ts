@@ -10,12 +10,15 @@ export class InstLocationComponent {
 
   showDesc=[];
   locations: any;
+  restUrl: any;
+  navParamType : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
     //console.log('Hello InstLocationComponent Component');
     this.showDesc.push(false);
     //console.log(this.locations);
     this.institutePrefferedLocation();
+    this.navParamType = typeof(this.navParams.data);
   }
 
   showDescription(index,button){
@@ -23,7 +26,7 @@ export class InstLocationComponent {
   }
 
   institutePrefferedLocation() {
-    if(typeof(this.navParams.data) == Number){
+    if(this.navParamType === Number){
       this.restUrl = '/institute/getInstituteInformation/'+this.navParams.data;
 		} else {
       this.restUrl = '/institute/getInstituteInformation/'+sessionStorage.getItem('instlooking');

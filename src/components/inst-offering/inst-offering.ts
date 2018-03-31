@@ -9,11 +9,8 @@ import { ViewController, NavController,Content, Scroll } from 'ionic-angular';
   templateUrl: 'inst-offering.html'
 })
 export class InstOfferingComponent {
-
-  text: string;
-
   constructor(public _global:GlobalProvider,public view:ViewController, public navCtrl:NavController) {
-    console.log(this._global.dashboardActiveComponent);
+    //console.log(this._global.dashboardActiveComponent);
     this._global.dashboardActiveComponent = this._global.dashboardActiveComponent;
   }
 

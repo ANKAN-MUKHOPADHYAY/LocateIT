@@ -15,7 +15,7 @@ export class GlobalProvider {
   public tempDashboardActiveComponent="inst-info";
 
   constructor(public http: HttpClient, public platform: Platform) {
-    console.log('Hello GlobalProvider Provider');
+    //console.log('Hello GlobalProvider Provider');
   }
 
 }

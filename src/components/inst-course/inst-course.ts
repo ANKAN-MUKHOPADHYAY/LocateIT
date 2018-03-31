@@ -7,14 +7,14 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'inst-course.html'
 })
 export class InstCourseComponent {
-  text: string;
   showDesc=[];
   courses: any;
+  restUrl: any;
+  navParamType : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
-    //console.log('Hello InstCourseComponent Component');
-    this.text = 'Hello World';
     this.showDesc.push(false);
+    this.navParamType = typeof(this.navParams.data);
     this.instituteOfferedCourses();
     //console.log(this.courses);
   }
@@ -23,7 +23,7 @@ export class InstCourseComponent {
   }
 
   instituteOfferedCourses() {
-    if(typeof(this.navParams.data) == Number){
+    if(this.navParamType === Number){
       this.restUrl = '/institute/getInstituteInformation/'+this.navParams.data;
 		} else {
       this.restUrl = '/institute/getInstituteInformation/'+sessionStorage.getItem('instlooking');

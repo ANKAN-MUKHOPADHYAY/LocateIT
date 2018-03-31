@@ -42,7 +42,7 @@ export class SimilarProfileComponent {
 
   constructor() {
     //console.log('Hello SimilarProfileComponent Component');
-    console.log(this.similarProfiles);
+    //console.log(this.similarProfiles);
   }
 
 

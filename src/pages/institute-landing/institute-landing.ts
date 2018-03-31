@@ -17,6 +17,7 @@ import { GlobalProvider } from '../../providers/global/global';
 export class InstituteLandingPage {
 	instituteInfos : any;
   restUrl : any;
+  navParamType : any;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider, public _global:GlobalProvider) {
 		//console.log(this.navParams.data);
@@ -24,7 +25,8 @@ export class InstituteLandingPage {
 	}
 
 	ionViewDidLoad() {
-    if(typeof(this.navParams.data) == Number){
+    this.navParamType = typeof(this.navParams.data);
+    if(this.navParamType === Number){
       this.restUrl = '/institute/getInstituteInformation/'+this.navParams.data;
 		} else {
       this.restUrl = '/institute/getInstituteInformation/'+sessionStorage.getItem('instlooking');
@@ -35,7 +37,7 @@ export class InstituteLandingPage {
   getData() {
     this._restservice.get(this.restUrl).then( res => {
       this.instituteInfos = res.response;
-      console.log(this.instituteInfos);
+      //console.log(this.instituteInfos);
     });
   }
 
