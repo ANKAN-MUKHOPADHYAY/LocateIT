@@ -1,4 +1,15 @@
-<!-- Generated template for the RecommendedInstituteComponent component -->
-<div>
-  {{text}}
+<div class="parentBlock" *ngFor="let r of recommended">
+	<ion-row class="individualOffering">
+		<ion-col col-4 class="center">
+			<img src="{{r.imgUrl}}"  class="img-thumbnail" alt="Institute Image"/>
+		</ion-col>
+		<ion-col col-8>
+			<div class="subHeading">{{r.name}}</div>
+			<div>
+				<ion-icon name="ios-pin-outline"></ion-icon>
+				<span class="mediumHeading">{{r.address}}</span>
+			</div>
+			<div class="smallHeading">{{r.reviews}} Reviews</div>
+		</ion-col>
+	</ion-row>
 </div>
