@@ -16,6 +16,7 @@ import { GlobalProvider } from '../../providers/global/global';
 })
 export class InstituteLandingPage {
 	instituteInfos : any;
+  restUrl : any;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider, public _global:GlobalProvider) {
 		//console.log(this.navParams.data);
@@ -23,19 +24,19 @@ export class InstituteLandingPage {
 	}
 
 	ionViewDidLoad() {
-		//console.log('ionViewDidLoad InstituteLandingPage');
-		if(this.navParams.data != undefined || this.navParams.data != null){
-      console.log(this.navParams.data);
-			this._restservice.get('/institute/getInstituteInformation/'+this.navParams.data).then( res => {
-				console.log(res);
-				this.instituteInfos = res.response;
-				console.log(this.instituteInfos);
-			});
+    if(typeof(this.navParams.data) == Number){
+      this.restUrl = '/institute/getInstituteInformation/'+this.navParams.data;
 		} else {
-			//this.navCtrl.setRoot('MainPage');
+      this.restUrl = '/institute/getInstituteInformation/'+sessionStorage.getItem('instlooking');
 		}
-
+    this.getData();
 	}
 
+  getData() {
+    this._restservice.get(this.restUrl).then( res => {
+      this.instituteInfos = res.response;
+      console.log(this.instituteInfos);
+    });
+  }
 
 }

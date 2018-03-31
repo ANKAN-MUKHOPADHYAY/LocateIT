@@ -9,22 +9,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 export class InstLocationComponent {
 
   showDesc=[];
-  locations: any = [{
-    name: "Location 1",
-    desc: "Lorem Ipsum"
-  },{
-    name: "Location 2",
-    desc: "Lorem Ipsum"
-  },{
-    name: "Location 3",
-    desc: "Lorem Ipsum3"
-  },{
-    name: "Location 4",
-    desc: "Lorem Ipsum4"
-  },{
-    name: "Sample 5",
-    desc: "Lorem Ipsum5"
-  }];
+  locations: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
     //console.log('Hello InstLocationComponent Component');
@@ -38,16 +23,19 @@ export class InstLocationComponent {
   }
 
   institutePrefferedLocation() {
-    if(this.navParams.data != undefined || this.navParams.data != null){
-    console.log(this.navParams.data);
-			this._restservice.get('/institute/getInstituteInformation/'+this.navParams.data).then( res => {
-				console.log(res);
-				this.locations = res.response[0].location;
-				console.log(this.locations);
-			});
+    if(typeof(this.navParams.data) == Number){
+      this.restUrl = '/institute/getInstituteInformation/'+this.navParams.data;
 		} else {
-			//this.navCtrl.setRoot('MainPage');
+      this.restUrl = '/institute/getInstituteInformation/'+sessionStorage.getItem('instlooking');
 		}
+    this.getData();
+  }
+
+  getData() {
+    this._restservice.get(this.restUrl).then( res => {
+      this.locations = res.response[0].location;
+      //console.log(this.instituteInfos);
+    });
   }
 
 }
