@@ -4,8 +4,6 @@ import { InstInfoComponent } from './inst-info/inst-info';
 import { InstCourseComponent } from './inst-course/inst-course';
 import { InstLocationComponent } from './inst-location/inst-location';
 import { InstReviewComponent } from './inst-review/inst-review';
-import { HeaderComponent } from './header/header';
-import { FooterComponent } from './footer/footer';
 
 
 @NgModule({
@@ -14,8 +12,6 @@ import { FooterComponent } from './footer/footer';
     InstCourseComponent,
     InstLocationComponent,
     InstReviewComponent,
-    HeaderComponent,
-    FooterComponent,
   ],
 	imports: [],
 	exports: [InstOfferingComponent,
@@ -23,8 +19,6 @@ import { FooterComponent } from './footer/footer';
     InstCourseComponent,
     InstLocationComponent,
     InstReviewComponent,
-    HeaderComponent,
-    FooterComponent,
   ]
 })
 export class ComponentsModule {}
