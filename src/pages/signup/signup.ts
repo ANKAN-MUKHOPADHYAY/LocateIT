@@ -46,5 +46,11 @@ export class SignupPage {
 			
       });
 	}
+	gotoLogin(){
+		this.navCtrl.push('LoginPage',{
+			selectedCourse : this.navParams.data.selectedCourse,
+      		selectedLocation: this.navParams.data.selectedLocation
+		});
+	}
 
 }
