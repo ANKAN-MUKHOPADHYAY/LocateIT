@@ -19,9 +19,11 @@ export class WelcomePage {
   currentItems: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider) {
+    console.log(this.navCtrl);
   }
 
   getCourses(ev) {
+      console.log(ev);
       let val = ev.target.value;
       if (!val || !val.trim()) {
         this.currentItems = [];
@@ -41,9 +43,9 @@ export class WelcomePage {
   gotoSignup(){
   	this.navCtrl.push('SignupPage');
   }
-  /*locationSearch(){
+  locationSearch(){
     this.navCtrl.push('SelectLocationPage');
-  }*/
+  }
   openItem(item) {
     this.navCtrl.push('SelectLocationPage', {
       selectedCourse : item

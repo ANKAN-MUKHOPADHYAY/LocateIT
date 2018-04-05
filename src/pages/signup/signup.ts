@@ -25,8 +25,9 @@ export class SignupPage {
 	doSignupProcess(data){
 		console.log(this.userinfo);	
 		this.userinfo.u_type = "Student";
-		this._restService.post('/user/adduser',JSON.stringify(this.userinfo)).then(res => {
+		/*this._restService.post('/user/adduser',JSON.stringify(this.userinfo)).then(res => {
 			console.log(res);
+			sessionStorage.setItem('userid',res.result.user_id);
 			this.userdetail.u_id = res.result.user_id;
 
 			if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
@@ -41,10 +42,16 @@ export class SignupPage {
 						}
 					});						
 			} else {
-				this.navCtrl.push('LoginPage');
+				this.navCtrl.push('WelcomePage');
 			}
 			
-      });
+      	});*/
+      	if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
+			console.log("Generate Enquiry and then take user to Main Page");
+			this.navCtrl.push('MainPage');
+		} else {
+			this.navCtrl.push('WelcomePage');
+		}
 	}
 	gotoLogin(){
 		this.navCtrl.push('LoginPage',{
