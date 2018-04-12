@@ -1,4 +1,24 @@
-<!-- Generated template for the HeaderComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-navbar [hideBackButton]="hideBackButton">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title></ion-title>
+  <div *ngIf="!loggedIn" style="float: right;margin-right: 30px;">
+    <button ion-button color="light" (click)="gotoLogin()">Login</button>
+    <button ion-button color="primary" (click)="gotoSignup()">Sign Up</button>
+  </div>
+  <div *ngIf="loggedIn" style="float: right;margin-right: 30px;">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://lh3.googleusercontent.com/-j24QJ2j8uAM/AAAAAAAAAAI/AAAAAAAAABI/tn8VzCQnFZo/s640/photo.jpg">
+      </ion-avatar>
+      <ion-label>{{userinfo.user_first_name}} {{userinfo.user_last_name}}</ion-label>
+      <ion-select [(ngModel)]="toppings" interface="popover">
+        <ion-option>Your Profile</ion-option>
+        <ion-option>My Account</ion-option>
+        <ion-option>My Enquiry</ion-option>
+        <ion-option>Logout</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+</ion-navbar>

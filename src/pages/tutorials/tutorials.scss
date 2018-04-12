@@ -1,13 +1,18 @@
 page-tutorials {
-.center{
-	text-align: center;
-    display: block;
-    width: 100%;
-}
-.imag{
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
-}
+	.center{
+		text-align: center;
+	    display: block;
+	    width: 100%;
+	}
+	.imag{
+	    width: auto;
+	    max-width: 100%;
+	    height: auto;
+	    max-height: 100%;
+	}
+
+	.tutorial{
+		//@include cardStyling($newsBrandColor)
+		background-image: linear-gradient(to left bottom, #2978fa, #00acf9, #37cfda, #b9e7d2, #fefffc);
+	}
 }

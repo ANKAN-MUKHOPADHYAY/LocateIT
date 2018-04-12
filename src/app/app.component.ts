@@ -24,8 +24,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-       { title: 'Home', component: HomePage },
-      { title: 'select-location', component: SelectLocationPage },
+      { title: 'About Us', component: SelectLocationPage },
     ];
   }
 

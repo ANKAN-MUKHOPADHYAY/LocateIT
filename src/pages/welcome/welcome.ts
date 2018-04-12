@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 /*import { AlertController } from 'ionic-angular';*/
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
-/**
- * Generated class for the WelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -35,13 +29,6 @@ export class WelcomePage {
           console.log(this.currentItems);
         }
       });
-  }
-
-  gotoLogin(){
-  	this.navCtrl.push('LoginPage');
-  }
-  gotoSignup(){
-  	this.navCtrl.push('SignupPage');
   }
   locationSearch(){
     this.navCtrl.push('SelectLocationPage');

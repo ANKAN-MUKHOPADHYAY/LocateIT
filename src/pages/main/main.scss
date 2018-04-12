@@ -3,6 +3,15 @@ page-main {
 }
 
 /*  Common CSS for All the Pages    */
+.tutorial{
+  background-image: linear-gradient(to left bottom, #2978fa, #00acf9, #37cfda, #b9e7d2, #fefffc);
+}
+.tilesBG{
+  background-image: linear-gradient(to top, #91948a, #a0a690, #aeb996, #bccc9c, #cbe0a2);
+}
+.innerBG {
+  background-image: linear-gradient(to top, #53d4fa, #68d6dc, #8ad4c2, #aad0b1, #c1cbad);
+}
 .genericPadding{
   padding: 30px;
 }
@@ -24,9 +33,7 @@ page-main {
   font-size: 1.6em !important;
 }
 .blockBackground{
-    border-radius: 5px;
     box-shadow: 0px 2px 6px #ccc;
-
     background: rgba(134,174,204,1);
     background: -moz-linear-gradient(top, rgba(134,174,204,1) 0%, rgba(212,228,239,1) 57%, rgba(212,228,239,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(134,174,204,1)), color-stop(57%, rgba(212,228,239,1)), color-stop(100%, rgba(212,228,239,1)));
@@ -35,7 +42,6 @@ page-main {
     background: -ms-linear-gradient(top, rgba(134,174,204,1) 0%, rgba(212,228,239,1) 57%, rgba(212,228,239,1) 100%);
     background: linear-gradient(to bottom, rgba(134,174,204,1) 0%, rgba(212,228,239,1) 57%, rgba(212,228,239,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86aecc', endColorstr='#d4e4ef', GradientType=0 );
-    margin-bottom: 10px;
 }
 .blockPadding{
   padding: 10px;

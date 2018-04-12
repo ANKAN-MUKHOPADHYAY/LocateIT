@@ -1,22 +1,31 @@
 import { Component } from '@angular/core';
+import { NavController, ViewController } from 'ionic-angular';
+import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
-/**
- * Generated class for the HeaderComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'header',
   templateUrl: 'header.html'
 })
 export class HeaderComponent {
+  loggedIn : boolean;
+  userinfo : any;
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public _restservice: HttpServiceProvider) {
+    if(sessionStorage.getItem('userid') != undefined || sessionStorage.getItem('userid') != null){
+      this._restservice.get('/user/userinfo/'+sessionStorage.getItem('userid')).then( resp => {
+        console.log(resp);
+        this.userinfo = resp.result;
+        this.loggedIn = true;
+      });
+    } else {
+      this.loggedIn = false;
+    }
+  }
 
-  text: string;
-
-  constructor() {
-    console.log('Hello HeaderComponent Component');
-    this.text = 'Hello World';
+  gotoLogin(){
+  	this.navCtrl.push('LoginPage');
+  }
+  gotoSignup(){
+  	this.navCtrl.push('SignupPage');
   }
 
 }

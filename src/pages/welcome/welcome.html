@@ -5,7 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <header hideBackButton="true"></header>
+  <!-- <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -13,39 +14,16 @@
     <div style="float: right;margin-right: 30px;">
     	<button ion-button color="light" (click)="gotoLogin()">Login</button>
     	<button ion-button color="primary" (click)="gotoSignup()">Sign Up</button>
-	</div>
-  </ion-navbar>
+	  </div>
+  </ion-navbar> -->
 </ion-header>
-
-
-<!-- <ion-content padding class="bg">
-	<div class="scrolling">
-		<ion-card class="middle" >
-			<ion-card-header>
-				Find best Tutors & institutes Near You
-			</ion-card-header>
-			<ion-card-content>
-				<ion-searchbar (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
-				<ion-list>
-			        <button ion-item *ngFor="let item of currentItems">
-			          <h2>{{item.course_name}}</h2>
-			        </button>
-			      </ion-list>
-				<div>
-				<button ion-button color="Primary" (click)="locationSearch()" right>FIND</button>
-			</div>
-			</ion-card-content>
-		</ion-card>
-	</div>
-</ion-content> -->
-
 
 <ion-content scroll="false">
   <div class="splash-bg"></div>
   <div class="splash-info">
     <div class="splash-logo"></div>
     <div class="splash-intro">
-      Find Training & Courses Near You
+      Find best Tutors & institutes Near You
     </div>
   </div>
   <ion-content>

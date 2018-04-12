@@ -38,14 +38,15 @@ export class LoginPage {
 	}
 
   	dologinProcess(data){
-		console.log(this.logininfo);	
-		/*this._restservice.post('/user/loginCandidate',JSON.stringify(this.logininfo)).then( response => {
+		console.log(this.logininfo);
+		this._restservice.post('/user/loginCandidate',JSON.stringify(this.logininfo)).then( response => {
 			console.log(response);
 			if(response.status){
+        sessionStorage.setItem('userid',this.loginresp.result.user_id);
 				console.log('Login Successful');
 				this._restservice.get('/user/userenquiries/'+response.result.user_id).then( resp => {
 					console.log(resp);
-					if(resp.status){
+					if(resp.status == true){
 						sessionStorage.setItem('enquiry',resp.result.enquiry_id);
 						this.navCtrl.push('MainPage');
 					} else {
@@ -55,8 +56,8 @@ export class LoginPage {
 			} else {
 				alert(response.message);
 			}
-		});*/
-		console.log(this.loginresp);
+		});
+		/*console.log(this.loginresp);
 		if(this.loginresp.status){
 			sessionStorage.setItem('userid',this.loginresp.result.user_id);
 			console.log(this.loginresp.message);
@@ -67,8 +68,6 @@ export class LoginPage {
 				console.log("create enquiry id first");
 				this.navCtrl.push('WelcomePage');
 			}
-		}
+		}*/
 	}
-}	
-
-
+}

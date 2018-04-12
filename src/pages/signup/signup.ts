@@ -23,35 +23,34 @@ export class SignupPage {
 	}
 
 	doSignupProcess(data){
-		console.log(this.userinfo);	
+		console.log(this.userinfo);
 		this.userinfo.u_type = "Student";
-		/*this._restService.post('/user/adduser',JSON.stringify(this.userinfo)).then(res => {
-			console.log(res);
-			sessionStorage.setItem('userid',res.result.user_id);
-			this.userdetail.u_id = res.result.user_id;
+		this._restService.post('/user/adduser',JSON.stringify(this.userinfo)).then(res => {
+  			console.log(res);
+  			sessionStorage.setItem('userid',res.result.user_id);
+  			this.userdetail.u_id = res.result.user_id;
 
-			if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
+  			if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
 
-				this.userdetail.u_cid = this.navParams.data.selectedCourse.id;
-				this.userdetail.u_lid = this.navParams.data.selectedLocation.id;	
-				this._restService.post('/user/userenquiry',JSON.stringify(this.userdetail)).then(resp => {
-						console.log(resp);
-						if(resp.status){
-							sessionStorage.setItem('enquiry', resp.result.enquiry_id);
-							this.navCtrl.push('MainPage');
-						}
-					});						
-			} else {
-				this.navCtrl.push('WelcomePage');
-			}
-			
-      	});*/
-      	if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
+  				this.userdetail.u_cid = this.navParams.data.selectedCourse.id;
+  				this.userdetail.u_lid = this.navParams.data.selectedLocation.id;
+  				this._restService.post('/user/userenquiry',JSON.stringify(this.userdetail)).then(resp => {
+  						console.log(resp);
+  						if(resp.status){
+  							sessionStorage.setItem('enquiry', resp.result.enquiry_id);
+  							this.navCtrl.push('MainPage');
+  						}
+  					});
+  			} else {
+  				this.navCtrl.push('WelcomePage');
+  			}
+	  });
+    /*if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
 			console.log("Generate Enquiry and then take user to Main Page");
 			this.navCtrl.push('MainPage');
 		} else {
 			this.navCtrl.push('WelcomePage');
-		}
+		}*/
 	}
 	gotoLogin(){
 		this.navCtrl.push('LoginPage',{
