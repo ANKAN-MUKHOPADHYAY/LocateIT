@@ -33,5 +33,4 @@ export class MainPage {
     sessionStorage.setItem('instlooking',inst.id);
     this.navCtrl.push('InstituteLandingPage',inst.id);
   }
-
 }

@@ -27,5 +27,10 @@ export class HeaderComponent {
   gotoSignup(){
   	this.navCtrl.push('SignupPage');
   }
-
+  logout(){
+    this.navCtrl.push('LoginPage');
+  }
+  gotoUserAccount(){
+    this.navCtrl.push('UseraccountPage');
+  }
 }

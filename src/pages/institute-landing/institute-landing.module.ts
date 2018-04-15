@@ -5,6 +5,7 @@ import { InstOfferingModule } from '../../components/inst-offering/inst-offering
 import { InstituteComponentsModule } from '../../components/institute-components.module';
 import { SimilarProfileModule } from '../../components/similar-profile/similar-profile.module';
 import { RecommendedInstituteModule } from '../../components/recommended-institute/recommended-institute.module';
+import { HeaderModule } from '../../components/header/header.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RecommendedInstituteModule } from '../../components/recommended-institu
     InstituteComponentsModule,
     InstOfferingModule,
     SimilarProfileModule,
-    RecommendedInstituteModule
+    RecommendedInstituteModule,
+    HeaderModule,
   ],
 })
 export class InstituteLandingPageModule {}
