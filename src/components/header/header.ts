@@ -30,7 +30,14 @@ export class HeaderComponent {
   logout(){
     this.navCtrl.push('LoginPage');
   }
-  gotoUserAccount(){
-    this.navCtrl.push('UseraccountPage');
+  gotoAccount(ev){
+    //alert('WOW');
+    console.log(ev);
+    if(ev == "Logout"){
+      sessionStorage.clear();
+      this.navCtrl.push('WelcomePage');
+    } else {
+      this.navCtrl.push('UseraccountPage');
+    } 
   }
 }

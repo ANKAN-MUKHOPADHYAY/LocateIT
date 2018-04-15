@@ -17,7 +17,7 @@ import { GlobalProvider } from '../providers/global/global';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
+    ListPage, 
     TutorialsPage
   ],
   imports: [
