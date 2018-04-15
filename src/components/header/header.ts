@@ -36,8 +36,13 @@ export class HeaderComponent {
     if(ev == "Logout"){
       sessionStorage.clear();
       this.navCtrl.push('WelcomePage');
+    } else if(ev == "My Enquiry"){
+      this.navCtrl.push('EnquiryhistoryPage');
     } else {
       this.navCtrl.push('UseraccountPage');
-    } 
+
+    }
+
   }
+  
 }
