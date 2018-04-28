@@ -47,7 +47,7 @@ export class LoginPage {
 				this._restservice.get('/user/userenquiries/'+response.result.user_id).then( resp => {
 					console.log(resp);
 					if(resp.status == true){
-						sessionStorage.setItem('enquiry',resp.result.enquiry_id);
+						sessionStorage.setItem('enquiry',resp.result[0].enquiry_id);
 						this.navCtrl.push('MainPage');
 					} else {
 						this.navCtrl.push('WelcomePage');
