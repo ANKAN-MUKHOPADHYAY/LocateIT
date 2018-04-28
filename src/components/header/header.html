@@ -15,9 +15,9 @@
       <ion-label>{{userinfo.user_first_name}} {{userinfo.user_last_name}}</ion-label>
       <ion-select [(ngModel)]="toppings" interface="popover">
         <ion-option>Your Profile</ion-option>
-        <ion-option>My Account</ion-option>
-        <ion-option>My Enquiry</ion-option>
-        <ion-option>Logout</ion-option>
+        <ion-option (ionSelect)="gotoAccount($event)">User Settings</ion-option>
+        <ion-option>My Enquiry</ion-option> 
+        <ion-option (ionSelect)="gotoAccount($event)">Logout</ion-option>
       </ion-select>
     </ion-item>
   </div>

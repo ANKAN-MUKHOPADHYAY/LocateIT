@@ -1,0 +1,24 @@
+page-useraccount {
+	.center{
+		text-align:center;
+	}
+	.size{
+		font-size:21px;
+	}
+	.design{
+		border:2px solid #EEEEEE;
+		width:70%;
+	}
+	.text-input::-moz-placeholder {
+	  color: purple;
+	}
+
+	.text-input:-ms-input-placeholder {
+	  color: purple;
+	}
+
+	.text-input::-webkit-input-placeholder {
+	  text-indent: 0;
+	  color: purple;
+	}
+}
