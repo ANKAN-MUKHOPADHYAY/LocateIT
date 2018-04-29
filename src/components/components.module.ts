@@ -6,6 +6,7 @@ import { InstLocationComponent } from './inst-location/inst-location';
 import { InstReviewComponent } from './inst-review/inst-review';
 
 
+
 @NgModule({
 	declarations: [InstOfferingComponent,
     InstInfoComponent,

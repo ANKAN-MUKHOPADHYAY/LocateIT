@@ -5,13 +5,15 @@ import { InstInfoComponent } from './inst-info/inst-info';
 import { InstCourseComponent } from './inst-course/inst-course';
 import { InstLocationComponent } from './inst-location/inst-location';
 import { InstReviewComponent } from './inst-review/inst-review';
+import { MessageComponent } from './message/message';
 
 @NgModule({
 	declarations: [
     InstInfoComponent,
     InstCourseComponent,
     InstLocationComponent,
-    InstReviewComponent
+    InstReviewComponent,
+		MessageComponent
     // BookmarksComponent,
     // OfflineComponent
 ],
@@ -20,7 +22,8 @@ import { InstReviewComponent } from './inst-review/inst-review';
     InstInfoComponent,
     InstCourseComponent,
     InstLocationComponent,
-    InstReviewComponent
+    InstReviewComponent,
+		MessageComponent,
     // BookmarksComponent,
     // OfflineComponent
 ]
