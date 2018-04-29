@@ -31,6 +31,7 @@ export class MainPage {
   gotoInstituteLanding(inst){
     console.log(inst);
     sessionStorage.setItem('instlooking',inst.id);
+    sessionStorage.setItem('trans', inst.tranx_id);
     this.navCtrl.push('InstituteLandingPage',inst.id);
   }
 

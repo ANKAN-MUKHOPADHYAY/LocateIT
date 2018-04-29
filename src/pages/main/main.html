@@ -16,6 +16,9 @@
 				    	<p>
 				    		{{institute.inst_address}}, {{institute.inst_city}}
 				    	</p>
+              <div *ngIf="institute.inst_message" class="notification">
+                  User have few unread messages.
+              </div>
 				  	</ion-card-content>
 				</ion-card>
 	    	</ion-col>
