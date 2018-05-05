@@ -64,7 +64,7 @@ inst-offering {
   $navigate:'navigate.png';
   $profiles:'filter.png';
   $bookmarks:'bookmark.png';
-  $favorites:'favorite.png';
+  $message:'favorite.png';
   $downloads:'download.png';
   $rateAssets:'rate-assets.png';
 
@@ -73,7 +73,7 @@ inst-offering {
   $navigateBrandColor:#f28b22;
   $profilesBrandColor:#027395;
   $bookmarksBrandColor:#a62743;
-  $favoritesBrandColor:#374957;
+  $messageBrandColor:#374957;
   $downloadsBrandColor:#3a923f;
   $rateAssetsBrandColor:#bb1818;
 
@@ -101,7 +101,7 @@ inst-offering {
   .navigate{@include cardStyling($navigate, $navigateBrandColor)}
   .profiles{@include cardStyling($profiles, $profilesBrandColor)}
   .bookmarks{@include cardStyling($bookmarks, $bookmarksBrandColor)}
-  .favorites{@include cardStyling($favorites, $favoritesBrandColor)}
+  .message{@include cardStyling($message, $messageBrandColor)}
   .downloads{@include cardStyling($downloads, $downloadsBrandColor)}
   .rateAssets{@include cardStyling($rateAssets, $rateAssetsBrandColor)}
 
@@ -145,7 +145,7 @@ ion-scroll[scrollX] {
  }
 
  .fav-item{
-  border-bottom: 1px solid $favoritesBrandColor !important;
+  border-bottom: 1px solid $messageBrandColor !important;
   padding-left: 0px;
 }
 

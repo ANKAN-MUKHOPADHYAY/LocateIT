@@ -13,5 +13,8 @@
             <ion-card id="bookmarks" [ngClass]="this._global.dashboardActiveComponent=='inst-review' ? 'bookmarks selected-nav' : 'bookmarks' " (click)="showActiveComponent('inst-review',4)" >
                     <div class="card-subtitle">Review</div>
             </ion-card>
+            <ion-card id="message" [ngClass]="this._global.dashboardActiveComponent=='message' ? 'message selected-nav' : 'message' " (click)="showActiveComponent('message',5)" >
+                    <div class="card-subtitle">Message</div>
+            </ion-card>
         </ion-scroll>
 </div>

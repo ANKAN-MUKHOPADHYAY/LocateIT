@@ -39,7 +39,9 @@ export class SignupPage {
   						if(resp.status){
   							sessionStorage.setItem('enquiry', resp.result.enquiry_id);
   							this.navCtrl.push('MainPage');
-  						}
+  						} else {
+                this.navCtrl.push('MainPage');
+              }
   					});
   			} else {
   				this.navCtrl.push('WelcomePage');
