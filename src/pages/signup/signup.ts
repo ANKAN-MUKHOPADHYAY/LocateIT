@@ -47,4 +47,8 @@ export class SignupPage {
       });
 	}
 
+	gotoLogin(){
+		this.navCtrl.push('LoginPage');
+	}
+
 }
