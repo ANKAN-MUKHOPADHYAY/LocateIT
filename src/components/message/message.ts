@@ -7,28 +7,31 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'message.html'
 })
 export class MessageComponent {
-
+  now:any; year:any; month:any; day:any; hour:any; minute:any; second:any;
   userMsg : {transactionid:string,message:{from:string,text:string,timestamp:string}} = {transactionid: sessionStorage.getItem('trans'),message:{from:"customer",text : '',timestamp: this.js_yyyy_mm_dd_hh_mm_ss()}};
-  messages: any;
-  restUrl: any;
-  navParamType : any;
-  data : any;
+  messages: any; restUrl: any; navParamType : any; data : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
-    this.getMessages();
-    //console.log(this.message);
+    if(sessionStorage.getItem('trans') != undefined || sessionStorage.getItem('trans') != null){
+      this.getMessages();
+      setInterval(() => {
+        this.getMessages();
+      }, 6000);
+    } else {
+      this.messages = null;
+    }
   }
 
   getMessages(){
-    this._restservice.get('/user/usermessage/'+sessionStorage.getItem('trans')).then( res => {
+    this._restservice.get('/user/usermessage/'+sessionStorage.getItem('trans'),false).then( res => {
       this.messages = JSON.parse(res.result);
       console.log(this.messages);
     });
   }
 
-  sendMessageProcess(){
+  sendMessageProcess(data){
     //console.log(this.userMsg);
-    this._restservice.post('/institute/sendMessage',this.userMsg).then( res => {
+    this._restservice.post('/institute/sendMessage',JSON.stringify(this.userMsg)).then( res => {
       //console.log(res);
       this.data = {
         "from" : "customer",
@@ -46,7 +49,6 @@ export class MessageComponent {
   }
 
   js_yyyy_mm_dd_hh_mm_ss () {
-    let now:any,year:any,month:any,day:any,hour:any,minute:any,second:any;
     this.now = new Date();
     console.log(this.now);
     this.year = "" + this.now.getFullYear();

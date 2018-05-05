@@ -13,7 +13,6 @@ message {
 
   h6 div{
     line-height: 1em;
-    background-color: #87CEFA;
     padding: 10px 10px;
     letter-spacing: 0.5px;
     font-size: 14px;
@@ -21,10 +20,17 @@ message {
     display: inline-block;
     border-radius: 5px;
   }
+  .institute{
+    background-color: #87CEFA;
+    float: left !important;
+    margin-bottom: 7px;
+    clear: both;
+  }
   .customer{
-    background-color: #FFF !important;
+    background-color: #FFF;
     float: right !important;
     margin-bottom: 7px;
+    clear: both;
   }
   h6{
     margin: 0px;
