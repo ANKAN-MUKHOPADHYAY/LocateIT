@@ -14,14 +14,12 @@
       </ion-avatar>
       <ion-label>{{userinfo.user_first_name}} {{userinfo.user_last_name}}</ion-label>
       <ion-select [(ngModel)]="toppings" interface="popover">
-<<<<<<< HEAD
         <ion-option (ionSelect)="gotoProfile($event)">Your Profile</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">My Account</ion-option>
-=======
         <ion-option>Your Profile</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">User Settings</ion-option>
->>>>>>> f6a21d7c05a6ae21fb9a19c64f49eafc6b3176d2
         <ion-option>My Enquiry</ion-option> 
+        <ion-option>My Enquiry</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">Logout</ion-option>
       </ion-select>
     </ion-item>
