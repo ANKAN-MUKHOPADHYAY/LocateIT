@@ -27,6 +27,9 @@ export class HeaderComponent {
   gotoSignup(){
   	this.navCtrl.push('SignupPage');
   }
+  logout(){
+    this.navCtrl.push('LoginPage');
+  }
   gotoProfile(){
     this.navCtrl.push('ProfilePage');
   }
@@ -36,8 +39,13 @@ export class HeaderComponent {
     if(ev == "Logout"){
       sessionStorage.clear();
       this.navCtrl.push('WelcomePage');
+    } else if(ev == "My Enquiry"){
+      this.navCtrl.push('EnquiryhistoryPage');
     } else {
       this.navCtrl.push('UseraccountPage');
-    } 
+
+    }
+
   }
+  
 }
