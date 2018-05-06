@@ -35,3 +35,4 @@ export class MainPage {
     this.navCtrl.push('InstituteLandingPage',inst.id);
   }
 }
+ 
