@@ -10,9 +10,10 @@ export class MessageComponent {
   now:any; year:any; month:any; day:any; hour:any; minute:any; second:any;
   userMsg : {transactionid:string,message:{from:string,text:string,timestamp:string}} = {transactionid: sessionStorage.getItem('trans'),message:{from:"customer",text : '',timestamp: this.js_yyyy_mm_dd_hh_mm_ss()}};
   messages: any; restUrl: any; navParamType : any; data : any;
+  displayMsg: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
-    if(sessionStorage.getItem('trans') != undefined || sessionStorage.getItem('trans') != null){
+    if(sessionStorage.getItem('trans') != "undefined" || sessionStorage.getItem('trans') != null){
       this.getMessages();
       setInterval(() => {
         this.getMessages();
@@ -23,12 +24,18 @@ export class MessageComponent {
   }
 
   getMessages(){
-    this._restservice.get('/user/usermessage/'+sessionStorage.getItem('trans'),false).then( res => {
-      this.messages = JSON.parse(res.result);
-      console.log(this.messages);
-    });
+    if(sessionStorage.getItem('trans') != "undefined"){
+      //console.log('IN undefined');
+      this.displayMsg = true;
+      this._restservice.get('/user/usermessage/'+sessionStorage.getItem('trans'),false).then( res => {
+        this.messages = JSON.parse(res.result);
+        //console.log(this.messages);
+      });
+    } else {
+      //console.log('In else ');
+      this.displayMsg = false;
+    }
   }
-
   sendMessageProcess(data){
     //console.log(this.userMsg);
     this._restservice.post('/institute/sendMessage',JSON.stringify(this.userMsg)).then( res => {
@@ -45,6 +52,7 @@ export class MessageComponent {
       } else {
         this.messages.push(this.data);
       }
+      this.userMsg.message.text = '';
     });
   }
 

@@ -14,7 +14,7 @@
       </ion-avatar>
       <ion-label>{{userinfo.user_first_name}} {{userinfo.user_last_name}}</ion-label>
       <ion-select [(ngModel)]="toppings" interface="popover">
-        <ion-option>Your Profile</ion-option>
+        <ion-option (ionSelect)="gotoProfile($event)">Your Profile</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">My Account</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">My Enquiry</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">User Settings</ion-option>
