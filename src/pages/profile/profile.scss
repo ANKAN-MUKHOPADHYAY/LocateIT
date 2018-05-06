@@ -1,0 +1,56 @@
+page-profile {
+	.bgcolor{
+		background-color: lightyellow;
+	}
+	.propic{
+		height: 50%;
+		width: 50%;
+	}
+	.heads{
+		color: #696E71;
+	}
+	.color{
+		color: #98CCF4;
+	}
+	.grey{
+		color: grey;
+	}
+	.ltgrey{
+		color:#ECECEC;
+	}
+	.marginLt{
+		margin-left: 15px;
+	}
+	.marginLt > .ion-md-pin{
+		font-size: 1em !important;
+	}
+	.select-md{
+		padding: 5px 2px;
+	}
+	ion-select{
+		max-width: 15% !important;
+	}
+	.marginRt{
+		margin-right: 15px;
+	}
+	.marginTp{
+		margin-top: 20px;
+	}
+	.row1bg{
+		background-color: #d3d3d35c;
+		height:100%;
+	}
+	.row2bg{
+		background-color: #d3d3d35c;
+		height:100%;
+		padding:20px;
+	}
+	.input{
+		width: 40%;
+		border: 1px solid lightgrey;
+	}
+	.padding{
+		padding:20px;
+	}
+
+}

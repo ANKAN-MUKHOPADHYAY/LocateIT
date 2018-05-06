@@ -52,6 +52,7 @@ export class MessageComponent {
       } else {
         this.messages.push(this.data);
       }
+      this.userMsg.message.text = '';
     });
   }
 

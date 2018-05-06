@@ -14,7 +14,7 @@ export class HeaderComponent {
       this._restservice.get('/user/userinfo/'+sessionStorage.getItem('userid')).then( resp => {
         console.log(resp);
         this.userinfo = resp.result;
-        this.loggedIn = true;
+        this.loggedIn = true;  
       });
     } else {
       this.loggedIn = false;
@@ -26,6 +26,9 @@ export class HeaderComponent {
   }
   gotoSignup(){
   	this.navCtrl.push('SignupPage');
+  }
+  gotoProfile(){
+    this.navCtrl.push('ProfilePage');
   }
   gotoAccount(ev){
     //alert('WOW');
