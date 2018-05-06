@@ -14,6 +14,8 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  info : string = "indiv";
+
 	userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string, u_type: string,u_password: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: '', u_type: '',u_password: ''};
 
 	userdetail:{u_id : string, u_cid : string, u_lid : string} ={u_id : '', u_cid : '', u_lid : ''};
@@ -22,7 +24,7 @@ export class SignupPage {
 		console.log(this.navParams);
 	}
 
-	doSignupProcess(data){
+  doSignupProcess(data){
 		console.log(this.userinfo);
 		this.userinfo.u_type = "Student";
 		this._restService.post('/user/adduser',JSON.stringify(this.userinfo)).then(res => {
@@ -39,20 +41,12 @@ export class SignupPage {
   						if(resp.status){
   							sessionStorage.setItem('enquiry', resp.result.enquiry_id);
   							this.navCtrl.push('MainPage');
-  						} else {
-                this.navCtrl.push('MainPage');
-              }
+  						}
   					});
   			} else {
   				this.navCtrl.push('WelcomePage');
   			}
 	  });
-    /*if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
-			console.log("Generate Enquiry and then take user to Main Page");
-			this.navCtrl.push('MainPage');
-		} else {
-			this.navCtrl.push('WelcomePage');
-		}*/
 	}
 	gotoLogin(){
 		this.navCtrl.push('LoginPage',{
