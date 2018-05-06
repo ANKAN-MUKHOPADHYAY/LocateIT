@@ -14,12 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'useraccount.html',
 })
 export class UseraccountPage {
+	userData: any = {
+		user_currentpassword: "",
+		user_newpassword: "",
+		user_verifypassword: "" 
+	};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UseraccountPage');
-  }
-
+	constructor(public navCtrl: NavController, public navParams: NavParams) {
+	
+	}
+	
+	updatePwd(data){
+		console.log(this.userData);
+	}
+  	
 }
