@@ -1,4 +1,4 @@
-var env = "LOCAL";
+var env = "SHARED";
 
 var constantJson;
 
@@ -7,11 +7,11 @@ const genericConstants = {
 }
 
 const envConstantLocal = {
-	"serverUrl" : "http://localhost:7999"
+	"serverUrl" : "http://192.168.1.8:7999"
 }
 
 const envConstantShared = {
-	"serverUrl" : "http://192.168.1.7:7999"
+	"serverUrl" : "http://192.168.1.8:7999"
 }
 
 if(env == "LOCAL")
