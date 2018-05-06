@@ -7,7 +7,7 @@ const genericConstants = {
 }
 
 const envConstantLocal = {
-	"serverUrl" : "http://192.168.1.8:7999"
+	"serverUrl" : "http://localhost:7999"
 }
 
 const envConstantShared = {

@@ -3,39 +3,26 @@ page-signup {
 		background-image:url('../assets/imgs/Learning.jpg');
 		background-size:100% 100%;
 	}
-	.center{
-		text-align:center;
-	}
 	.formview{
 		width: 40%;
 		margin: 100px auto;
 	}
-	.color{
-		color: darkviolet;
+	.marginRt{
+		margin-right: 15px;
+	}
+	.marginTp{
+		margin-top: 20px;
 	}
 	.listbg{
 		background-color: rgba(0, 0, 0, 0.7) !important;
-		border-radius: 9px;
+		border-radius: 5px;
 	}
-
-	.item-ios {
-		padding-right: 16px;
-	}
-	.item-md{
-		padding-right: 16px !important;
-	}
-
 	.transparent{
 		background-color: transparent !important;
 		color: #FFF;
 	}
-	.radio{
-		float: left;
-    margin: 15px;
-		color:#FFF;
-	}
-	.marginl{
-		margin-left: 10px;
+	.segment-md .segment-button{
+		color: #0b2759 !important;
 	}
 
 	@media only screen

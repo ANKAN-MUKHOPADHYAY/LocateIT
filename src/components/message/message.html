@@ -1,17 +1,24 @@
-<div class="message-main-container" *ngIf="messages != null">
-  <h6 *ngFor="let m of messages">
-      <div *ngIf="m.from == 'institute'" class="institute">{{m.text}} <br><span style="float:right;font-size: 10px;margin-top: 10px;">{{m.timestamp}}</span></div>
-      <div class="customer" *ngIf="m.from == 'customer'">{{m.text}} <br><span style="float:right;font-size: 10px;margin-top: 10px;">{{m.timestamp}}</span></div>
-  </h6>
-</div>
-<form (submit)="sendMessageProcess()" style="margin-top: 10px;">
-  <ion-list>
-    <ion-item class="transparent">
-      <ion-input type="text" [(ngModel)]="userMsg.message.text" name="fname"></ion-input>
-    </ion-item>
-
-    <div style="padding-top: 20px;" class="center">
-      <button ion-button secondary [disabled]="userMsg.message.text === '' ">Send</button><br><br>
+<div class="message-main-container">
+  <div *ngIf="displayMsg">
+    <div>
+      <h6 *ngFor="let m of messages">
+          <div *ngIf="m.from == 'institute'" class="institute">{{m.text}} <br><span style="float:right;font-size: 10px;margin-top: 10px;">{{m.timestamp}}</span></div>
+          <div class="customer" *ngIf="m.from == 'customer'">{{m.text}} <br><span style="float:right;font-size: 10px;margin-top: 10px;">{{m.timestamp}}</span></div>
+      </h6>
     </div>
-  </ion-list>
-</form>
+    <form (submit)="sendMessageProcess()" style="margin-top: 10px;">
+      <ion-list>
+        <ion-item class="transparent">
+          <ion-input type="text" [(ngModel)]="userMsg.message.text" name="fname"  ></ion-input>
+        </ion-item>
+
+        <div style="padding-top: 20px;" class="center">
+          <button ion-button secondary [disabled]="userMsg.message.text === '' ">Send</button><br><br>
+        </div>
+      </ion-list>
+    </form>
+  </div>
+  <div *ngIf="!displayMsg">
+    Sorry we are still processing your enquiry.
+  </div>
+</div>
