@@ -7,11 +7,11 @@
 <form (submit)="sendMessageProcess()" style="margin-top: 10px;">
   <ion-list>
     <ion-item class="transparent">
-      <ion-input type="text" [(ngModel)]="userMsg.message.text" name="fname"  ></ion-input>
+      <ion-input type="text" [(ngModel)]="userMsg.message.text" name="fname"></ion-input>
     </ion-item>
 
     <div style="padding-top: 20px;" class="center">
-      <button ion-button secondary>Send</button><br><br>
+      <button ion-button secondary [disabled]="userMsg.message.text === '' ">Send</button><br><br>
     </div>
   </ion-list>
 </form>
