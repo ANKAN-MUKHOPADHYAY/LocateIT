@@ -11,14 +11,14 @@
 				  	<img style="height:150px;padding: 10px;" src="{{institute.inst_images}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
 				  	<ion-card-content  class="blockBackground">
 				    	<ion-card-title>
-				      	{{institute.inst_name}}
-				      </ion-card-title>
+				      		{{institute.inst_name}}
+				      	</ion-card-title>
 				    	<p>
 				    		{{institute.inst_address}}, {{institute.inst_city}}
 				    	</p>
-              <div *ngIf="institute.inst_message" class="notification">
-                  User have few unread messages.
-              </div>
+     					<div *ngIf="institute.inst_message" class="notification">
+          					<ion-icon name="mail-open" class="notification"></ion-icon>
+      					</div>
 				  	</ion-card-content>
 				</ion-card>
 	    	</ion-col>

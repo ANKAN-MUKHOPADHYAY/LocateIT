@@ -34,5 +34,5 @@ export class MainPage {
     sessionStorage.setItem('trans', inst.tranx_id);
     this.navCtrl.push('InstituteLandingPage',inst.id);
   }
-
 }
+ 

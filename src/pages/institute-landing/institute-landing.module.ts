@@ -7,7 +7,6 @@ import { SimilarProfileModule } from '../../components/similar-profile/similar-p
 import { RecommendedInstituteModule } from '../../components/recommended-institute/recommended-institute.module';
 import { HeaderModule } from '../../components/header/header.module';
 
-
 @NgModule({
   declarations: [
     InstituteLandingPage,

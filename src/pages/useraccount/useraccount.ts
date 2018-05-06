@@ -4,11 +4,11 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 
 /**
- * Generated class for the UseraccountPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+* Generated class for the UseraccountPage page.
+*
+* See https://ionicframework.com/docs/components/#navigation for more info on
+* Ionic pages and navigation.
+*/
 
 @IonicPage()
 @Component({
@@ -16,28 +16,36 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'useraccount.html',
 })
 export class UseraccountPage {
-	  current_username : any;
-      new_firstname:any;
-      new_lastname:any;
+  current_username : any;
+  new_firstname:any;
+  new_lastname:any;
+  userData: any = {
+		user_currentpassword: "",
+		user_newpassword: "",
+		user_verifypassword: ""
+	};
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UseraccountPage');
     this._restservice.get('/user/userinfo/'+sessionStorage.getItem('userid')).then( res => {
-    	console.log(sessionStorage.getItem('userid'));
-    	if(res.status == true){
-    		console.log(res.status);
-    		this.current_username = res.result.username;
-    		console.log(this.current_username);
-    	} else {
-    		console.log("nothing to display");
-    	}
+      console.log(sessionStorage.getItem('userid'));
+      if(res.status == true){
+        console.log(res.status);
+        this.current_username = res.result.username;
+        console.log(this.current_username);
+      } else {
+        console.log("nothing to display");
+      }
     });
   }
-update() {
-     this._restservice.get('/user/userinfo/').then(res=>{
-	console.log(res);
- });
-}
+  update() {
+    this._restservice.get('/user/userinfo/').then(res=>{
+      console.log(res);
+    });
+  }
+  updatePwd(data){
+		console.log(this.userData);
+	}
 }
