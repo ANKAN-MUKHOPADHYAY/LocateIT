@@ -1,4 +1,4 @@
-page-signup {
+page-signin {
 	.pageBg{
 		background-image:url('../assets/imgs/Learning.jpg');
 		background-size:100% 100%;
@@ -24,15 +24,4 @@ page-signup {
 	.segment-md .segment-button{
 		color: #0b2759 !important;
 	}
-
-	@media only screen
-    and (max-device-width: 640px),
-    only screen and (max-device-width: 667px),
-    only screen and (max-width: 480px){
-    	.formview{
-				width: 90%;
-				margin: 0px auto;
-				margin-top: 20%;
-			}
-    }
 }

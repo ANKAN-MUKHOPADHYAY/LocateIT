@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 /**
- * Generated class for the SignupPage page.
+ * Generated class for the SigninPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,11 +10,12 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 @IonicPage()
 @Component({
-  selector: 'page-signup',
-  templateUrl: 'signup.html',
+  selector: 'page-signin',
+  templateUrl: 'signin.html',
 })
-export class SignupPage {
-  info : string = "indiv";
+export class SigninPage {
+	
+	info : string = "indiv";
 
 	userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string, u_type: string,u_password: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: '', u_type: '',u_password: ''};
 
@@ -54,5 +55,9 @@ export class SignupPage {
       		selectedLocation: this.navParams.data.selectedLocation
 		});
 	}
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SigninPage');
+  }
 
 }
