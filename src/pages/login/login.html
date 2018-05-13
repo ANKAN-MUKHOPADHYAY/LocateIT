@@ -4,21 +4,31 @@
 
 <ion-content padding class="bg">
 	<div class="formView" >
-		<form (submit)="dologinProcess()">
+		<form (submit)="dologinProcess()" #loginForm="ngForm">
 			<ion-list class="listbg">
 				<h1 style="text-align: center; color: white">User Login</h1>
 
 				<ion-item class="transparent">
 					<ion-label floating>Email / Phone Number</ion-label>
-					<ion-input style="color: white" type="text" name="login_params" [(ngModel)]="logininfo.i_loginparams"></ion-input>
+					<ion-input style="color: white" type="text" name="login_params" [(ngModel)]="logininfo.i_loginparams" id="email" #email="ngModel" required></ion-input>
 				</ion-item>
+				<div *ngIf="email.errors && (email.dirty || email.touched)">
+						<div [hidden]="!email.errors.required">
+                          <span class="errorMsg">Email/phone Number is required!</span>
+                      </div>
+                        </div>
 
 				<ion-item class="transparent">
 					<ion-label floating>Password</ion-label>
-					<ion-input style="color: white" type="password" name="password" [(ngModel)]="logininfo.i_password"></ion-input>
+					<ion-input style="color: white" type="password" name="password" [(ngModel)]="logininfo.i_password" id="password" #password="ngModel" required></ion-input>
 				</ion-item>
+				<div *ngIf="password.errors && (password.dirty || password.touched)">
+						<div [hidden]="!password.errors.required">
+                          <span class="errorMsg">password  is required!</span>
+                      </div>
+                        </div>
 				<div class="center">
-					<button ion-button secondary>Login</button>
+					<button ion-button secondary [disabled]="!loginForm.form.valid" >Login</button>
 				</div>
 				<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
 					<p><span> Not a Member? Please <a (click)="gotoSignup()">SignUp here </a></span></p>
