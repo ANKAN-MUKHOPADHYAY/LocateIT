@@ -10,34 +10,44 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
-@Component({
-  selector: 'page-useraccount',
-  templateUrl: 'useraccount.html',
-})
-export class UseraccountPage {
-	  current_username : any;
-      new_firstname:any;
-      new_lastname:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
-  }
+ @IonicPage()
+ @Component({
+   selector: 'page-useraccount',
+   templateUrl: 'useraccount.html',
+ })
+ export class UseraccountPage {
+   current_username : any;
+   new_firstname:any;
+   new_lastname:any;
+   uid:any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UseraccountPage');
-    this._restservice.get('/user/userinfo/'+sessionStorage.getItem('userid')).then( res => {
-    	console.log(sessionStorage.getItem('userid'));
-    	if(res.status == true){
-    		console.log(res.status);
-    		this.current_username = res.result.username;
-    		console.log(this.current_username);
-    	} else {
-    		console.log("nothing to display");
-    	}
-    });
-  }
-update() {
+   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
+   }
+
+   ionViewDidLoad() {
+     console.log('ionViewDidLoad UseraccountPage');
+     this._restservice.get('/user/userinfo/'+sessionStorage.getItem('userid')).then( res => {
+       console.log(sessionStorage.getItem('userid'));
+       if(res.status == true){
+         console.log(res.status);
+         this.current_username = res.result.username;
+         console.log(this.current_username);
+       } else {
+         console.log("nothing to display");
+       }
+     });
+   }
+   update() {
      this._restservice.get('/user/userinfo/').then(res=>{
-	console.log(res);
- });
-}
-}
+       console.log(res);
+     });
+   }
+   submitForm(data){
+     this._restservice.put('/user/updateusername/',JSON.stringify({
+       uid: sessionStorage.getItem('userid'),
+       username: this.current_username
+     })).then(resp=>{
+       console.log(resp);
+     });
+   }
+ }

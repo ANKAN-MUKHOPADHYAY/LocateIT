@@ -20,13 +20,13 @@
 
 				<ion-item class="transparent">
 					<ion-label floating>Password</ion-label>
-					<ion-input style="color: white" type="password" name="password" [(ngModel)]="logininfo.i_password" id="password" #password="ngModel" required></ion-input>
+					<ion-input style="color: white" type="password" name="password" [(ngModel)]="logininfo.i_password" id="password" #password="ngModel"  required ></ion-input>
 				</ion-item>
 				<div *ngIf="password.errors && (password.dirty || password.touched)">
 						<div [hidden]="!password.errors.required">
-                          <span class="errorMsg">password  is required!</span>
+                          <span class="errorMsg">Password should be required</span>
                       </div>
-                        </div>
+					</div>
 				<div class="center">
 					<button ion-button secondary [disabled]="!loginForm.form.valid" >Login</button>
 				</div>
