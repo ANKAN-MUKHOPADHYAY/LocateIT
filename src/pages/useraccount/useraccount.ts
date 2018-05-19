@@ -16,6 +16,17 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'useraccount.html',
 })
 export class UseraccountPage {
+  turn: any = {
+    uid: "",
+    mail: "",
+    msg: "",
+    call: "",
+    active: ""
+  };
+
+  change: boolean = true;
+  //res: any = {"status":true,"result":{"user_id":79,"user_first_name":"ALOO","user_last_name":"GOBI","user_mobile_number":4141414141,"user_altmobile_number":4141414141,"user_email":"ALOO.GOBI@GMAIL.COM","user_type":"Student","active_status":1,"uniqueid":6,"username":"ALOO_GOBI","subscribe_message":0,"subscribe_call":0,"subscribe_mail":0,"attr1":null}};
+
   current_username : any;
   new_firstname:any;
   new_lastname:any;
@@ -24,7 +35,12 @@ export class UseraccountPage {
 		user_newpassword: "",
 		user_verifypassword: ""
 	};
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
+  }
+
+  notify(event){
+    this.change = false;
   }
 
   ionViewDidLoad() {
@@ -35,11 +51,68 @@ export class UseraccountPage {
         console.log(res.status);
         this.current_username = res.result.username;
         console.log(this.current_username);
-      } else {
+
+        if(res.result.subscribe_call == 1){
+          this.turn.call = true;
+        }else {
+             this.turn.call = false;
+        }
+        
+        if(res.result.active_status == 1){
+          this.turn.active = true;
+        }
+        else{
+          this.turn.active = false;
+        }
+        if(res.result.subscribe_mail == 1){
+          this.turn.mail = true;
+        }
+        else{
+          this.turn.mail = false;
+        }
+        if(res.result.subscribe_message == 1){
+          this.turn.msg = true;
+        }
+        else{
+          this.turn.msg = false;
+        }
+      }else{
         console.log("nothing to display");
       }
     });
   }
+  updatePreference(datas){
+
+    if(this.turn.call == true){
+          this.turn.call = 1;
+    }else {
+         this.turn.call = 0;
+    }
+    if(this.turn.active == true){
+      this.turn.active = 1;
+    }
+    else{
+      this.turn.active = 0;
+    }
+    if(this.turn.mail == true){
+      this.turn.mail = 1;
+    }
+    else{
+      this.turn.mail = 0;
+    }
+    if(this.turn.msg == true){
+      this.turn.msg = 1;
+    }
+    else{
+      this.turn.msg = 0;
+    }
+    this.turn.uid = sessionStorage.getItem('userid');
+    this._restservice.put('/user/updateuserpreference',JSON.stringify(this.turn)).then(response=>{
+      console.log(this.turn);
+    });
+    
+  }
+
   update() {
     this._restservice.get('/user/userinfo/').then(res=>{
       console.log(res);

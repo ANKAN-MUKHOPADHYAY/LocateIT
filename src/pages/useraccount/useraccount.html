@@ -57,13 +57,13 @@
 			<ion-col>
 				<ion-item class="design" style="background-color: transparent;">
 					<ion-label> Subscripted email</ion-label>
-					<ion-toggle></ion-toggle>
+					<ion-toggle [(ngModel)]="turn.mail" [checked]="turn.mail" (click)="notify()"></ion-toggle>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item class="design" style="background-color: transparent;">
 					<ion-label>Keep my account Activated or deactivated</ion-label>
-					<ion-toggle></ion-toggle>
+					<ion-toggle [checked]="turn.active" [(ngModel)]="turn.active" (click)="notify()"></ion-toggle>
 				</ion-item>
 			</ion-col>
 		</ion-row>
@@ -71,7 +71,7 @@
 			<ion-col>
 				<ion-item class="design" style="background-color: transparent;">
 					<ion-label>Messages</ion-label>
-					<ion-toggle></ion-toggle>
+					<ion-toggle [checked]="turn.msg" [(ngModel)]="turn.msg" (click)="notify()"></ion-toggle>
 				</ion-item>
 			</ion-col>
 			<ion-col></ion-col>
@@ -80,13 +80,13 @@
 			<ion-col>
 				<ion-item class="design" style="background-color: transparent;">
 					<ion-label>I will like to receive calls</ion-label>
-					<ion-toggle></ion-toggle>
+					<ion-toggle [checked]="turn.call" [(ngModel)]="turn.call" (click)="notify()"></ion-toggle>
 				</ion-item>
 			</ion-col>
 			<ion-col></ion-col>
 		</ion-row>
 	</ion-grid>
 	<div class="center">
-		<button ion-button>Update Preferences</button>
+		<button ion-button (click)="updatePreference()" [disabled]="change">Update Preferences</button>
 	</div>
 </ion-content>
