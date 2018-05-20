@@ -27,15 +27,15 @@ export class UseraccountPage {
   change: boolean = true;
   //res: any = {"status":true,"result":{"user_id":79,"user_first_name":"ALOO","user_last_name":"GOBI","user_mobile_number":4141414141,"user_altmobile_number":4141414141,"user_email":"ALOO.GOBI@GMAIL.COM","user_type":"Student","active_status":1,"uniqueid":6,"username":"ALOO_GOBI","subscribe_message":0,"subscribe_call":0,"subscribe_mail":0,"attr1":null}};
 
-  current_username : any;
-  new_firstname:any;
-  new_lastname:any;
-  userData: any = {
-		user_currentpassword: "",
-		user_newpassword: "",
-		user_verifypassword: ""
-	};
- 
+    current_username : any;
+    new_firstname:any;
+    new_lastname:any;
+    userData: any = {
+  		user_currentpassword: "",
+  		user_newpassword: "",
+  		user_verifypassword: ""
+  	};
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
   }
 
@@ -57,7 +57,7 @@ export class UseraccountPage {
         }else {
              this.turn.call = false;
         }
-        
+
         if(res.result.active_status == 1){
           this.turn.active = true;
         }
@@ -110,7 +110,7 @@ export class UseraccountPage {
     this._restservice.put('/user/updateuserpreference',JSON.stringify(this.turn)).then(response=>{
       console.log(this.turn);
     });
-    
+
   }
 
   update() {
@@ -120,5 +120,21 @@ export class UseraccountPage {
   }
   updatePwd(data){
 		console.log(this.userData);
-	}
-}
+    this.pwdRequestData.u_old_pwd = this.userData.user_currentpassword;
+    this.pwdRequestData.u_new_pwd = this.userData.user_newpassword;
+    this.pwdRequestData.uid = sessionStorage.getItem("userid");
+
+    this._restservice.put('/user/updatepassword',JSON.stringify(this.pwdRequestData)).then(resp => {
+      console.log(resp);
+    });
+	 }
+
+   submitForm(data){
+     this._restservice.put('/user/updateusername/',JSON.stringify({
+       uid: sessionStorage.getItem('userid'),
+       username: this.current_username
+     })).then(resp=>{
+       console.log(resp);
+     });
+   }
+ }

@@ -13,6 +13,7 @@
 	<ion-grid>
 		<ion-row>
 			<ion-col col-12 col-md-4 col-lg-4 padding>
+
 				<div class="form-group">
 					<img src="http://www.clker.com/cliparts/M/I/9/z/q/H/male-upload-md.png" alt="Upload Photo" class="propic">
 					<input type="file" id="file" (change)= "handleFileInput($event.target.files)" class="marginTp">
@@ -46,12 +47,16 @@
 				<div [ngSwitch]="info">
 					<ion-list *ngSwitchCase="'Personal'">
 						<ion-item>
-							<h4 class="heads">Birth Date:</h4>
-							<input type="date" name="date" class="input">
-							<h6 class="heads marginTp"> Email-id:  </h6>
-							<input type="email" class="input">
-							<h6 class="heads marginTp"> Phone-number:</h6>
-							<input type="tel" class="input ">
+							<h6 class="heads marginTp">FirstName:</h6>
+							<input type="text" name="fname" class="input">
+							<h6 class="heads marginTp">LastName:</h6>
+							<input type="text" name="lname" class="input">
+							<h4 class="heads marginTp">DOB:</h4>
+							<input type="text" name="dob">
+							<h6 class="heads marginTp">Email:</h6>
+							<input type="email" name="email" class="input ">
+							<h6 class="heads marginTp">PhoneNumber:</h6>
+							<input type="text" maxlength="10" name="mobile">
 						</ion-item>
 
 					</ion-list>
@@ -69,9 +74,18 @@
 									<textarea></textarea>
 								</span>
 							</div>
+									<h6 class="heads marginTp">City:</h6>
+									<input type="text" name="city">
+									<h6 class="heads marginTp">State:</h6>
+									<input type="text" name="state">
+									<h6 class="heads marginTp">Zip code:</h6>
+									<input type="text" name="zipcode">
+									<h6 class="heads marginTp">County:</h6>
+									<input type="text" name="country">
 						</ion-item>
 					</ion-list>
 				</div>
+				
 				  <!-- <ion-icon name="person" class="ltgrey"></ion-icon>
 				 <span class="ltgrey"> Personal information</span>
 				 <ion-icon name="ios-home-outline" class="marginLt"></ion-icon>

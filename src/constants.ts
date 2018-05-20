@@ -1,4 +1,4 @@
-var env = "SHARED";
+var env = "LOCAL";
 
 var constantJson;
 
@@ -18,7 +18,6 @@ if(env == "LOCAL")
 	constantJson = envConstantLocal;
 else if(env == "SHARED")
 	constantJson = envConstantShared;
-
 
 
 constantJson = Object.assign(constantJson, genericConstants);
