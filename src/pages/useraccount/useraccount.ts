@@ -24,6 +24,13 @@ export class UseraccountPage {
 		user_newpassword: "",
 		user_verifypassword: ""
 	};
+
+   pwdRequestData: any ={
+     u_old_pwd : "",
+     u_new_pwd : "",
+     uid : ""
+   };
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
   }
 
@@ -47,5 +54,18 @@ export class UseraccountPage {
   }
   updatePwd(data){
 		console.log(this.userData);
+    this.pwdRequestData.u_old_pwd = this.userData.user_currentpassword;
+    this.pwdRequestData.u_new_pwd = this.userData.user_newpassword;
+    this.pwdRequestData.uid = sessionStorage.getItem("userid");
+
+    this._restservice.put('/user/updatepassword',JSON.stringify(this.pwdRequestData)).then(resp => {
+      console.log(resp);
+    });
 	}
+  /*update() {
+    this._restService.put('/user/updatepassword',JSON.stringify(this.userinfo)).then(res => {
+        console.log(res);
+        sessionStorage.setItem('userid',res.result.user_id);
+        this.userdetail.u_id = res.result.user_id;
+  }*/
 }
