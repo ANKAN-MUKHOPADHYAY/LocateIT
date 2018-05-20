@@ -57,5 +57,12 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
    }
    updatePwd(data){
 		console.log(this.userData);
-	}
+    this.pwdRequestData.u_old_pwd = this.userData.user_currentpassword;
+    this.pwdRequestData.u_new_pwd = this.userData.user_newpassword;
+    this.pwdRequestData.uid = sessionStorage.getItem("userid");
+
+    this._restservice.put('/user/updatepassword',JSON.stringify(this.pwdRequestData)).then(resp => {
+      console.log(resp);
+    });
+	 }
  }

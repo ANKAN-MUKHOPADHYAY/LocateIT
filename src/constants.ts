@@ -20,6 +20,5 @@ else if(env == "SHARED")
 	constantJson = envConstantShared;
 
 
-
 constantJson = Object.assign(constantJson, genericConstants);
 export {constantJson};
