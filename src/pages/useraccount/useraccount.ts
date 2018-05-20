@@ -27,14 +27,21 @@ export class UseraccountPage {
   change: boolean = true;
   //res: any = {"status":true,"result":{"user_id":79,"user_first_name":"ALOO","user_last_name":"GOBI","user_mobile_number":4141414141,"user_altmobile_number":4141414141,"user_email":"ALOO.GOBI@GMAIL.COM","user_type":"Student","active_status":1,"uniqueid":6,"username":"ALOO_GOBI","subscribe_message":0,"subscribe_call":0,"subscribe_mail":0,"attr1":null}};
 
-    current_username : any;
-    new_firstname:any;
-    new_lastname:any;
-    userData: any = {
-  		user_currentpassword: "",
-  		user_newpassword: "",
-  		user_verifypassword: ""
-  	};
+  current_username : any;
+  new_firstname:any;
+  new_lastname:any;
+  userData: any = {
+    user_currentpassword: "",
+    user_newpassword: "",
+    user_verifypassword: ""
+  };
+
+   pwdRequestData: any ={
+     u_old_pwd : "",
+     u_new_pwd : "",
+     uid : ""
+   };
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
   }
