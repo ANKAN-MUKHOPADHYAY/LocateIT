@@ -41,7 +41,7 @@
                        UserName cannot be more than 30 characters long.
                    </div>
                    </div>
-					<button ion-button [disabled]="current_username == '' ">update username</button>
+					<button ion-button [disabled]="current_username=='' || username.errors">update username</button>
 					<button ion-button>Reset</button>
 				</form>
 			</ion-col>
