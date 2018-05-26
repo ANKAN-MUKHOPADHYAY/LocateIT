@@ -68,18 +68,18 @@
 					</div>
 					<ion-item class="transparent">
 						<ion-label floating>Password</ion-label>
-						<ion-input type="password" name="password" [(ngModel)]="userinfo.u_password" id="password" #password="ngModel" minlength="5" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"></ion-input>
+						<ion-input type="password" name="password" [(ngModel)]="userinfo.u_password" id="password" #password="ngModel" minlength="5" maxlength="30" pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/"></ion-input>
 					</ion-item>
 					<div *ngIf="password.errors && (password.dirty || password.touched)">
-                      <div [hidden]="!password.errors.minlength">
-                        <span class="errorMsg">Password must be at least 5 characters long.</span>
-                       </div>
-                       <div [hidden]="!password.errors.maxlength">
-                       <span class="errorMsg">Password cannot be more than 30 characters long.</span>
-                       </div>
-                       <div [hidden]="!password.errors.pattern">
-                          <span class="errorMsg">"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</span>
-                      </div>
+                <div [hidden]="!password.errors.minlength">
+                  <span class="errorMsg">Password must be at least 5 characters long.</span>
+                </div>
+                <div [hidden]="!password.errors.maxlength">
+                 	<span class="errorMsg">Password cannot be more than 30 characters long.</span>
+                </div>
+                <div [hidden]="!password.errors.pattern">
+                  <span class="errorMsg">Must contain at least one number, uppercase, lowercase letter & at least 8 or more characters</span>
+                </div>
 					</div>
 					<div style="padding-top: 20px;" class="center">
 						<button ion-button secondary [disabled]="!signupForm.form.valid">Sign Up</button><br><br>
