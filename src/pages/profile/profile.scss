@@ -1,23 +1,58 @@
 page-profile {
+		.pageBg{
+				background-image:url('../assets/imgs/Learning.jpg');
+				background-size:100% 100%;
+				}		
+	.person{
+	 	font-size:20px;
+	}
+
+	.transparent{
+		background-color: transparent !important;
+		color: #FFF;
+	}
+
+	.formview{
+		width: 40%;
+		margin: 100px auto;
+	}
+
+	.splash-intro {
+	    font-size: 18px;
+	    font-weight: bold;
+	    max-width: 80%;
+	    margin: auto;
+	}
+
 	.bgcolor{
 		background-color: lightyellow;
 	}
+
+	.listbg{
+		background-color: rgba(0, 0, 0, 0.7) !important;
+			border-radius: 5px;
+		}
+
 	.propic{
 		height: 50%;
 		width: 50%;
 	}
 	.heads{
 		color: #696E71;
+		font-size:20spx;
 	}
 	.color{
-		color: #98CCF4;
+		color: skyblue;
+		font-size: 20px;
 	}
 	.grey{
 		color: grey;
 	}
-	.ltgrey{
+	.itgrey{
 		color:#ECECEC;
-	}
+
+		}
+
 	.marginLt{
 		margin-left: 15px;
 	}
@@ -45,12 +80,20 @@ page-profile {
 		height:100%;
 		padding:20px;
 	}
-	.input{
-		width: 40%;
-		border: 1px solid lightgrey;
-	}
+	
 	.padding{
 		padding:20px;
 	}
+
+	@media only screen
+and (max-device-width: 640px),
+only screen and (max-device-width: 667px),
+only screen and (max-width: 480px){
+.formview{
+width: 90%;
+margin: 0px auto;
+margin-top: 20%;
+}
+}
 
 }
