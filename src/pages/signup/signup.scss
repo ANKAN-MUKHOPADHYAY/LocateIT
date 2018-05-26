@@ -21,8 +21,15 @@ border-radius: 5px;
 background-color: transparent !important;
 color: #FFF;
 }
+.item-md{
+	padding-right: 16px !important;
+}
 .segment-md .segment-button{
 color: #0b2759 !important;
+font-size: 1.6rem !important;
+}
+.segment-md .segment-button.segment-activated{
+	background-color: gainsboro !important;
 }
 form,input,optgroup,select{
 	color:white !important;
