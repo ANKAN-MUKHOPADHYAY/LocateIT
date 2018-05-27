@@ -7,7 +7,7 @@ var envConstantLocal = {
     "serverUrl": "http://localhost:7999"
 };
 var envConstantShared = {
-    "serverUrl": "http://192.168.1.8:7999"
+    "serverUrl": "http://192.168.1.9:7999"
 };
 if (env == "LOCAL")
     constantJson = envConstantLocal;
