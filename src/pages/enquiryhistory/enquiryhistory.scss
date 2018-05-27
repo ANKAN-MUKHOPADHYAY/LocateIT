@@ -1,10 +1,21 @@
 page-enquiryhistory {
 	.splash-logo {
 	    margin: auto;
-	    background: url('../assets/img/appicon.png') repeat transparent;
+	    //background: url('../assets/img/appicon.png') repeat transparent;
 	    background-size: 100%;
-	    width: 128px;
-	    height: 128px;
+	    width: 135px;
+    	height: 125px;
 	}
-
+	.card{
+		background-color:transparent;
+		border: none;
+	}
+	.imgCourses{
+		height: 130px;
+    	border-radius: 65px;
+	}
+ .b{
+	font-weight:bold;
+	padding-top:10px;
+}
 }
