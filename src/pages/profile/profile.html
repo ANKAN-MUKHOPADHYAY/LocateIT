@@ -13,26 +13,34 @@
 	<ion-grid>
 		<ion-row>
 			<ion-col col-12 col-md-4 col-lg-4 padding>
-
-				<div class="form-group">
-					<img src="http://www.clker.com/cliparts/M/I/9/z/q/H/male-upload-md.png" alt="Upload Photo" class="propic">
-						<ion-icon name="camera"></ion-icon>
-					<input type="file" id="file" (change)= "handleFileInput($event.target.files)" class="marginTp">
+				<div class="toppart">
 				</div>
-				<hr class="marginTp">
-				
+				<div class="middlepart">
+					<div class="profile_photo_container">
+						<img src="http://www.clker.com/cliparts/M/I/9/z/q/H/male-upload-md.png" class="img-circle" alt="Profile">
+						<div class="uploadNew" (click)="openBasicModal()">
+							<ion-icon class="cameraUpload" name="camera"></ion-icon>
+						</div>
+					</div>
+				</div>
+				<div class="bottompart">
+					<div>
+						<h3 class="heads">
+							{{userproinfo.user_first_name}} {{userproinfo.user_last_name}}
+						</h3>
+					</div>
+					<span class="marginLt"><ion-icon ios="ios-pin" md="md-pin"></ion-icon></span>
+
+					<span class="color">{{userproinfo.city}}</span>
+					<div>
+						<ion-select class="color">
+							<ion-option selected> Student </ion-option>
+							<ion-option> Working </ion-option>
+						</ion-select>
+					</div>
+				</div>
 			</ion-col>
 			<ion-col col-12 col-md-8 col-lg-8 padding>
-				<span><h3 class="heads">Mr. Lobo</h3></span>
-				<span class="marginLt"><ion-icon ios="ios-pin" md="md-pin"></ion-icon></span>
-
-				<span class="color">Bangalore</span>
-				<div>
-					<ion-select class="color">
-						<ion-option selected> Student </ion-option>
-						<ion-option> Working </ion-option>
-					</ion-select>
-				</div>
 				
 				<div class="marginTp">
 					<ion-segment  [(ngModel)]="info">
@@ -48,67 +56,73 @@
 				</div>
 				<div [ngSwitch]="info">
 					<div class="formView">
-							<div class="marginTp">
-					<form>
-					<ion-list class="listbg" *ngSwitchCase="'Personal'">
-						
-						<ion-item class="transparent">
-							<ion-label floating>FirstName:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_fname" minlength="5" maxlength="30" name="fname" id="name" #name="ngModel" required></ion-input>
-						</ion-item>
-						<ion-item class="transparent">
-							<ion-label floating>LastName:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_lname" minlength="5" maxlength="30" name="lname" id="lname" #name="ngModel" required></ion-input>
-						</ion-item>
-						<ion-item class="transparent">
-							<ion-label floating>DOB:</ion-label>
-							<ion-input type="date" [(ngModel)]="userinfo.u_dob" name="dob" id="dob" #name="ngModel" required></ion-input>
-						</ion-item>
-						<ion-item class="transparent">
-							<ion-label floating>Email:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_email" name="email" id="email" #name="ngModel" required></ion-input>
-						</ion-item>
-						<ion-item class="transparent">
-							<ion-label floating>MobileNumber:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_mobile" maxlength="10" name="mobile" id="mobile" #name="ngModel" required></ion-input>
-						</ion-item>
-						<ion-item class="transparent">
-							<ion-label floating>AlternativeNumber:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_altmobile" maxlength="10" name="altmobile" id="altmobile" #name="ngModel" required></ion-input>
-						</ion-item>
-					</ion-list>
-				</form>
-					<form>
-					<ion-list class="listbg" *ngSwitchCase="'Residential'">
-						
-						<ion-item class="transparent">
-							<ion-label floating>PermanentAddress:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_paddress" minlength="5" maxlength="30" name="paddress" id="paddress" #name="ngModel" required></ion-input>
-						</ion-item>
+						<div>
+							<form>
+								<ion-list class="listbg" *ngSwitchCase="'Personal'">
+
+									<ion-item class="transparent">
+										<ion-label floating>FirstName:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.user_first_name" minlength="5" maxlength="30" name="fname" id="name" #name="ngModel" required></ion-input>
+									</ion-item>
+									<ion-item class="transparent">
+										<ion-label floating>LastName:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.user_last_name" minlength="5" maxlength="30" name="lname" id="lname" #name="ngModel" required></ion-input>
+									</ion-item>
+									<ion-item class="transparent">
+										<ion-label floating>DOB:</ion-label>
+										<ion-input type="date" required></ion-input>
+									</ion-item>
+									<ion-item class="transparent">
+										<ion-label floating>Email:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.user_email" name="email" id="email" #name="ngModel" required></ion-input>
+									</ion-item>
+									<ion-item class="transparent">
+										<ion-label floating>Mobile Number:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.user_mobile_number" maxlength="10" name="mobile" id="mobile" #name="ngModel" required></ion-input>
+									</ion-item>
+									<ion-item class="transparent">
+										<ion-label floating>AlternativeNumber:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.user_altmobile_number" maxlength="10" name="altmobile" id="altmobile" #name="ngModel" required></ion-input>
+									</ion-item>
+									<div style="padding-top: 20px;" class="center">
+								<button ion-button secondary>Submit</button><br><br>
+							</div>
+								</ion-list>
+							</form>
+							<form>
+								<ion-list class="listbg" *ngSwitchCase="'Residential'">
+
+									<ion-item class="transparent">
+										<ion-label floating>Permanent Address:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.permanent_address" minlength="5" maxlength="30" name="paddress" required></ion-input>
+									</ion-item>
+
+									<ion-item class="transparent">
+										<ion-label floating>Current Address:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.current_address" minlength="5" maxlength="30" name="caddress" required></ion-input>
+									</ion-item>
+
+									<ion-item class="transparent">
+										<ion-label floating>City:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.city" minlength="5" maxlength="30" name="city" id="city" #name="ngModel" required></ion-input>
+									</ion-item>
+
+									<ion-item class="transparent">
+										<ion-label floating>State:</ion-label>
+										<ion-input type="text" [(ngModel)]="userproinfo.state" minlength="5" maxlength="30" name="state" id="state" #name="ngModel" required></ion-input>
+									</ion-item>
+
+									
+									<div style="padding-top: 20px;" class="center">
+								<button ion-button secondary>Submit</button><br><br>
+							</div>
+
+								</ion-list>
+							</form>
 							
-							<ion-item class="transparent">
-							<ion-label floating>CurrentAddress:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_caddress" minlength="5" maxlength="30" name="paddress" id="paddress" #name="ngModel" required></ion-input>
-						</ion-item>
-
-						<ion-item class="transparent">
-							<ion-label floating>State:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_state" minlength="5" maxlength="30" name="state" id="state" #name="ngModel" required></ion-input>
-						</ion-item>
-
-							<ion-item class="transparent">
-							<ion-label floating>Country:</ion-label>
-							<ion-input type="text" [(ngModel)]="userinfo.u_country" minlength="5" maxlength="30" name="country" id="country" #name="ngModel" required></ion-input>
-						</ion-item>
-						
-					</ion-list>
-				</form>
-				<div style="padding-top: 20px;" class="center">
-						<button ion-button secondary>Submit</button><br><br>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-	</div>
 
 				
 				  <!-- <ion-icon name="person" class="ltgrey"></ion-icon>
