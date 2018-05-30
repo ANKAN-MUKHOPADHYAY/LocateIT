@@ -19,10 +19,10 @@
 			<ion-col col-12 col-md-4 col-lg-3  *ngFor="let sample of sampleData">
 				<ion-card>
 					<div class="splash-logo">
-						<img style="height:150px;padding: 10px;" src="{{sample.course_image}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+							<img class="imgCourses" src="{{sample.course_image}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
 					</div>
 					<ion-card-content  class="blockBackground">
-						<h2 class="center"> {{sample.course_name}} </h2>
+						<h2 class="center b"> {{sample.course_name}} </h2>
 						<ion-row>
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
 								{{sample.enquiry_type}} Enquiry
