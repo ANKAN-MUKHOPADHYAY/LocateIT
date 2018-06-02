@@ -41,12 +41,12 @@
 				</div>
 			</ion-col>
 			<ion-col col-12 col-md-8 col-lg-8 padding>
-				
+				<div class="formView">
 				<div class="marginTp">
 					<ion-segment  [(ngModel)]="info">
 						<ion-segment-button value="Personal">
 							<ion-icon name="person" class="itgrey marginRt"></ion-icon>
-							Personal information
+							<span class="select">Personal information</span>
 						</ion-segment-button>
 						<ion-segment-button value="Residential">
 							<ion-icon name="ios-home-outline" class="itgrey marginRt"></ion-icon>
@@ -55,7 +55,7 @@
 					</ion-segment>
 				</div>
 				<div [ngSwitch]="info">
-					<div class="formView">
+					
 						<div>
 							<form>
 								<ion-list class="listbg" *ngSwitchCase="'Personal'">

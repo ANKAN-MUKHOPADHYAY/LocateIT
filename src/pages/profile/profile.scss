@@ -9,6 +9,11 @@ page-profile {
 	.item-md{
 		padding-right:16px !important;
 	}
+	select{
+		color: red;
+		font-size:50px;
+	}
+
 	.transparent{
 		background-color: transparent !important;
 		color: #FFF;
@@ -42,6 +47,7 @@ page-profile {
 	.color{
 		color: blue;
 		font-size: 20px;
+		margin-left: 100px;
 	}
 	.grey{
 		color: grey;
