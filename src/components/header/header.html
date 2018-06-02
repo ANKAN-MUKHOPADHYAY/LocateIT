@@ -3,7 +3,7 @@
     <ion-icon name="menu"></ion-icon>
   </button>
   <ion-title></ion-title>
-  <div class="logo">
+  <div class="applogo">
     <img src="../assets/img/ideology.png" alt="urban" class="img-responsive">
   </div>
   <div *ngIf="!loggedIn" style="float: right;margin-right: 30px;">
@@ -15,7 +15,7 @@
       <ion-avatar item-start>
         <img src="https://lh3.googleusercontent.com/-j24QJ2j8uAM/AAAAAAAAAAI/AAAAAAAAABI/tn8VzCQnFZo/s640/photo.jpg">
       </ion-avatar>
-      <ion-label>{{userinfo.user_first_name}} {{userinfo.user_last_name}}</ion-label>
+      <ion-label id="userName">{{userinfo.user_first_name}} {{userinfo.user_last_name}}</ion-label>
       <ion-select [(ngModel)]="toppings" interface="popover">
         <ion-option (ionSelect)="gotoProfile($event)">Your Profile</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">My Account</ion-option>

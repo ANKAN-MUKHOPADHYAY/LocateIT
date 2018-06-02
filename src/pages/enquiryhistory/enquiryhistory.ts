@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 /**
  * Generated class for the EnquiryhistoryPage page.
@@ -14,6 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'enquiryhistory.html',
 })
 export class EnquiryhistoryPage {
+  oldEnquiryIds : Array<any>=[];
+  userPreviousEnquiry : any = [];
+
 	sampleData: any = [{
 		course_name : "Web design and development",
 		enquiry_id : "22",
@@ -96,14 +100,15 @@ export class EnquiryhistoryPage {
 		institute_count : "10"
 	}];
 
-	
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EnquiryhistoryPage');
+    this._restservice.get('/user/oldenquiryinfo/'+sessionStorage.getItem('userid')).then( res => {
+      console.log(res);
+  	});
   }
 
 }
-
