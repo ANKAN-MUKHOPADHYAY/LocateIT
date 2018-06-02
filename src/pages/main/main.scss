@@ -57,6 +57,7 @@ page-main {
   margin-bottom: 10px;
   background-color: #FFF;
   box-shadow: 0px 2px 6px #ccc;
+  max-height: 100px;
 }
 .fatbob {
   font-weight: 900;
@@ -69,4 +70,7 @@ page-main {
 }
 .center{
   text-align: center;
+}
+.selfAlignCenter{
+  align-self: center;
 }
