@@ -12,8 +12,8 @@
 <ion-content class="tutorial" padding>
 	<ion-grid>
 		<ion-row>
-			<ion-col col-12 col-md-4 col-lg-3  *ngFor="let sample of sampleData">
-				<ion-card>
+			<ion-col col-12 col-md-4 col-lg-3  *ngFor="let sample of userPreviousEnquiry" >
+				<ion-card (click)="gotoMain(sample.enquiry_id)">
 					<div class="splash-logo">
 							<img class="imgCourses" src="{{sample.course_image}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
 					</div>
@@ -21,10 +21,10 @@
 						<h2 class="center b"> {{sample.course_name}} </h2>
 						<ion-row>
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
-								{{sample.enquiry_type}} Enquiry
+								{{sample.location_city}} Enquiry
 							</ion-col>
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
-								{{sample.enquiry_status}}
+								{{sample.location_name}}
 							</ion-col>
 						</ion-row>
 						<ion-row class="innerBG" style="padding: 5px;">
@@ -33,7 +33,7 @@
 								<span>{{sample.institute_count}} Offering</span>
 							</ion-col>
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
-								{{sample.enquiry_date}}
+								{{sample.datetime | date}}
 							</ion-col>
 						</ion-row>
 					</ion-card-content>
