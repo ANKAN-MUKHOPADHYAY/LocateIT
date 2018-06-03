@@ -17,8 +17,8 @@ import { GlobalProvider } from '../providers/global/global';
   declarations: [
     MyApp,
     HomePage,
-    ListPage, 
-    TutorialsPage
+    ListPage,
+    TutorialsPage,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +30,7 @@ import { GlobalProvider } from '../providers/global/global';
     MyApp,
     HomePage,
     ListPage,
-    TutorialsPage
+    TutorialsPage,
   ],
   providers: [
     StatusBar,

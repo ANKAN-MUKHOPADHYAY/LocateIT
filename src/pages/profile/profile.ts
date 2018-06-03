@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { ModalPage } from '../modal/modal';
 /**
  * Generated class for the ProfilePage page.
  *
@@ -21,7 +22,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
    public userproinfo : any = [];
 
 
-   constructor(public navCtrl: NavController, public navParams: NavParams,public _restService: HttpServiceProvider) {
+   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,public _restService: HttpServiceProvider) {
    }
 
     ionViewDidLoad() {
@@ -38,10 +39,12 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
     }
     
 
-    handleFileInput(files: FileList) {
+    openUploadPhotoModal() {
       console.log('Heeo');
-      this.fileToUpload = files.item(0);
+      // let myModal = this.modalCtrl.create(ModalPage);
+      // myModal.present();
+      var modalPage = this.modalCtrl.create('ModalPage'); 
+      modalPage.present();
     }
-
 
 }

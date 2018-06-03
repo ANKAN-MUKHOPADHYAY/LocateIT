@@ -1,12 +1,15 @@
 header {
-	.logo{
+	.applogo{
 		max-width: 8%;
 		float: left;
 	}
 
 	@media only screen and (max-device-width : 720px){
-		.logo{
+		.applogo{
 			max-width: 35%;
+		}
+		#userName{
+			display: none;
 		}
 	}
 }
