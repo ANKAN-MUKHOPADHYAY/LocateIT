@@ -25,7 +25,7 @@
 						</h3>
 					</div>
 					<span class="city"><ion-icon ios="ios-pin" md="md-pin">{{userproinfo.city}}</ion-icon></span>
-					<!-- <div>
+				<!-- <div>
 						<ion-select class="color">
 							<ion-option selected> Student </ion-option>
 							<ion-option> Working </ion-option>
@@ -49,6 +49,22 @@
 					</div>
 					<div [ngSwitch]="info">
 						
+=======
+				<div class="marginTp">
+					<ion-segment  [(ngModel)]="info">
+						<ion-segment-button value="Personal">
+							<ion-icon name="person" class="itgrey marginRt"></ion-icon>
+							<span class="select">Personal information</span>
+						</ion-segment-button>
+						<ion-segment-button value="Residential">
+							<ion-icon name="ios-home" class="itgrey marginRt"></ion-icon>
+							Residential Information
+						</ion-segment-button>
+					</ion-segment>
+				</div>
+				<div [ngSwitch]="info">
+
+>>>>>>> 3c72c8e27caf6e3c83f081eb49800bc52711b8b6
 						<div>
 							<form>
 								<ion-list class="listbg" *ngSwitchCase="'Personal'">
