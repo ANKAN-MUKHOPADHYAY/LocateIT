@@ -1,10 +1,10 @@
- <ion-header>
+<ion-header>
   <header hideBackButton="true"></header>
 </ion-header>
 
 
 <ion-content padding class="innerBG">
-	<ion-grid>
+	<!-- <ion-grid>
 	  	<ion-row>
 	    	<ion-col (click)="gotoInstituteLanding(institute)" col-12 col-md-3 col-lg-2  *ngFor="let institute of offeredInstitutes">
 	    		<ion-card>
@@ -23,5 +23,32 @@
 				</ion-card>
 	    	</ion-col>
 	  	</ion-row>
+	</ion-grid> -->
+
+  <ion-grid>
+		<ion-row>
+			<ion-col col-12 col-md-4 col-lg-4 (click)="gotoInstituteLanding(institute)"  *ngFor="let institute of offeredInstitutes">
+				<ion-card>
+          <ion-row>
+            <ion-col class="center" style="padding: 0px;" col-2 col-md-2 col-lg-2>
+      					<div class="splash-logo">
+      							<img class="imgCourses" src="{{institute.inst_images}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+      					</div>
+            </ion-col>
+            <ion-col class="rightBlock" col-10 col-md-10 col-lg-10>
+      					<ion-card-content  class="blockBackground righInnerElement">
+      						<h2 class="b"> {{institute.inst_name}} </h2>
+      						<ion-row>
+      							{{institute.inst_address}}, {{institute.inst_city}}
+      						</ion-row>
+      						<div *ngIf="institute.inst_message" class="notification">
+                		<ion-icon name="mail-open" class="notification"></ion-icon>
+            			</div>
+      					</ion-card-content>
+            </ion-col>
+          </ion-row>
+         </ion-card>
+       </ion-col>
+		</ion-row>
 	</ion-grid>
 </ion-content>
