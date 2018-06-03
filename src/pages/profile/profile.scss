@@ -9,12 +9,20 @@ page-profile {
 	.item-md{
 		padding-right:16px !important;
 	}
+	.city{
+		color:blue;	
+	}
+	.ion-md-pin:before{
+		margin-right: 10px;
+	}
+
+
 	.transparent{
 		background-color: transparent !important;
 		color: #FFF;
 	}
 
-	.formview{
+	.forighte16{
 		width: 40%;
 		margin: 100px auto;
 
@@ -31,6 +39,14 @@ page-profile {
 		background-color: lightyellow;
 	}
 
+	.segment-md .segment-button.segment-activated {
+	    background-color: gainsboro !important;
+	}
+	.segment-md .segment-button {
+	    color: #0b2759 !important;
+	    font-size: 1.6rem !important;
+	}
+
 	.listbg{
 		background-color: rgba(0, 0, 0, 0.7) !important;
 		border-radius: 5px;
@@ -42,13 +58,14 @@ page-profile {
 	.color{
 		color: blue;
 		font-size: 20px;
+		margin: auto;
 	}
 	.grey{
 		color: grey;
 	}
 	.itgrey{
-		color:#ECECEC;
-		}
+		color:rgba(46, 32, 162, 0.8509803921568627);
+	}
 
 	.marginLt{
 		margin-left: 15px;
@@ -94,6 +111,7 @@ page-profile {
 	.middlepart{
 		position: relative;
     	height: 60px;
+    	margin-bottom: 90px;
 	} 
 
 	.profile_photo_container{
@@ -129,7 +147,6 @@ page-profile {
     	padding-top: 4.5px;
 	}
 	.bottompart{
-		margin-top: 90px;
 		text-align: center;
 	}
 

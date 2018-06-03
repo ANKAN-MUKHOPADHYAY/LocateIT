@@ -11,7 +11,7 @@
 				<div class="middlepart">
 					<div class="profile_photo_container">
 						<img src="http://www.clker.com/cliparts/M/I/9/z/q/H/male-upload-md.png" class="img-circle" alt="Profile">
-						<div class="uploadNew" (click)="openBasicModal()">
+						<div class="uploadNew" (click)="handleFileInput()">
 							<ion-icon class="cameraUpload" name="camera"></ion-icon>
 						</div>
 					</div>
@@ -22,9 +22,9 @@
 							{{userproinfo.user_first_name}} {{userproinfo.user_last_name}}
 						</h3>
 					</div>
-					<span class="marginLt"><ion-icon ios="ios-pin" md="md-pin"></ion-icon></span>
+					<span class="city"><ion-icon ios="ios-pin" md="md-pin">{{userproinfo.city}}</ion-icon></span>
 
-					<span class="color">{{userproinfo.city}}</span>
+
 					<div>
 						<ion-select class="color">
 							<ion-option selected> Student </ion-option>
@@ -34,21 +34,21 @@
 				</div>
 			</ion-col>
 			<ion-col col-12 col-md-8 col-lg-8 padding>
-
+				<div class="formView">
 				<div class="marginTp">
 					<ion-segment  [(ngModel)]="info">
 						<ion-segment-button value="Personal">
 							<ion-icon name="person" class="itgrey marginRt"></ion-icon>
-							Personal information
+							<span class="select">Personal information</span>
 						</ion-segment-button>
 						<ion-segment-button value="Residential">
-							<ion-icon name="ios-home-outline" class="itgrey marginRt"></ion-icon>
+							<ion-icon name="ios-home" class="itgrey marginRt"></ion-icon>
 							Residential Information
 						</ion-segment-button>
 					</ion-segment>
 				</div>
 				<div [ngSwitch]="info">
-					<div class="formView">
+
 						<div>
 							<form>
 								<ion-list class="listbg" *ngSwitchCase="'Personal'">

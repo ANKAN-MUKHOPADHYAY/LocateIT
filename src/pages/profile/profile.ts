@@ -24,7 +24,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
    constructor(public navCtrl: NavController, public navParams: NavParams,public _restService: HttpServiceProvider) {
    }
 
-   ionViewDidLoad() {
+    ionViewDidLoad() {
      console.log('ionViewDidLoad ProfilePage');
 
      //this.userproinfo = {"status":true,"result":{"user_id":79,"user_first_name":"ALOO","user_last_name":"GOBI","user_mobile_number":4141414141,"user_altmobile_number":4141414141,"user_email":"ALOO.GOBI@GMAIL.COM","user_type":"Student","active_status":1,"uniqueid":6,"username":"aloogobi","subscribe_message":0,"subscribe_call":1,"subscribe_mail":1,"permanent_address":null,"current_address":"Kumaraswamy Layout","city":"Bangalore","state":"Karnataka"}};
@@ -35,10 +35,13 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
          console.log(this.userproinfo);
        }
      });
-   }
-  // handleFileInput(files: FileList) {
-  //   this.fileToUpload = files.item(0);
-  // }
+    }
+    
+
+    handleFileInput(files: FileList) {
+      console.log('Heeo');
+      this.fileToUpload = files.item(0);
+    }
 
 
 }
