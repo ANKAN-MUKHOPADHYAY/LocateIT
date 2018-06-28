@@ -32,14 +32,14 @@
           <ion-row>
             <ion-col class="center" style="padding: 0px;" col-2 col-md-2 col-lg-2>
       					<div class="splash-logo">
-      							<img class="imgCourses" src="{{institute.inst_images}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+      							<img class="imgCourses" src="{{institute.LOC_INST_IMG}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
       					</div>
             </ion-col>
             <ion-col class="rightBlock" col-10 col-md-10 col-lg-10>
       					<ion-card-content  class="blockBackground righInnerElement">
-      						<h2 class="b"> {{institute.inst_name}} </h2>
+      						<h2 class="b"> {{institute.LOC_INST_NAME}} </h2>
       						<ion-row>
-      							{{institute.inst_address}}, {{institute.inst_city}}
+      							{{institute.LOC_INST_ADDRESS}}, {{institute.LOC_INST_CITY}}
       						</ion-row>
       						<div *ngIf="institute.inst_message" class="notification">
                 		<ion-icon name="mail-open" class="notification"></ion-icon>

@@ -1,7 +1,7 @@
 
-<ion-navbar>
-	<header hideBackButton="true"></header>
-</ion-navbar>
+<ion-header>
+  <header hideBackButton="true"></header>
+</ion-header>
 
 
 
@@ -17,12 +17,12 @@
 								<ion-row>
 									<ion-col col-12 col-sm-12 col-md-4 col-lg-4 class="center">
 										<!-- <img style="height:200px;" src="https://images.template.net/wp-content/uploads/2017/03/22091835/Free-Travel-Company-Logo1.jpg" /> -->
-										<img style="height:200px;" src="{{info.inst_images}}" />
+										<img style="height:200px;" src="{{info.LOC_INST_IMG}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
 									</ion-col>
 									<ion-col col-12 col-sm-12 col-md-8 col-lg-8>
 										<!-- <h1>Travel Company</h1> -->
-										<h1>{{info.inst_name}}</h1>
-										<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">{{info.inst_address}}, {{info.inst_city}}</span>
+										<h1>{{info.LOC_INST_NAME}}</h1>
+										<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">{{info.LOC_INST_ADDRESS}}, {{info.LOC_INST_CITY}}</span>
 										<div style="margin-top: 10px;">
 											<ion-icon name="star" style="color: yellow;"></ion-icon>
 											<ion-icon name="star" style="color: yellow;"></ion-icon>
@@ -31,10 +31,10 @@
 											<ion-icon name="star" style="color: yellow;"></ion-icon>
 										</div>
 										<div>
-											<a href="mailto:{{info.inst_email}}?Subject=Locate%20IT%20Enquiry">
+											<a href="mailto:{{info.LOC_INST_EMAIL}}?Subject=Locate%20IT%20Enquiry">
 												<button ion-button color="primary"> <ion-icon name="ios-mail-outline" style="margin-right: 10px;"></ion-icon> Send Mail</button>
 											</a>
-											<a href="tel:{{info.inst_contact}}">
+											<a href="tel:{{info.LOC_INST_CONTACT}}">
 												<button ion-button color="primary" style="margin-left: 20px;"> <ion-icon name="ios-call-outline" style="margin-right: 10px;"></ion-icon> Call</button>
 											</a>
 										</div>

@@ -35,8 +35,8 @@ export class SignupPage {
 
         if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
 
-          this.userdetail.u_cid = this.navParams.data.selectedCourse.id;
-          this.userdetail.u_lid = this.navParams.data.selectedLocation.id;
+          this.userdetail.u_cid = this.navParams.data.selectedCourse.LOC_COURSE_ID;
+          this.userdetail.u_lid = this.navParams.data.selectedLocation.LOC_LOCATION_ID;
           this._restService.post('/user/userenquiry',JSON.stringify(this.userdetail)).then(resp => {
               console.log(resp);
               if(resp.status){

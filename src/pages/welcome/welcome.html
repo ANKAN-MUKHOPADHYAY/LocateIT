@@ -16,7 +16,7 @@
       <ion-searchbar (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
       <ion-list>
         <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
-          <h2>{{item.course_name}}</h2>
+          <h2>{{item.LOC_COURSE_NAME}}</h2>
         </button>
       </ion-list>
       <button ion-button (click)="locationSearch()">FIND</button>

@@ -15,7 +15,7 @@
       <ion-avatar item-start>
         <img src="https://lh3.googleusercontent.com/-j24QJ2j8uAM/AAAAAAAAAAI/AAAAAAAAABI/tn8VzCQnFZo/s640/photo.jpg">
       </ion-avatar>
-      <ion-label id="userName">{{userinfo.user_first_name}} {{userinfo.user_last_name}}</ion-label>
+      <ion-label id="userName">{{userinfo.LOC_USERNAME}}</ion-label>
       <ion-select [(ngModel)]="toppings" interface="popover">
         <ion-option (ionSelect)="gotoProfile($event)">Your Profile</ion-option>
         <ion-option (ionSelect)="gotoAccount($event)">My Account</ion-option>

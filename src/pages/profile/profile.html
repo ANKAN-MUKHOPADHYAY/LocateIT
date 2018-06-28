@@ -20,10 +20,10 @@
 				<div class="bottompart">
 					<div>
 						<h3 class="heads">
-							{{userproinfo.user_first_name}} {{userproinfo.user_last_name}}
+							{{userproinfo.LOC_USER_FNAME}} {{userproinfo.LOC_USER_LNAME}}
 						</h3>
 					</div>
-					<span class="city"><ion-icon ios="ios-pin" md="md-pin">{{userproinfo.city}}</ion-icon></span>
+					<span class="city"><ion-icon ios="ios-pin" md="md-pin">Bangalore</ion-icon></span>
 
 
 					<div>
@@ -56,11 +56,11 @@
 
 									<ion-item class="transparent">
 										<ion-label floating>FirstName:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.user_first_name" minlength="5" maxlength="30" name="fname" id="name" #name="ngModel" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_FNAME" minlength="5" maxlength="30" name="fname" id="name" #name="ngModel" required></ion-input>
 									</ion-item>
 									<ion-item class="transparent">
 										<ion-label floating>LastName:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.user_last_name" minlength="5" maxlength="30" name="lname" id="lname" #name="ngModel" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_LNAME" minlength="5" maxlength="30" name="lname" id="lname" #name="ngModel" required></ion-input>
 									</ion-item>
 									<ion-item class="transparent">
 										<ion-label floating>DOB:</ion-label>
@@ -68,15 +68,15 @@
 									</ion-item>
 									<ion-item class="transparent">
 										<ion-label floating>Email:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.user_email" name="email" id="email" #name="ngModel" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_EMAIL" name="email" id="email" #name="ngModel" required></ion-input>
 									</ion-item>
 									<ion-item class="transparent">
 										<ion-label floating>Mobile Number:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.user_mobile_number" maxlength="10" name="mobile" id="mobile" #name="ngModel" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_MOBILE" maxlength="10" name="mobile" id="mobile" #name="ngModel" required></ion-input>
 									</ion-item>
 									<ion-item class="transparent">
 										<ion-label floating>AlternativeNumber:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.user_altmobile_number" maxlength="10" name="altmobile" id="altmobile" #name="ngModel" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_ALT_CONTACT" maxlength="10" name="altmobile" id="altmobile" #name="ngModel" required></ion-input>
 									</ion-item>
 									<div style="padding-top: 20px;" class="center">
 								<button ion-button secondary>Submit</button><br><br>
@@ -88,22 +88,22 @@
 
 									<ion-item class="transparent">
 										<ion-label floating>Permanent Address:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.permanent_address" minlength="5" maxlength="30" name="paddress" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_PERMANENT_ADDRESS" minlength="5" maxlength="30" name="paddress" required></ion-input>
 									</ion-item>
 
 									<ion-item class="transparent">
 										<ion-label floating>Current Address:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.current_address" minlength="5" maxlength="30" name="caddress" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_CURRENT_ADDRESS" minlength="5" maxlength="30" name="caddress" required></ion-input>
 									</ion-item>
 
 									<ion-item class="transparent">
 										<ion-label floating>City:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.city" minlength="5" maxlength="30" name="city" id="city" #name="ngModel" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_CITY" minlength="5" maxlength="30" name="city" id="city" #name="ngModel" required></ion-input>
 									</ion-item>
 
 									<ion-item class="transparent">
 										<ion-label floating>State:</ion-label>
-										<ion-input type="text" [(ngModel)]="userproinfo.state" minlength="5" maxlength="30" name="state" id="state" #name="ngModel" required></ion-input>
+										<ion-input type="text" [(ngModel)]="userproinfo.LOC_USER_STATE" minlength="5" maxlength="30" name="state" id="state" #name="ngModel" required></ion-input>
 									</ion-item>
 
 

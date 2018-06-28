@@ -3,16 +3,10 @@
       <div class="genericPadding">
           <!-- <h1 *ngIf="_global.deviceName == 'ipad' ">Information</h1> -->
           <h2>Overview</h2>
-          <p>
-            TechNinzaz is a premier Coaching and Mentoring Institute with a dedicated team of subject matter experts ,counselors and mentors who believe in helping each student achieve the desired career and excel in their academics. Specializing in Big Data, Web Development, Mobile App development, Java, Soft Skills, Personality Development along with Industry relevant experience in Information Technology Industry , we will ensure you get a holistic course coaching and mentoring on your Exam preparations and further.
-
-            Our Offerings :
-
-            Join Our Complete JAVA Course, Web Development Course, Mobile Application Development to learn and implement the things in real-time.
-
-            Coach : Coaching classes for all major subjects in Computer Science students. Also offering IT Industry Specific Languages like Core & Advanced JAVA , Frameworks , Ui and more .
-            Educate: IT Projects for Computer Science students on desired computer language platform which are Industry Centric.
-          </p>
+          <p *ngIf="about != null" [innerHTML]="about"></p>
+          <h2> Description </h2>
+          <p *ngIf="information != null" [innerHTML]="information"></p>
+          
           <div style="text-align:center;">
             <video controls="true">
                 <source src="www.youtube.com/watch?v=b-e9cOpGC0I" type="video/mp4" />

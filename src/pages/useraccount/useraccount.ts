@@ -56,28 +56,28 @@ export class UseraccountPage {
       console.log(sessionStorage.getItem('userid'));
       if(res.status == true){
         console.log(res.status);
-        this.current_username = res.result.username;
+        this.current_username = res.result.LOC_USERNAME;
         console.log(this.current_username);
 
-        if(res.result.subscribe_call == 1){
+        if(res.result.LOC_USER_SUB_CALL == 1){
           this.turn.call = true;
         }else {
              this.turn.call = false;
         }
 
-        if(res.result.active_status == 1){
+        if(res.result.LOC_USER_ACTIVE == 1){
           this.turn.active = true;
         }
         else{
           this.turn.active = false;
         }
-        if(res.result.subscribe_mail == 1){
+        if(res.result.LOC_USER_SUB_MAIL == 1){
           this.turn.mail = true;
         }
         else{
           this.turn.mail = false;
         }
-        if(res.result.subscribe_message == 1){
+        if(res.result.LOC_USER_SUB_MSG == 1){
           this.turn.msg = true;
         }
         else{

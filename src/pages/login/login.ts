@@ -33,7 +33,7 @@ export class LoginPage {
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
 	}
 
-	
+
 	gotoSignup(){
 		this.navCtrl.push('SignupPage');
 	}
@@ -43,12 +43,12 @@ export class LoginPage {
 		this._restservice.post('/user/loginCandidate',JSON.stringify(this.logininfo)).then( response => {
 			console.log(response);
 			if(response.status){
-        sessionStorage.setItem('userid',response.result.user_id);
+        sessionStorage.setItem('userid',response.result.LOC_USER_ID);
 				console.log('Login Successful');
-				this._restservice.get('/user/userenquiries/'+response.result.user_id).then( resp => {
+				this._restservice.get('/user/userenquiries/'+response.result.LOC_USER_ID).then( resp => {
 					console.log(resp);
 					if(resp.status == true){
-						sessionStorage.setItem('enquiry',resp.result[0].enquiry_id);
+						sessionStorage.setItem('enquiry',resp.result[0].LOC_ENQ_ID);
 						this.navCtrl.push('MainPage');
 					} else {
 						this.navCtrl.push('WelcomePage');

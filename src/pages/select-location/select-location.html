@@ -15,7 +15,7 @@
 	<ion-searchbar (ionInput)="getLocation($event)"></ion-searchbar>
 	<ion-list>
 		<ion-item (click)="openSignUp(location)" *ngFor="let location of locations">
-			{{ location.location_name }}
+			{{ location.LOC_LOCATION_NAME }}
 		</ion-item>
 	</ion-list>
 	<button ion-button color="Primary" (click)="openSignUp('Jello')" right>FIND</button>

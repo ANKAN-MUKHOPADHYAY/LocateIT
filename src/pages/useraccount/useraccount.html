@@ -14,11 +14,11 @@
 			<ion-col col-6>
 				<form (submit)="updatePwd()">
 					<ion-label class="size">Change Password</ion-label>
-					<ion-input type="password" name="currentpassword" [(ngModel)]="userData.user_currentpassword" placeholder="current password" class="design"></ion-input><br>
+					<ion-input type="password" name="currentpassword" [(ngModel)]="userData.user_currentpassword" placeholder="Current password" class="design"></ion-input><br>
 
 					<ion-input type="password" name="user_newpassword" [(ngModel)]="userData.user_newpassword" placeholder="New password" class="design"></ion-input><br>
 
-					<ion-input type="password" name="user_verifypassword" [(ngModel)]="userData.user_verifypassword" placeholder="verify password" class="design"></ion-input><br>
+					<ion-input type="password" name="user_verifypassword" [(ngModel)]="userData.user_verifypassword" placeholder="Verify password" class="design"></ion-input><br>
 
 					<div>
 						<button [disabled]= "(userData.user_verifypassword=='') || (userData.user_newpassword=='') || (userData.user_currentpassword=='') || (userData.user_newpassword!=userData.user_verifypassword)" ion-button>update password</button>
