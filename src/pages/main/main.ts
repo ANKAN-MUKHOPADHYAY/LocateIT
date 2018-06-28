@@ -16,12 +16,21 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 })
 export class MainPage {
 	public offeredInstitutes: any;
+  public urlData : any;
 
   	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
   	}
 
   ionViewDidLoad() {
-    this._restservice.get('/user/searchenquiry/'+sessionStorage.getItem('enquiry')).then( res => {
+    console.log(this.navParams);
+    console.log(this.navParams.data.hasOwnProperty('previousEnquiryId'));
+    if(this.navParams.data.hasOwnProperty('previousEnquiryId')){
+       this.urlData = '/user/searchenquiry/'+this.navParams.data.previousEnquiryId;
+    } else {
+      this.urlData = '/user/searchenquiry/'+sessionStorage.getItem('enquiry');
+    }
+    console.log(this.urlData);
+    this._restservice.get(this.urlData).then( res => {
   		console.log(res);
   		this.offeredInstitutes = res.response;
   		console.log(this.offeredInstitutes);

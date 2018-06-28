@@ -1,4 +1,4 @@
-var env = "LOCAL";
+var env = "SHARED";
 
 var constantJson;
 
