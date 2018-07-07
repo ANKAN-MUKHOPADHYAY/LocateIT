@@ -35,7 +35,7 @@ export class InstInfoComponent {
     this._restservice.get(this.restUrl).then( res => {
       this.about = res.response[0].LOC_INST_ABOUT;
       this.information = res.response[0].LOC_INST_DESC;
-      console.log(this.infomation);
+      //console.log(this.information);
       //console.log(this.instituteInfos);
     });
   }

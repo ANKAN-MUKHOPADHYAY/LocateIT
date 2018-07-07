@@ -15,22 +15,22 @@
 			<ion-col col-12 col-md-4 col-lg-3  *ngFor="let sample of userPreviousEnquiry" >
 				<ion-card (click)="gotoMain(sample.enquiry_id)">
 					<div class="splash-logo">
-							<img class="imgCourses" src="{{sample.course_image}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+							<img class="imgCourses" src="{{sample.LOC_COURSE_IMAGE}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
 					</div>
 					<ion-card-content  class="blockBackground">
-						<h2 class="center b"> {{sample.course_name}} </h2>
+						<h2 class="center b"> {{sample.LOC_COURSE_NAME}} </h2>
 						<ion-row>
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
-								{{sample.location_city}} Enquiry
+								{{sample.LOC_LOCATION_CITY}} Enquiry
 							</ion-col>
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
-								{{sample.location_name}}
+								{{sample.LOC_LOCATION_NAME}}
 							</ion-col>
 						</ion-row>
 						<ion-row class="innerBG" style="padding: 5px;">
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
 								<ion-icon name="notifications"></ion-icon>
-								<span>{{sample.institute_count}} Offering</span>
+								<!-- <span>{{sample.institute_count}} Offering</span> -->
 							</ion-col>
 							<ion-col class="center" col-6 col-md-6 col-lg-6>
 								{{sample.datetime | date}}
