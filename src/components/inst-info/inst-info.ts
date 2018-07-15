@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Injectable } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
@@ -12,6 +12,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   selector: 'inst-info',
   templateUrl: 'inst-info.html'
 })
+@Injectable()
 export class InstInfoComponent {
   about: any;
   information: any;

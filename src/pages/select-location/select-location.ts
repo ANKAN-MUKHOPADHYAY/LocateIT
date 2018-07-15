@@ -40,19 +40,20 @@ export class SelectLocationPage {
        this.navCtrl.push('SignupPage',{
         selectedCourse : this.navParams.data.selectedCourse,
         selectedLocation: loc
-      }); 
+      });
     } else{
-      this.userdetail.u_cid = this.navParams.data.selectedCourse.id;
+      this.userdetail.u_cid = this.navParams.data.selectedCourse.LOC_COURSE_ID;
       this.userdetail.u_id = sessionStorage.getItem('userid');
-      this.userdetail.u_lid = loc.id;
+      this.userdetail.u_lid = loc.LOC_LOCATION_ID;
       this.restService.post('/user/userenquiry',JSON.stringify(this.userdetail)).then(resp => {
         console.log(resp);
         if(resp.status){
           sessionStorage.setItem('enquiry', resp.result.enquiry_id);
           this.navCtrl.push('MainPage');
         }
-      });  
+      });
     }
+    console.log(this.userdetail);
   }
 
 }
