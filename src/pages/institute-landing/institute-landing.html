@@ -1,62 +1,135 @@
-<!--
-  Generated template for the InstituteLandingPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-	<ion-navbar>
-	    <button ion-button menuToggle>
-	      <ion-icon name="menu"></ion-icon>
-	    </button>
-	    <div style="float: right;margin-right: 30px;">
-	    	<button ion-button color="light" (click)="gotoLogin()">Login</button>
-	    	<button ion-button color="primary" (click)="gotoSignup()">Sign Up</button>
-		</div>
-	</ion-navbar>
+  <header hideBackButton="true"></header>
 </ion-header>
+
 
 
 <ion-content>
 	<div class="institute-bg"></div>
 	<div class="institute-info" *ngFor="let info of instituteInfos">
-		<ion-grid>
-		  	<ion-row>
-			    <ion-col col-12 col-sm-12 col-md-8 col-lg-8>
-			      	<div class="institute-details">
-			      		<ion-grid>
-		  					<ion-row>
-		  						<ion-col col-12 col-sm-12 col-md-4 col-lg-4>
-		  							<img src="{{info.inst_images}}" />
-		  						</ion-col>
-		  						<ion-col col-12 col-sm-12 col-md-8 col-lg-8>
-		  							<h1>{{info.inst_name | uppercase}}</h1>
-		  							<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">{{info.inst_address}}, {{info.inst_city}}</span>
-		  							<div style="margin-top: 10px;">
-		  								<ion-icon name="star" style="color: yellow;"></ion-icon>
-		  								<ion-icon name="star" style="color: yellow;"></ion-icon>
-		  								<ion-icon name="star" style="color: yellow;"></ion-icon>
-		  								<ion-icon name="star" style="color: yellow;"></ion-icon>
-		  								<ion-icon name="star" style="color: yellow;"></ion-icon>
-		  							</div>
-		  							<div>
-		  								<button ion-button color="primary"> <ion-icon name="ios-mail-outline" style="margin-right: 10px;"></ion-icon> Message</button>
-		  								<button ion-button color="primary" style="margin-left: 20px;"> <ion-icon name="ios-call-outline" style="margin-right: 10px;"></ion-icon> Call</button>
-		  							</div>
-		  							
-		  						</ion-col>
-		  					</ion-row>
-		  				</ion-grid>
-			      	</div>
-			    </ion-col>
-			    <ion-col col-12 col-sm-12 col-md-4 col-lg-4 style="height:200px;background-color: lightgreen">
-			      	<div class="share-info">
+		<!-- <div class="institute-info" padding> -->
+			<ion-grid>
+				<ion-row>
+					<ion-col col-12 col-sm-12 col-md-8 col-lg-8>
+						<div class="blockBackground instituteInfo">
+							<ion-grid>
+								<ion-row>
+									<ion-col col-12 col-sm-12 col-md-4 col-lg-4 class="center">
+										<!-- <img style="height:200px;" src="https://images.template.net/wp-content/uploads/2017/03/22091835/Free-Travel-Company-Logo1.jpg" /> -->
+										<img style="height:200px;" src="{{info.LOC_INST_IMG}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+									</ion-col>
+									<ion-col col-12 col-sm-12 col-md-8 col-lg-8>
+										<!-- <h1>Travel Company</h1> -->
+										<h1>{{info.LOC_INST_NAME}}</h1>
+										<ion-icon name="ios-pin-outline"></ion-icon><span style="margin-left: 10px;">{{info.LOC_INST_ADDRESS}}, {{info.LOC_INST_CITY}}</span>
+										<div style="margin-top: 10px;">
+											<ion-icon name="star" style="color: yellow;"></ion-icon>
+											<ion-icon name="star" style="color: yellow;"></ion-icon>
+											<ion-icon name="star" style="color: yellow;"></ion-icon>
+											<ion-icon name="star" style="color: yellow;"></ion-icon>
+											<ion-icon name="star" style="color: yellow;"></ion-icon>
+										</div>
+										<div>
+											<a href="mailto:{{info.LOC_INST_EMAIL}}?Subject=Locate%20IT%20Enquiry">
+												<button ion-button color="primary"> <ion-icon name="ios-mail-outline" style="margin-right: 10px;"></ion-icon> Send Mail</button>
+											</a>
+											<a href="tel:{{info.LOC_INST_CONTACT}}">
+												<button ion-button color="primary" style="margin-left: 20px;"> <ion-icon name="ios-call-outline" style="margin-right: 10px;"></ion-icon> Call</button>
+											</a>
+										</div>
 
-			      	</div>
-			    </ion-col>
-		  	</ion-row>
-		</ion-grid>
-	</div>
-		
+									</ion-col>
+								</ion-row>
+							</ion-grid>
+						</div>
 
-</ion-content>
+						<div class="clickables">
+							<inst-offering></inst-offering>
+						</div>
+						<div class="bodyContentArea">
+							<inst-info *ngIf="this._global.dashboardActiveComponent=='inst-info'"></inst-info>
+							<inst-course *ngIf="this._global.dashboardActiveComponent=='inst-course'"></inst-course>
+							<inst-location *ngIf="this._global.dashboardActiveComponent=='inst-location'"></inst-location>
+							<message *ngIf="this._global.dashboardActiveComponent=='message'"></message>
+						</div>
+
+					</ion-col>
+					<ion-col col-12 col-sm-12 col-md-4 col-lg-4>
+						<div class="blockBackground blockPadding">
+							<div class="subHeading fatbob"> Share this Profile </div>
+							<div class="shareoption">
+								<span>
+									<ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+								</span>
+								<span class="assetFav">
+									<ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+								</span>
+								<span>
+									<ion-icon ios="logo-googleplus" md="logo-googleplus"></ion-icon>
+								</span>
+								<span>
+									<ion-icon ios="ios-share" md="md-share"></ion-icon>
+								</span>
+							</div>
+						</div>
+						<div class="blockBackground blockPadding">
+							<div class="subHeading fatbob"> Recommended </div>
+							<recommended-institute></recommended-institute>
+							<!-- <div class="parentBlock">
+								<ion-row class="individualOffering">
+									<ion-col col-4 class="center">
+										<img src="https://s3-ap-southeast-1.amazonaws.com/tv-prod/member/photo/1953912-medium190ap.jpg"  class="img-thumbnail" alt="Institute Image"/>
+									</ion-col>
+									<ion-col col-8>
+										<div class="subHeading">TechNinzaz</div>
+										<div>
+											<ion-icon name="ios-pin-outline"></ion-icon>
+											<span class="mediumHeading">Banashankari 3rd Stage,Bangalore</span>
+										</div>
+										<div class="smallHeading">10 Reviews</div>
+									</ion-col>
+								</ion-row>
+							</div>
+							<div class="parentBlock">
+								<ion-row class="individualOffering">
+									<ion-col col-4 class="center">
+										<img src="https://s3-ap-southeast-1.amazonaws.com/tv-prod/member/photo/3728986-medium190ap.jpg" class="img-thumbnail" alt="Institute Image"/>
+									</ion-col>
+									<ion-col col-8>
+										<div class="subHeading">PositiveEdge Learning Labs</div>
+										<div>
+											<ion-icon name="ios-pin-outline"></ion-icon>
+											<span class="mediumHeading">J P Nagar, Bangalore</span>
+										</div>
+										<div class="smallHeading">5 Reviews</div>
+									</ion-col>
+								</ion-row>
+							</div>
+							<div class="parentBlock">
+								<ion-row class="individualOffering">
+									<ion-col col-4 class="center">
+										<img src="https://s3-ap-southeast-1.amazonaws.com/tv-prod/member/photo/2607619-medium190ap.jpg" class="img-thumbnail" alt="Institute Image"/>
+									</ion-col>
+									<ion-col col-8>
+										<div class="subHeading">CourseCube Private Limited</div>
+										<div>
+											<ion-icon name="ios-pin-outline"></ion-icon>
+											<span class="mediumHeading">BTM Layout, Bangalore</span>
+										</div>
+										<div class="smallHeading">No Reviews</div>
+									</ion-col>
+								</ion-row>
+							</div> -->
+						</div>
+						<div class="blockBackground blockPadding">
+							<div class="subHeading fatbob"> Similar Profiles </div>
+							<similar-profile></similar-profile>
+						</div>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</div>
+
+
+	</ion-content>

@@ -1,0 +1,38 @@
+recommended-institute {
+.name{
+	font-size:17px;
+	font-weight:bold;
+	
+}
+.img-recommend{
+	background-size: 50% 50% !important;
+	height:70px !important;
+	width:70px !important;
+}
+.addr{
+	padding-top:10px;
+	padding-left:1px;
+	color:#7ba4e5;
+	font-size:15px;
+	font-weight:bold;
+}
+.rev{
+	padding-top:15px;
+	text-align:right;
+	color:red;
+	font-weight:bold;
+}
+/* .bg{
+	background-color:#7e8ef7;
+} */
+
+ion-row:nth-child(odd){
+	background: white;
+}
+ion-row:nth-child(even){
+	background:#7e8ef7;
+}
+.icon-md {
+    font-size: 1.0em !important;
+}
+}

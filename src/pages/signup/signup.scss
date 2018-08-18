@@ -1,50 +1,59 @@
 page-signup {
-	.pageBg{
-		background-image:url('../assets/imgs/Learning.jpg');
-		background-size:100% 100%;
-	}
-	.center{
-		text-align:center;
-	}
-	.formview{
-		width: 40%;
-		margin: 50px auto;
-	}
-	.color{
-		color: darkviolet;
-	}
-	.listbg{
-		background-color: rgba(0, 0, 0, 0.7) !important;	
-		border-radius: 9px;
-	}
-	
-	.item-ios {
-		padding-right: 16px;
-	}
-	.item-md{
-		padding-right: 16px !important;
-	}
+.pageBg{
+background-image:url('../assets/imgs/Learning.jpg');
+background-size:100% 100%;
+}
+.formview{
+width: 40%;
+margin: 100px auto;
+}
+.marginRt{
+margin-right: 15px;
+}
+.marginTp{
+margin-top: 20px;
+}
+.listbg{
+background-color: rgba(0, 0, 0, 0.7) !important;
+border-radius: 5px;
+}
+.transparent{
+background-color: transparent !important;
+color: #FFF;
+}
+.item-md{
+	padding-right: 16px !important;
+}
+.segment-md .segment-button{
+color: #0b2759 !important;
+font-size: 1.6rem !important;
+}
+.segment-md .segment-button.segment-activated{
+	background-color: gainsboro !important;
+}
+form,input,optgroup,select{
+	color:white !important;
+}
+.errorMsg{
+	color:red;
+	padding-left: 15px;
+}
+.ng-valid[required], .ng-valid.required  {
+border-bottom: 2px solid #1d8209; /* green */
+}
 
-	.transparent{
-		background-color: transparent !important;
-		color: #FFF;
-	}
-	.radio{
-		float: left;
-    margin: 15px;
-		color:#FFF;
-	}
-	.marginl{
-		margin-left: 10px;
-	}
+.ng-touched:not(form) {
+	color: #a94442; /* red */
+}
 
-	@media only screen 
-    and (max-device-width: 640px), 
-    only screen and (max-device-width: 667px), 
-    only screen and (max-width: 480px){ 
-    	.formview{
-			width: 90%;
-			margin: 0 auto;
-		}
-    }
+@media only screen
+and (max-device-width: 640px),
+only screen and (max-device-width: 667px),
+only screen and (max-width: 480px){
+.formview{
+width: 90%;
+margin: 0px auto;
+margin-top: 20%;
+}
+}
 }

@@ -1,0 +1,25 @@
+<div class="location-main-container">
+  <ion-item *ngFor="let l of locations; let k=index">
+    <ion-grid>
+        <ion-row>
+              <ion-col col-11>
+                <div class="off-name">{{l.LOC_LOCATION_NAME}}, {{l.LOC_LOCATION_CITY}}, {{l.LOC_LOCATION_PINCODE}}</div>
+                <ion-col col-12 *ngIf="showDesc[k]">
+                    <div (click)="showOfferingInfo(k)">
+                      <div class="smallHeading">Nearby: {{l.LOC_LOCATION_NEARBY}} <span>({{l.LOC_LOCATION_RELEVANCE_NAME}}), </span> </div>
+                    </div>
+                </ion-col>
+              </ion-col>
+              <ion-col col-1 class="delButton buttonstray">
+                <button class="arrow-icon removeGrayBG" *ngIf="!showDesc[k]" (click)="showDescription(k,true)">
+                  <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+                </button>
+
+                <button class="arrow-icon removeGrayBG" *ngIf="showDesc[k]" (click)="showDescription(k,false)">
+                  <ion-icon ios="ios-arrow-up" md="md-arrow-up"></ion-icon>
+                </button>
+              </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-item>
+</div>

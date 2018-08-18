@@ -1,35 +1,24 @@
-<!--
-  Generated template for the SelectLocationPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>select_location_page</ion-title>
-  </ion-navbar>
-
+  <header hideBackButton="true"></header>
 </ion-header>
 
 
-<ion-content padding class="bg">
-<div class="scroll">
-		<ion-card class="middle1" >
-			<ion-card-header>
-				What's your prefered location for training?
-			</ion-card-header>
-			<ion-card-content>
-				<ion-searchbar (ionInput)="getLocation($event)"></ion-searchbar>
-				<ion-list>
-					<ion-item (click)="openSignUp(location)" *ngFor="let location of locations">
-		 				{{ location.location_name }}
-					</ion-item>
-				</ion-list>
-				<div>
-				<button ion-button color="Primary" right>FIND</button>
-			</div>
-			</ion-card-content>
-		</ion-card>
+<ion-content scroll="false">
+	<div class="bg"></div>
+	<div class="info">
+	<div class="logo"></div>
+	<div class="intro">What's your prefered location for training?
 	</div>
+    </div>
+<ion-content>
+<div class="find-location">
+	<ion-searchbar (ionInput)="getLocation($event)"></ion-searchbar>
+	<ion-list>
+		<ion-item (click)="openSignUp(location)" *ngFor="let location of locations">
+			{{ location.LOC_LOCATION_NAME }}
+		</ion-item>
+	</ion-list>
+	<button ion-button color="Primary" (click)="openSignUp('Jello')" right>FIND</button>
+</div>
+</ion-content>
 </ion-content>

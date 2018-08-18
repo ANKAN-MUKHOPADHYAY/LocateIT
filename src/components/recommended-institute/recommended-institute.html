@@ -1,0 +1,16 @@
+<div class="parentBlock" *ngFor="let r of recommended">
+	<ion-row class="individualOffering">
+		<ion-col col-4 class="center selfAlignCenter">
+			<img src="{{r.imgUrl}}"  class="img-recommend" alt="Institute Image"/>
+			<!-- <div [ngStyle]="'background-image': 'url(' + r.imgUrl + ')"></div> -->
+		</ion-col>
+		<ion-col col-8>
+			<div class="subHeading" class="name">{{r.name}}</div>
+			<div>
+				<ion-icon name="ios-pin-outline" class="addr"></ion-icon>
+				<span class="mediumHeading addr">{{r.address}}</span>
+			</div>
+			<div class="smallHeading rev">{{r.reviews}} Reviews</div>
+		</ion-col>
+	</ion-row>
+</div>

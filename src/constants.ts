@@ -11,14 +11,13 @@ const envConstantLocal = {
 }
 
 const envConstantShared = {
-	"serverUrl" : "http://192.168.1.10:7999"
+	"serverUrl" : "http://192.168.1.5:7999"
 }
 
 if(env == "LOCAL")
 	constantJson = envConstantLocal;
 else if(env == "SHARED")
 	constantJson = envConstantShared;
-
 
 
 constantJson = Object.assign(constantJson, genericConstants);

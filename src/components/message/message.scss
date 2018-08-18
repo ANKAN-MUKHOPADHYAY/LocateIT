@@ -1,0 +1,45 @@
+message {
+  .message-main-container{
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px #ccc;
+    background-color: rgba(188, 186, 186, 0.39);
+    padding: 10px;
+    max-height: 380px;
+    overflow-y: scroll;
+  }
+  .message-main-container h6:last-child{
+    margin-bottom: 0px;
+  }
+
+  h6 div{
+    line-height: 1em;
+    padding: 10px 10px;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    opacity: 0.9;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  .institute{
+    background-color: #87CEFA;
+    float: left !important;
+    margin-bottom: 7px;
+    clear: both;
+  }
+  .customer{
+    background-color: #FFF;
+    float: right !important;
+    margin-bottom: 7px;
+    clear: both;
+  }
+  h6{
+    margin: 0px;
+    margin-bottom: 7px;
+  }
+  .item-md{
+      padding-left: 0px;
+  }
+  .list-md .item-block .item-inner{
+    border: 1px solid #dedede;
+  }
+}

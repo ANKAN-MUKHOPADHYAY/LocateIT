@@ -1,0 +1,32 @@
+<div class="course-main-container">
+  <ion-item *ngFor="let c of courses; let k=index">
+    <ion-grid>
+        <ion-row>
+              <ion-col col-1>
+                <img src="{{c.LOC_COURSE_IMAGE}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" style="height: 50px;" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="off-name">{{c.LOC_COURSE_NAME}}</div>
+                <ion-col col-12 *ngIf="showDesc[k]">
+                    <div (click)="showOfferingInfo(k)">
+                      <div class="smallHeading">{{c.LOC_COURSE_CREATED_BY}}</div>
+                    </div>
+                </ion-col>
+              </ion-col>
+              <ion-col col-1 class="delButton buttonstray">
+                <button class="arrow-icon removeGrayBG" *ngIf="!showDesc[k]" (click)="showDescription(k,true)">
+                  <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+                </button>
+
+                <button class="arrow-icon removeGrayBG" *ngIf="showDesc[k]" (click)="showDescription(k,false)">
+                  <ion-icon ios="ios-arrow-up" md="md-arrow-up"></ion-icon>
+                </button>
+              </ion-col>
+
+        </ion-row>
+        <!-- <ion-row *ngIf="showDesc[k]">
+
+        </ion-row> -->
+    </ion-grid>
+  </ion-item>
+</div>

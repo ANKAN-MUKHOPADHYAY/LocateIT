@@ -1,29 +1,122 @@
-<!--
-  Generated template for the SignupPage page.
+<!-- <ion-header>
+	<header hideBackButton="true"></header>
+</ion-header> -->
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-	<ion-navbar>
-		<ion-title>Signup</ion-title>
-	</ion-navbar>
+	<header hideBackButton="true"></header>
 </ion-header>
-
-
 <ion-content padding class="pageBg">
 	<div class="formview">
-		<div class="radio">
-			<span>
-				<input type="radio" name="institute" [(ngModel)]="institute" [value]="true" [checked]="institute">
-				<label>I am an Individual</label>
-			</span>
-			<span>
-				<input type="radio" name="institute" class="marginl" [(ngModel)]="institute" [value]="false" [checked]="!institute">
-				<label>I run an Institute</label>
-			</span>
+		<div class="marginTp" >
+			<ion-segment [(ngModel)]="info">
+				<ion-segment-button value="indiv">
+					I am an Individual
+				</ion-segment-button>
+				<ion-segment-button value="insti">
+					I run an Institute
+				</ion-segment-button>
+			</ion-segment>
 		</div>
-		<form (submit)="doSignupProcess()" *ngIf="institute">
+		<div [ngSwitch]="info">
+			<form (submit)="doSignupProcess()" #signupForm="ngForm">
+				<ion-list class="listbg" *ngSwitchCase="'indiv'">
+					<ion-item class="transparent">
+						<ion-label floating>First Name</ion-label>
+						<ion-input type="text" [(ngModel)]="userinfo.u_fname" minlength="5" maxlength="30" name="fname" id="name" #name="ngModel" required></ion-input>
+					</ion-item>
+					<div *ngIf="name.errors && (name.dirty || name.touched)">
+						<div [hidden]="!name.errors.required">
+							<span class="errorMsg">User Name is required!</span>
+						</div>
+						<div [hidden]="!name.errors.minlength">
+                        <span class="errorMsg">UserName  must be at least 5 characters long.</span>
+                       </div>
+                       <div [hidden]="!name.errors.maxlength">
+                       <span class="errorMsg">UserName cannot be more than 30 characters long.</span>
+                       </div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Last Name</ion-label>
+						<ion-input type="text" name="lname" [(ngModel)]="userinfo.u_lname" id="lastName" #lastName="ngModel" required></ion-input>
+					</ion-item>
+					<div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+						<div [hidden]="!lastName.errors.required">
+							<span class="errorMsg">user lastname is required!</span>
+						</div>
+					</div>
+					<ion-item  class="transparent">
+						<ion-label floating>Phone Number</ion-label>
+						<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="userinfo.u_mobile" id="number" #number="ngModel" required></ion-input>
+					</ion-item>
+					<div *ngIf="number.errors && (number.dirty || number.touched)">
+						<div [hidden]="!number.errors.required">
+							<span class="errorMsg">Phone Number is required!</span>
+						</div>
+					</div>
+					<ion-item  class="transparent">
+						<ion-label floating>Alternative Number</ion-label>
+						<ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="userinfo.u_altmobile"></ion-input>
+					</ion-item>
+					<ion-item class="transparent">
+						<ion-label floating>Email-id</ion-label>
+						<ion-input type="text" name="email" [(ngModel)]="userinfo.u_email" id="email" #email="ngModel" required></ion-input>
+					</ion-item>
+					<div *ngIf="email.errors && (email.dirty || email.touched)">
+						<div [hidden]="!email.errors.required">
+							<span class="errorMsg">Email is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Password</ion-label>
+						<ion-input type="password" name="password" [(ngModel)]="userinfo.u_password" id="password" #password="ngModel" minlength="5" maxlength="30" ></ion-input>
+					</ion-item>
+					<div *ngIf="password.errors && (password.dirty || password.touched)">
+                <div [hidden]="!password.errors.minlength">
+                  <span class="errorMsg">Password must be at least 5 characters long.</span>
+                </div>
+                <div [hidden]="!password.errors.maxlength">
+                 	<span class="errorMsg">Password cannot be more than 30 characters long.</span>
+                </div>
+                <!-- <div [hidden]="!password.errors.pattern">
+                  <span class="errorMsg">Must contain at least one number, uppercase, lowercase letter & at least 8 or more characters</span>
+                </div> -->
+					</div>
+					<div style="padding-top: 20px;" class="center">
+						<button ion-button secondary [disabled]="!signupForm.form.valid">Sign Up</button><br><br>
+					</div>
+					<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
+						<span> Already a Member? <a (click)="gotoLogin()">Login </a></span>
+					</div>
+				</ion-list>
+			</form>
+			<form (submit)="doSignupProcessInstitute()">
+				<ion-list class="listbg" *ngSwitchCase="'insti'">
+					<ion-item class="transparent">
+						<ion-input type="text" name="Iname" [(ngModel)]="userinfo.u_Iname"></ion-input>
+						<ion-label floating>Institute Name</ion-label>
+					</ion-item>
+					<ion-item  class="transparent">
+						<ion-label floating>Phone Number</ion-label>
+						<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="userinfo.u_mobile"></ion-input>
+					</ion-item>
+					<ion-item  class="transparent">
+						<ion-label floating>Alternative Number</ion-label>
+						<ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="userinfo.u_altmobile"></ion-input>
+					</ion-item>
+					<ion-item class="transparent">
+						<ion-label floating>Email-id</ion-label>
+						<ion-input type="text" name="email" [(ngModel)]="userinfo.u_email"></ion-input>
+					</ion-item>
+					<div style="padding-top: 20px;" class="center">
+						<button ion-button secondary>Register</button><br><br>
+					</div>
+					<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
+						<span> Already a Member? <a (click)="gotoLogin()">Login</a></span>
+					</div>
+				</ion-list>
+			</form>
+		</div>
+		<!-- <form (submit)="doSignupProcess()" *ngIf="institute">
 			<ion-list class="listbg">
 				<ion-item class="transparent">
 					<ion-label floating>First Name</ion-label>
@@ -34,10 +127,6 @@
 					<ion-label floating>Last Name</ion-label>
 					<ion-input type="text" name="lname" [(ngModel)]="userinfo.u_lname"></ion-input>
 				</ion-item>
-				<!-- <ion-item class="transparent" *ngIf="!institute">
-					<ion-input type="text" name="Iname" [(ngModel)]="userinfo.u_Iname"></ion-input>
-					<ion-label floating>Institute Name</ion-label>
-				</ion-item> -->
 
 				<ion-item  class="transparent">
 					<ion-label floating>Phone Number</ion-label>
@@ -95,6 +184,6 @@
 					<span> Already a Member? <a (click)="gotoLogin()">Login </a></span>
 				</div>
 			</ion-list>
-		</form>
+		</form> -->
 	</div>
 </ion-content>

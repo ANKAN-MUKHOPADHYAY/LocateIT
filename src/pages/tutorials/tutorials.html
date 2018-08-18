@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <div>
+        <button ion-button clear style="float: right;" (click)="gotoWelcome()">SKIP</button>
+    </div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-slides pager>
+
+  <ion-slide class="tutorial">
+    <div class="center">
+      <img src="https://hjnilsson.com/apps/conf/img/ica-slidebox-img-1.png"  />
+      <h2>Welcome to the Locate IT Application</h2>
+      <p><b>Locate IT </b>is a fully-featured application to search differnt type of Learning requirement anywhere in <b>India</b>.</p>
+    </div>
+
+  </ion-slide>
+
+  <ion-slide class="tutorial">
+   <img src="https://hjnilsson.com/apps/conf/img/ica-slidebox-img-2.png"  />
+   <h2>How to use the Super Starter</h2>
+      <p>Assemble the various page types you want and remove the ones you don't. We've provided many common mobile app page layouts, like login and signup pages, tabs, and this tutorial page.</p>
+  </ion-slide>
+
+  <ion-slide class="tutorial">
+    <img src="https://hjnilsson.com/apps/conf/img/ica-slidebox-img-3.png"  />
+     <h2>Getting Started</h2>
+      <p>Need help? Check out the Super Starter README for a full tutorial</p>
+  </ion-slide>
+
+  <ion-slide class="tutorial">
+    <img src="https://hjnilsson.com/apps/conf/img/ica-slidebox-img-4.png"  />
+     <h2>Ready to Play?</h2>
+     <button ion-button clear (click)="Welcome()">CONTINUE
+       <ion-icon name="arrow-forward" style="padding-left: 10px;"></ion-icon>
+     </button>
+  </ion-slide>
+
+</ion-slides>
+</ion-content>

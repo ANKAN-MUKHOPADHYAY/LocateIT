@@ -1,0 +1,45 @@
+<!--
+  Generated template for the EnquiryhistoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <header hideBackButton="true"></header>
+</ion-header>
+
+
+<ion-content class="tutorial" padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-12 col-md-4 col-lg-3  *ngFor="let sample of userPreviousEnquiry" >
+				<ion-card (click)="gotoMain(sample.enquiry_id)">
+					<div class="splash-logo">
+							<img class="imgCourses" src="{{sample.LOC_COURSE_IMAGE}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+					</div>
+					<ion-card-content  class="blockBackground">
+						<h2 class="center b"> {{sample.LOC_COURSE_NAME}} </h2>
+						<ion-row>
+							<ion-col class="center" col-6 col-md-6 col-lg-6>
+								{{sample.LOC_LOCATION_CITY}} Enquiry
+							</ion-col>
+							<ion-col class="center" col-6 col-md-6 col-lg-6>
+								{{sample.LOC_LOCATION_NAME}}
+							</ion-col>
+						</ion-row>
+						<ion-row class="innerBG" style="padding: 5px;">
+							<ion-col class="center" col-6 col-md-6 col-lg-6>
+								<ion-icon name="notifications"></ion-icon>
+								<!-- <span>{{sample.institute_count}} Offering</span> -->
+							</ion-col>
+							<ion-col class="center" col-6 col-md-6 col-lg-6>
+								{{sample.datetime | date}}
+							</ion-col>
+						</ion-row>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

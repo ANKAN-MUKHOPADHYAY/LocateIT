@@ -1,0 +1,154 @@
+inst-offering {
+  /* Hide ion-content scrollbar */
+  ::-webkit-scrollbar{
+    display:none;
+  }
+  .progress-bar {
+
+    .progress-outer {
+        width: 96%;
+        margin: 10px ;
+        background-color: map-get($colors, primary);
+    }
+
+    .progress-inner {
+        width: 15%;
+        padding: 1px;
+        border-radius: px;
+        background-color:white;
+    }
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+    dashboard-menu {
+    .nav-container{ width:12%; height: 664px; z-index: 10;  position: fixed; left: 10px; overflow-y:scroll; margin-left: -10px; }
+    ion-scroll[scrollX] {
+      white-space:unset;
+      height: auto;
+
+    }
+
+    dashboard-menu .nav-container{height: 664px;}
+    .nav-container .scroll-zoom-wrapper{width:100% !important;}
+    .nav-container .scroll-zoom-wrapper .card{width:100% !important; height:90px; float: left; margin-bottom: 5px; opacity: 0.6;}
+    .nav-container .scroll-content{height: 664px; overflow-y:scroll; padding: 0px !important}
+
+    .news-container {float: right;}
+    .pageHeading {float: right;}
+
+    .bodyContentArea {width: 82%; float: right; border:1px solid #000; height: 690px; overflow: visible;}
+    }
+
+  }
+
+  @media screen and (min-width: 1112px) {
+
+    dashboard-menu {
+
+      .nav-container{ width:12%; height: 736px;}
+      .nav-container .scroll-content{height: 736px;}
+      .nav-container .scroll-zoom-wrapper .card{height:101px;}
+
+    }
+
+  }
+
+
+  $iconSource: '../assets/imgs/';         // defined universal source archive for icons
+
+
+  $news:'news.png';
+  $navigate:'navigate.png';
+  $profiles:'filter.png';
+  $bookmarks:'bookmark.png';
+  $message:'favorite.png';
+  $downloads:'download.png';
+  $rateAssets:'rate-assets.png';
+
+
+  $newsBrandColor: #4298D5;
+  $navigateBrandColor:#f28b22;
+  $profilesBrandColor:#027395;
+  $bookmarksBrandColor:#a62743;
+  $messageBrandColor:#374957;
+  $downloadsBrandColor:#3a923f;
+  $rateAssetsBrandColor:#bb1818;
+
+
+
+  @mixin cardStyling($imageName,$bgColor){
+    background-image: url(''+$iconSource+$imageName+'');
+    background-color:$bgColor;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    background-size:auto 35px;
+    padding-top:60px !important;
+    margin: 0px;
+    margin-right: 5px;
+    width: 150px;
+    height: 90px;
+    box-shadow: none;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 1
+  }
+
+  .news{@include cardStyling($news, $newsBrandColor)}
+  .navigate{@include cardStyling($navigate, $navigateBrandColor)}
+  .profiles{@include cardStyling($profiles, $profilesBrandColor)}
+  .bookmarks{@include cardStyling($bookmarks, $bookmarksBrandColor)}
+  .message{@include cardStyling($message, $messageBrandColor)}
+  .downloads{@include cardStyling($downloads, $downloadsBrandColor)}
+  .rateAssets{@include cardStyling($rateAssets, $rateAssetsBrandColor)}
+
+  news .pageHeading{color: $newsBrandColor;}
+  filters .pageHeading{color:#333;}//$navigateBrandColor;}
+  profiles .pageHeading{color:#333;}//$profilesBrandColor;}
+  bookmarks .pageHeading{color:#333;}//$bookmarksBrandColor;}
+  favorites .pageHeading{color:#333;}//$favoritesBrandColor;}
+  offline .pageHeading{color:#333;}//$downloadsBrandColor;}
+  rateassets .pageHeading{color:#333;}//$rateAssetsBrandColor;}
+
+
+ion-scroll[scrollX] {
+    white-space: nowrap;
+    height: 115px !important;
+  }
+  ion-card {
+    display: inline-block;
+  }
+  .card-subtitle{
+    font-size: 14px;
+    text-transform: uppercase;
+    text-overflow: inherit;
+  }
+  .box{
+    border: 1;
+    height: 90px;
+    width : 90px;
+  }
+
+
+  .profile-item         // Profile Page Related Class
+  {
+      border-bottom: 1px solid #c8c7cc !important;
+      padding:0;
+  }
+
+.bookmark-item{
+    border-bottom: 1px solid $bookmarksBrandColor !important;
+    padding-left: 0px;
+ }
+
+ .fav-item{
+  border-bottom: 1px solid $messageBrandColor !important;
+  padding-left: 0px;
+}
+
+.news-asset-item{
+  border-bottom:1px solid $newsBrandColor !important;
+}

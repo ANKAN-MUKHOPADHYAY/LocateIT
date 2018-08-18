@@ -1,34 +1,54 @@
-<!--
-  Generated template for the MainPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>main</ion-title>
-  </ion-navbar>
-
+  <header hideBackButton="true"></header>
 </ion-header>
 
 
-<ion-content padding >
-	<ion-grid>
+<ion-content padding class="innerBG">
+	<!-- <ion-grid>
 	  	<ion-row>
-	    	<ion-col (click)="gotoInstituteLanding(institute)" col-12 col-md-3 col-lg-3  *ngFor="let institute of offeredInstitutes">
+	    	<ion-col (click)="gotoInstituteLanding(institute)" col-12 col-md-3 col-lg-2  *ngFor="let institute of offeredInstitutes">
 	    		<ion-card>
-				  	<img style="height:150px" src="{{institute.inst_images}}" onerror="this.onerror=null;this.src='http://192.168.1.10:8100/assets/imgs/error.jpg';" />
-				  	<ion-card-content>
+				  	<img style="height:150px;padding: 10px;" src="{{institute.inst_images}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+				  	<ion-card-content  class="blockBackground">
 				    	<ion-card-title>
-				      	{{institute.inst_name}}
+				      		{{institute.inst_name}}
 				      	</ion-card-title>
 				    	<p>
 				    		{{institute.inst_address}}, {{institute.inst_city}}
 				    	</p>
+     					<div *ngIf="institute.inst_message" class="notification">
+          					<ion-icon name="mail-open" class="notification"></ion-icon>
+      					</div>
 				  	</ion-card-content>
 				</ion-card>
 	    	</ion-col>
 	  	</ion-row>
+	</ion-grid> -->
+
+  <ion-grid>
+		<ion-row>
+			<ion-col col-12 col-md-4 col-lg-4 (click)="gotoInstituteLanding(institute)"  *ngFor="let institute of offeredInstitutes">
+				<ion-card>
+          <ion-row>
+            <ion-col class="center" style="padding: 0px;" col-2 col-md-2 col-lg-2>
+      					<div class="splash-logo">
+      							<img class="imgCourses" src="{{institute.LOC_INST_IMG}}" onerror="this.onerror=null;this.src='assets/imgs/error.jpg';" />
+      					</div>
+            </ion-col>
+            <ion-col class="rightBlock" col-10 col-md-10 col-lg-10>
+      					<ion-card-content  class="blockBackground righInnerElement">
+      						<h2 class="b"> {{institute.LOC_INST_NAME}} </h2>
+      						<ion-row>
+      							{{institute.LOC_INST_ADDRESS}}, {{institute.LOC_INST_CITY}}
+      						</ion-row>
+      						<div *ngIf="institute.inst_message" class="notification">
+                		<ion-icon name="mail-open" class="notification"></ion-icon>
+            			</div>
+      					</ion-card-content>
+            </ion-col>
+          </ion-row>
+         </ion-card>
+       </ion-col>
+		</ion-row>
 	</ion-grid>
 </ion-content>

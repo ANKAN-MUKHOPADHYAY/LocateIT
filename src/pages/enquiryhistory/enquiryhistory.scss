@@ -1,0 +1,30 @@
+page-enquiryhistory {
+	.splash-logo {
+	    margin: auto;
+	    position: relative;
+	    background-size: 100%;
+	    width: 135px;
+    	height: 125px;
+	}
+	.card{
+		background-color:transparent;
+		-webkit-box-shadow : none;
+		box-shadow: none;
+	}
+	.imgCourses{
+			position: absolute;
+			margin-top: 40px;
+			height: 130px;
+    	border-radius: 15px;
+	}
+	 .b{
+		font-weight:bold;
+		padding-top:10px;
+	}
+	.card-content-md,.card-content-ios{
+		 padding: 50px 10px 13px 10px;
+	}
+	.card-ios,.card{
+		margin-top: -35px;
+	}
+}

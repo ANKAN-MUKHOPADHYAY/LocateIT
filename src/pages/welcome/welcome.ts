@@ -3,12 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 /*import { AlertController } from 'ionic-angular';*/
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
-/**
- * Generated class for the WelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,9 +13,11 @@ export class WelcomePage {
   currentItems: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider) {
+    console.log(this.navCtrl);
   }
 
   getCourses(ev) {
+      console.log(ev);
       let val = ev.target.value;
       if (!val || !val.trim()) {
         this.currentItems = [];
@@ -34,16 +30,9 @@ export class WelcomePage {
         }
       });
   }
-
-  gotoLogin(){
-  	this.navCtrl.push('LoginPage');
-  }
-  gotoSignup(){
-  	this.navCtrl.push('SignupPage');
-  }
-  /*locationSearch(){
+  locationSearch(){
     this.navCtrl.push('SelectLocationPage');
-  }*/
+  }
   openItem(item) {
     this.navCtrl.push('SelectLocationPage', {
       selectedCourse : item

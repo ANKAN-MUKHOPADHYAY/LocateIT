@@ -1,9 +1,32 @@
 page-institute-landing {
+
+	/*  CSS for Tabs 	*/
+	.bodyContentArea .scroll-content{padding: 0px !important; margin-top: 0px;}
+  .bodyContentArea .scroll-content .news-main-container{padding-left: 0px;}
+  .nav-container .scroll-content { margin:0px;padding:0px !important}
+  .content-ios>.scroll-content>.content-ios>.scroll-content { margin:0px;padding:15px 0px !important}
+  .nav-container .scroll-content .card-ios .content-ios, .nav-container .scroll-content .card-md .content-md{
+		background: none;
+		text-align: center;
+		color: white;
+	}
+	.selected-nav{
+		border: solid 2px #FFF;
+		box-shadow: 0 0 20px #000000 !important;
+		opacity: 1 !important;
+		scroll-snap-destination: 50%;
+		width: 150px;
+		height: 100px;
+		margin-bottom:-5px;
+	}
+	/* Ends Here */
+
+
 	.institute-bg {
 	    position: relative;
 	    background: url('../assets/img/header-background.jpg') no-repeat transparent;
 	    background-size: cover;
-	    height: 35%;
+	    height: 30%;
 	    z-index: 1;
 	    background-repeat: repeat-x;
 	    animation: animatedBackground 40s linear infinite;
@@ -15,15 +38,40 @@ page-institute-landing {
 	.institute-info {
 	    position: relative;
 	    z-index: 2;
-	    margin-top: -64px;
+	    margin-top: -200px;
+			padding: 30px;
+			text-align: justify;
 	}
 	.logoSize{
 		height:150px;
 		border-radius: 50px;
 	}
-	.institute-details{
+	.clickables{
+		margin: 10px 0px;
+	}
+
+	.blockSpacing{
+		margin-bottom: 10px;
 		border-radius: 5px;
-	    box-shadow: 0px 2px 2px 1px mediumslateblue;
-	    background-color: rgba(188, 186, 186, 0.94117647);
+	}
+
+	.blockBackground > div > span {
+		margin-right: 20px;
+	}
+	.blockBackground > div > span > .icon-md{
+		color: grey;
+	}
+	.shareoption{
+		margin-top: 20px;
+	}
+
+	@media screen and (max-width: 760px) {
+		.instituteInfo {
+		    text-align: center;
+		}
+		.institute-info{
+			padding: 0px;
+		}
+
 	}
 }
