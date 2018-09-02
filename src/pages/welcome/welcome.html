@@ -14,10 +14,16 @@
   <ion-content>
     <div class="find-course">
       <ion-searchbar (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
-      <ion-list>
+      <ion-list inset>
+          <ion-item>
+              
         <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+            <ion-avatar item-start>
+                <img src="item.LOC_COURSE_IMAGE">
+              </ion-avatar>
           <h2>{{item.LOC_COURSE_NAME}}</h2>
         </button>
+        </ion-item>
       </ion-list>
       <button ion-button (click)="locationSearch()">FIND</button>
     </div>
