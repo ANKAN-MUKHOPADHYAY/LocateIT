@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 /**
  * Generated class for the SelectLocationPage page.
@@ -14,11 +14,19 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'select-location.html',
 })
 export class SelectLocationPage {
+  @ViewChild('search') searchBar: Searchbar;
+
   locations: any;
   userdetail:{u_id : string, u_cid : string, u_lid : string} ={u_id : '', u_cid : '', u_lid : ''};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider) {
     console.log(this.navParams);
+  }
+
+  focusme(){ 
+    setTimeout(()=>{
+      this.searchBar.setFocus();
+    }, 1000);
   }
 
   getLocation(loc){
@@ -30,6 +38,7 @@ export class SelectLocationPage {
       this.restService.get('/search/searchlocations/'+val).then(data => {
         if(data.status){
           this.locations = data.response;
+          this.focusme();
           console.log(this.locations);
         }
       });
