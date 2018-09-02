@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the FooterComponent component.
@@ -14,7 +15,7 @@ export class FooterComponent {
 
   text: string;
 
-  constructor() {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {
     console.log('Hello FooterComponent Component');
     this.text = 'Hello World';
   }
