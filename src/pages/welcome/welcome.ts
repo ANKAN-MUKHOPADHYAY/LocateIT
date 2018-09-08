@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 /*import { AlertController } from 'ionic-angular';*/
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
@@ -9,11 +9,19 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   selector: 'page-welcome',
   templateUrl: 'welcome.html',
 })
+
 export class WelcomePage {
   currentItems: any;
+  @ViewChild('si') searchBar: Searchbar;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider) {
     console.log(this.navCtrl);
+  }
+
+  focusme(){ 
+    setTimeout(()=>{
+      this.searchBar.setFocus();
+    }, 2000);
   }
 
   getCourses(ev) {
@@ -26,6 +34,7 @@ export class WelcomePage {
       this.restService.get('/search/searchcourses/'+val).then(data => {
         if(data.status){
           this.currentItems = data.response;
+          this.focusme();
           console.log(this.currentItems);
         }
       });
