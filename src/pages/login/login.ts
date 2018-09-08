@@ -35,7 +35,8 @@ export class LoginPage {
 
 
 	gotoSignup(){
-		this.navCtrl.push('SignupPage');
+		//this.navCtrl.push('SignupPage');
+		this.navCtrl.push('OptionSignupPage');
 	}
 
   	dologinProcess(data){
