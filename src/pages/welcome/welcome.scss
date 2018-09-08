@@ -40,9 +40,6 @@ page-welcome {
 	    margin: auto;
 	    text-align: center;
 	}
-	.scroll-content {
-	    overflow-y: hidden !important;
-	}
 	.find-button{
 	    font-size: 18px;
 	    font-weight: bold;
@@ -71,5 +68,8 @@ page-welcome {
 	
 	.searchbackground{
 		background-image: url("http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Background-Images.jpg"); 
+	}
+	.footer{
+		background: #cacaca;
 	}
 }

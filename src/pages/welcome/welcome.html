@@ -11,7 +11,7 @@
       Find best Tutors & institutes Near You
     </div>
   </div>
-  <ion-content>
+  <div>
     <div class="find-course">
       <ion-searchbar #si (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French" class="nopad">java</ion-searchbar>
         <ion-list>
@@ -26,10 +26,10 @@
       </ion-list>
       <button ion-button (click)="locationSearch()">FIND</button>
     </div>
-  </ion-content>
+  </div>
+  <div class="footer">
+    <in-news></in-news>
+    <footer></footer>
+  </div>
 </ion-content>
 
-<ion-footer>
-  <in-news></in-news>
-  <footer></footer>
-</ion-footer>
