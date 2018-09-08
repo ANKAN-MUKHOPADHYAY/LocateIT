@@ -13,11 +13,16 @@
   </div>
   <ion-content>
     <div class="find-course">
-      <ion-searchbar #si (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French"></ion-searchbar>
-      <ion-list>
-        <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
-          <h2>{{item.LOC_COURSE_NAME}}</h2>
-        </button>
+      <ion-searchbar #si (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French" class="nopad">java</ion-searchbar>
+        <ion-list>
+          <ion-item  class="searchbackground">
+            <button class="seperator" ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+              <ion-avatar item-start>
+                <img [src]="item.LOC_COURSE_IMAGE">
+              </ion-avatar>
+              <h4>{{item.LOC_COURSE_NAME}}</h4>
+            </button>
+        </ion-item>
       </ion-list>
       <button ion-button (click)="locationSearch()">FIND</button>
     </div>
