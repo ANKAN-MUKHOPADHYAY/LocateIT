@@ -2,10 +2,13 @@ page-login{
 	.transparent{
 		background-color:transparent !important;
 		color: #FFF;
+	
 	}
 
 	.center{
 		text-align:center;
+
+	
 	}
 	.item-ios {
 		padding-right: 16px;
@@ -16,16 +19,50 @@ page-login{
 	.formView{
 		margin: 0px auto;
 		width: 40%;
-		margin-top: 15%;
+		margin-top: 5%;
 		background-color:transparent !important;
 	}
-	.listbg{
+	.listbg {
 		background-color: rgba(0, 0, 0, 0.7) !important;
-		border-radius: 9px;
+		border-radius: 10px;
+		font-style:initial;
+		margin: 10px;
+	}
+	.listbg h1{
+		background-color: aqua;
+		padding: 20px;
+		font-style: initial;
+		border-radius: 10px;
+		text-align: center;
+		font-size: 20px;
+	}
+	.textAlignCen{
+		text-align: center;
+	}
+	.ab{
+		text-align: center;
+		font-size: 30px;
+		font-style: italic;
+		padding: -25px;
+		
+	}
+		.line {
+			display: inline-block;
+			border-bottom: 1px solid #7B7B7B;
+			width: 150px;
+			vertical-align: middle;
+		}
+	.facebookLogin{
+		height:80px;
+		width: 60%;
+	}
+	.facebook{
+		text-align: center;
+		
 	}
 
 	.bg{
-		background-image:url(../assets/imgs/learning.jpg);
+		background-image:url(../assets/imgs/login1.jpg);
 		background-size: 100% 100%;
 	}
 	.ng-valid[required], .ng-valid.required  {
@@ -37,6 +74,9 @@ page-login{
 	}
 	.ng-invalid:not(form){
 		border-bottom-color: red;
+	}
+	.OR{
+		font-size: 55px;
 	}
 	.errorMsg{
 		color:red;
