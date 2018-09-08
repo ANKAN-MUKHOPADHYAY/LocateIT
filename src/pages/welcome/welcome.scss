@@ -60,4 +60,16 @@ page-welcome {
 	      background-color: rgb(220, 220, 220);
 	    }
 	}
+	.seperator{
+		border-bottom: 1px solid #cacaca;
+	}
+
+	.nopad{
+		padding: 0;
+		border: inset red 4px;
+	}
+	
+	.searchbackground{
+		background-image: url("http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Background-Images.jpg"); 
+	}
 }
