@@ -1,3 +1,9 @@
-footer {
-
+ion-col>a{
+    color: #111 !important;
+}
+a:hover{
+    cursor: pointer !important;
+}
+ion-col>a:hover{
+    color: #488aff !important;
 }
