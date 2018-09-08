@@ -2,6 +2,7 @@ page-login{
 	.transparent{
 		background-color:transparent !important;
 		color: #FFF;
+	
 	}
 
 	.center{
@@ -18,18 +19,18 @@ page-login{
 	.formView{
 		margin: 0px auto;
 		width: 40%;
-		margin-top: 15%;
+		margin-top: 5%;
 		background-color:transparent !important;
 	}
 	.listbg {
 		background-color: rgba(0, 0, 0, 0.7) !important;
-		border-radius: 9px;
+		border-radius: 10px;
 		font-style:initial;
-		margin: 20px;
+		margin: 10px;
 	}
 	.listbg h1{
 		background-color: aqua;
-		padding: 10px;
+		padding: 20px;
 		font-style: initial;
 		border-radius: 10px;
 		text-align: center;
@@ -42,6 +43,7 @@ page-login{
 		text-align: center;
 		font-size: 30px;
 		font-style: italic;
+		padding: -25px;
 		
 	}
 		.line {
@@ -72,6 +74,9 @@ page-login{
 	}
 	.ng-invalid:not(form){
 		border-bottom-color: red;
+	}
+	.OR{
+		font-size: 55px;
 	}
 	.errorMsg{
 		color:red;
