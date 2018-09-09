@@ -10,7 +10,7 @@
 	<div class="intro">What's your prefered location for training?
 	</div>
     </div>
-<ion-content>
+<div>
 <div class="find-location">
 	<ion-searchbar #search (ionInput)="getLocation($event)"></ion-searchbar>
 	<ion-list>
@@ -20,5 +20,10 @@
 	</ion-list>
 	<button ion-button color="Primary" (click)="openSignUp('Jello')" right>FIND</button>
 </div>
-</ion-content>
+</div>
+<div class="footer">
+    <in-news></in-news>
+    <footer></footer>
+  </div>
+
 </ion-content>
