@@ -11,6 +11,7 @@ import { HeaderModule } from '../../components/header/header.module';
   imports: [
     IonicPageModule.forChild(UseraccountPage),
     HeaderModule,
+
   ],
 })
 export class UseraccountPageModule {}
