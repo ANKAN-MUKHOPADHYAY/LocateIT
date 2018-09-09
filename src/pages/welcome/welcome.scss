@@ -40,9 +40,6 @@ page-welcome {
 	    margin: auto;
 	    text-align: center;
 	}
-	.scroll-content {
-	    overflow-y: hidden !important;
-	}
 	.find-button{
 	    font-size: 18px;
 	    font-weight: bold;
@@ -64,12 +61,21 @@ page-welcome {
 		border-bottom: 1px solid #cacaca;
 	}
 
+	.footer{
+		background: #cacaca;
+	}
 	.nopad{
 		padding: 0;
-		border: inset red 4px;
+		box-shadow: 5px 5px 5px 5px;
+		border-radius: 5%; 
 	}
 	
-	.searchbackground{
-		background-image: url("http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Background-Images.jpg"); 
+	// .searchbackground{
+	// 	background-image: url("http://informationcommunicationtechnology.com/wp-content/uploads/2018/06/Background-Images.jpg"); 
+	// }
+	.footer{
+		background: #f0f0f0de;
+		margin-top: 45px;
+		padding: 30px;
 	}
 }
