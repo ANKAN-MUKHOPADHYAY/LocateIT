@@ -1,16 +1,16 @@
-<div class="parentBlock" *ngFor="let r of recommended">
+<div class="parentBlock" *ngFor="let r of recommendedInstitutes">
 	<ion-row class="individualOffering">
 		<ion-col col-4 class="center selfAlignCenter">
-			<img src="{{r.imgUrl}}"  class="img-recommend" alt="Institute Image"/>
+			<img src="{{r.LOC_INST_IMG}}"  class="img-recommend" alt="Institute Image"/>
 			<!-- <div [ngStyle]="'background-image': 'url(' + r.imgUrl + ')"></div> -->
 		</ion-col>
 		<ion-col col-8>
-			<div class="subHeading" class="name">{{r.name}}</div>
+			<div class="subHeading" class="name">{{r.LOC_INST_NAME}}</div>
 			<div>
 				<ion-icon name="ios-pin-outline" class="addr"></ion-icon>
-				<span class="mediumHeading addr">{{r.address}}</span>
+				<span class="mediumHeading addr">{{r.LOC_INST_ADDRESS}}</span>
 			</div>
-			<div class="smallHeading rev">{{r.reviews}} Reviews</div>
+			<div class="smallHeading rev">30 Reviews</div>
 		</ion-col>
 	</ion-row>
 </div>
