@@ -3,10 +3,11 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+
 import { TutorialsPage  } from '../pages/tutorials/tutorials';
-//import { SelectLocationPage } from '../pages/select-location/select-location';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { EnquiryhistoryPage } from '../pages/enquiryhistory/enquiryhistory';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,11 +22,13 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'About Us', component: TutorialsPage },
-    ];
+     this.pages = [
+        { title: 'About Us', component: '' },
+        { title: 'Create New Enquiry', component: WelcomePage },
+        { title: 'Edit Profile', component: ProfilePage },
+        { title: 'Enquiry Page', component: EnquiryhistoryPage },
+        
+     ];
   }
 
   initializeApp() {
