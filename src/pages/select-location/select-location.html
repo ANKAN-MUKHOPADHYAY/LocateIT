@@ -12,7 +12,7 @@
     </div>
 <div>
 <div class="find-location">
-	<ion-searchbar #search (ionInput)="getLocation($event)"></ion-searchbar>
+	<ion-searchbar #search (ionInput)="getLocation($event)" class="nopad" ></ion-searchbar>
 	<ion-list>
 		<ion-item (click)="openSignUp(location)" *ngFor="let location of locations">
 			{{ location.LOC_LOCATION_NAME }}

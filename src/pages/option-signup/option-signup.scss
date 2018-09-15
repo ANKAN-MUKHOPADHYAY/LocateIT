@@ -26,6 +26,7 @@ page-option-signup {
 		background-color:transparent !important;
     }
     .header-back{
+<<<<<<< HEAD
         background-color: aqua;
         text-align: center;
         padding: 20px;
@@ -45,5 +46,95 @@ page-option-signup {
     }
     .stud{
        text-align: center;
+=======
+        background-color: #00CED1;
+        width: 1020px;
+        text-align: centre;
+        height: 50px;
+        //margin-left: 20%;
+        font-size: 40px;
+    }
+
+
+    .classes-left{
+        width: 300px;
+        background-color: blue;
+        color: black;
+        font-weight: 30px;
+        display: inline-block;
+        //margin-left: 20%;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .classes-middle{
+        width: 300px;
+        background-color: blue;
+        color: white;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 1.5%;
+        text-align: center;
+    }
+    
+    .classes-right{
+        width: 300px;
+        background-color: blue;
+        color: white;
+        //margin-right: 12%;
+        float: right;
+        text-align: center;
+    }
+    
+    .class-name-left{
+        font-size: 30px;
+        font-weight: 10px;
+        background-color: lightblue;
+        color: #2F4F4F;
+        font-weight: bold;
+    }
+    
+    .class-name-right{
+        font-size: 30px;
+        font-weight: 10px;
+        background-color: gold;
+        color: #2F4F4F;
+        font-weight: bold;
+    }
+    
+    .class-name-middle{
+        font-size: 30px;
+        font-weight: 10px;
+        background-color: #B2F729;
+        color: #2F4F4F;
+        font-weight: bold;
+    }
+
+    .options-background{
+       background-image: url("http://orlandocatholicschools.org/wp-content/uploads/2017/04/Teacher-Collage.jpg");
+       background-repeat: no-repeat;
+       background-size: 100%; 
+    }
+
+    .intersection{
+        display: inline-block;
+        vertical-align: top;
+       
+    }
+
+    .borderline{
+        background-color: black;
+        // position: absolute;
+         width:2px;
+         height:70px;
+         border-radius: 50%;
+         margin-left: 20px;  
+    }
+    
+    .options-pos{
+        width: 1020px;
+        background-color:white;
+        margin-left: 20%;
+>>>>>>> ca3dbb52ddf2adfac95d9ff51a07f10bc6a9e590
     }
 }

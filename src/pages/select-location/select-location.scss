@@ -19,7 +19,8 @@ page-select-location {
 	    font-weight: bold;
 	    width: 80%;
 	    margin: auto;
-	    text-align: center;
+		text-align: center;
+		margin-top: 15px;
 	}
 	.bg {
 	    position: relative;
@@ -51,5 +52,10 @@ page-select-location {
 	    font-weight: bold;
 	    max-width: 80%;
 	    margin: auto;
+	}
+	.nopad{
+		padding: 0;
+		box-shadow: 0px 1px 5px 5px lightgrey;
+		border-radius: 5%; 
 	}
 }
