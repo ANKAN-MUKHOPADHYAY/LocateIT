@@ -21,5 +21,12 @@ export class OptionSignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad OptionSignupPage');
   }
-
+    
+   SignupPage(){
+     this.navCtrl.push('SignupPage');
+   }
+  // gotoSignup(){
+	// 	this.navCtrl.push('SignupPage');
+		
+	// }
 }
