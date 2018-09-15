@@ -1,5 +1,49 @@
 page-option-signup {
+    h1{
+        margin-bottom: 0;
+    }
+    .orTXT{
+        align-self: center;
+        font-size: 35px;
+        
+    }
+    .bg{
+        // background-image:url(../assets/imgs/login1.jpg);
+        background-image:url(https://centralkaratela.files.wordpress.com/2015/01/light-wood-background-wallpaper.jpg);
+		background-size: 100% 100%;
+    }
+    .bon{
+        margin-bottom: 15px;
+    }
+    .text{
+        font-size: 20px;
+        margin-top: -25px;
+    }
+    .displayView{
+		margin: 0px auto;
+		width: 80%;
+		margin-top: 5%;
+		background-color:transparent !important;
+    }
     .header-back{
-        background-color: #00CED1;
+        background-color: aqua;
+        text-align: center;
+        padding: 20px;
+    }
+    .signUpSelection{
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.76);
+    }
+    .teach{
+         text-align: center;
+    }
+    .teacher{
+        padding: 40px;
+    }
+    .student{
+        padding: 60px;
+    }
+    .stud{
+       text-align: center;
     }
 }

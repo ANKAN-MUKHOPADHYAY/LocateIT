@@ -36,6 +36,10 @@ export class LoginPage {
 
 	gotoSignup(){
 		//this.navCtrl.push('SignupPage');
+		
+	}
+
+	OptionSignupPage(){
 		this.navCtrl.push('OptionSignupPage');
 	}
 

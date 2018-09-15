@@ -3,8 +3,25 @@
 </ion-header>
 
 
-<ion-content>
-
-<h1 class="header-back">What Are You Looking For?</h1>
-
+<ion-content padding class="bg">
+    <div class="displayView" >
+        <h1 class="header-back">What Are You Looking For?</h1>
+        <ion-row class="signUpSelection">
+            <ion-col col-5>
+                <div class="teacher">
+                    <img src="https://www.ewa.org/sites/main/files/imagecache/medium/main-images/bigstock-pretty-teacher-smiling-at-came-69887626.jpg" />
+                </div>
+                <p class="text">I am looking to teach</p>
+                <button ion-button color="secondary"  (click)="SignupPage()">Secondary</button>
+            </ion-col>
+            <ion-col col-2 class="orTXT">OR</ion-col>
+            <ion-col col-5>
+                <div class="teacher">
+                    <img src="https://credissimo.mk/uploads/images/studenti.jpg" />
+                </div>
+                <p class="text">I am looking to teach</p>
+                <button class="bon" ion-button color="secondary" (click)="SignupPage()"> Secondary</button>
+            </ion-col>
+        </ion-row>
+    </div>
 </ion-content>
