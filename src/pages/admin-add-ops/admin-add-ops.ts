@@ -26,9 +26,18 @@ export class AdminAddOpsPage {
     console.log(this.courseDetails);
     this._restService.post('/admin/addnewcourse',JSON.stringify(this.courseDetails)).then(resp => {
       console.log(resp);
+
+       this.courseDetails   = { course_name : '', imageurl: '', createdby:'admin@techninzaz.com', course_status: 1, parentcategory: ''};
+      
+      if(resp.status)
+      alert("submission successful");
+      else
+      alert("submission failed");
+
+
     });
   }
-  
+
   newLocation(){
     console.log(this.LocationInfo);
   }
