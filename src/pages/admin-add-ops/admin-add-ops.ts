@@ -26,20 +26,25 @@ export class AdminAddOpsPage {
     console.log(this.courseDetails);
     this._restService.post('/admin/addnewcourse',JSON.stringify(this.courseDetails)).then(resp => {
       console.log(resp);
-
        this.courseDetails   = { course_name : '', imageurl: '', createdby:'admin@techninzaz.com', course_status: 1, parentcategory: ''};
-      
       if(resp.status)
       alert("submission successful");
       else
       alert("submission failed");
-
-
     });
   }
 
   newLocation(){
     console.log(this.LocationInfo);
+    this._restService.post('/admin/addlocation',JSON.stringify(this.LocationInfo)).then(resp => {
+      console.log(resp);
+    console.log(this.LocationInfo);
+    this.LocationInfo = {Location_name :'', Location_city : '', Location_state:'',Location_pincode:'',Location_relevant_name:''};
+      if(resp.status)
+      alert("submission successful");
+      else
+      alert("submission failed");
+    });
   }
   
   ionViewDidLoad() {
