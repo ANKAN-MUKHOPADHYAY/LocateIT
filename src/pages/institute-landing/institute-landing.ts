@@ -19,6 +19,7 @@ export class InstituteLandingPage {
   restUrl : any;
   navParamType : any;
   recommendUrl: any;
+  
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider, public _global:GlobalProvider) {
 		//console.log(this.navParams.data);
@@ -29,9 +30,10 @@ export class InstituteLandingPage {
     this.navParamType = typeof(this.navParams.data);
     if(this.navParamType === Number){
       this.restUrl = '/institute/getInstituteInformation/'+this.navParams.data;
+      
 		} else {
       this.restUrl = '/institute/getInstituteInformation/'+sessionStorage.getItem('instlooking');
-		}
+    }
     this.recommendUrl = '/institute/recommendedInstitute/'+sessionStorage.getItem('enquiry');
     this.getData();
 	}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
@@ -7,6 +7,8 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'header.html'
 })
 export class HeaderComponent {
+  @Input('hideBackButton') hideBackButton;
+  
   loggedIn : boolean;
   userinfo : any;
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public _restservice: HttpServiceProvider) {

@@ -11,54 +11,59 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+	selector: 'page-login',
+	templateUrl: 'login.html',
 })
 export class LoginPage {
- 	logininfo : {i_loginparams : string, i_password: string}= {i_loginparams : '', i_password: ''}
+	logininfo: { i_loginparams: string, i_password: string } = { i_loginparams: '', i_password: '' }
 
- 	loginresp : any = {
-		"status" : true,
-		"message" : "User Account Already Exist",
+	loginresp: any = {
+		"status": true,
+		"message": "User Account Already Exist",
 		"result": {
-			"user_id" : 22
+			"user_id": 22
 		}
 	};
 
-	enquiryresp : any ={
-		"status" : false,
-		"message" : "User doesn't have any enquiry",
+	enquiryresp: any = {
+		"status": false,
+		"message": "User doesn't have any enquiry",
 	}
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
 	}
 
 
-	gotoSignup(){
+	gotoSignup() {
 		//this.navCtrl.push('SignupPage');
-		
+
 	}
 
-	OptionSignupPage(){
+	OptionSignupPage() {
 		this.navCtrl.push('OptionSignupPage');
 	}
 
-  	dologinProcess(data){
+	dologinProcess(data) {
 		console.log(this.logininfo);
-		this._restservice.post('/user/loginCandidate',JSON.stringify(this.logininfo)).then( response => {
+		this._restservice.post('/user/loginCandidate', JSON.stringify(this.logininfo)).then(response => {
 			console.log(response);
-			if(response.status){
-        sessionStorage.setItem('userid',response.result.LOC_USER_ID);
-				console.log('Login Successful');
-				this._restservice.get('/user/userenquiries/'+response.result.LOC_USER_ID).then( resp => {
-					console.log(resp);
-					if(resp.status == true){
-						sessionStorage.setItem('enquiry',resp.result[0].LOC_ENQ_ID);
-						this.navCtrl.push('MainPage');
-					} else {
-						this.navCtrl.push('WelcomePage');
-					}
-				});
+			if (response.status) {
+				if (response.result.LOC_USER_TYPE === "ADMIN") {
+					this.navCtrl.push('AdminAddOpsPage');
+				} else {
+					sessionStorage.setItem('userid', response.result.LOC_USER_ID);
+					console.log('Login Successful');
+					this._restservice.get('/user/userenquiries/' + response.result.LOC_USER_ID).then(resp => {
+						console.log(resp);
+						if (resp.status == true) {
+							sessionStorage.setItem('enquiry', resp.result[0].LOC_ENQ_ID);
+							this.navCtrl.push('MainPage');
+						} else {
+							this.navCtrl.push('WelcomePage');
+						}
+
+					});
+				}
 			} else {
 				alert(response.message);
 			}

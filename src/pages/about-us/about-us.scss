@@ -1,24 +1,24 @@
 page-about-us {
+    .owl-width{
+        padding: 0% 5%;
+    }
+    .padding-top .col{
+        padding: 0px 15px;
+    }
+    .padding-top{
+        padding-top: 40px;
+    }
+    .border>div{
+        border: 1px solid #1c7cc1;
+        padding: 20px;
+        text-align: center;
+        min-height: 175px;
+        margin: 10px 0px;
+    }
+    .border>div:hover {
+        background: #1c7cc1;
+        color: #fff !important;
+        transition: all 0.3s ease-in-out;
+    }
+}
 
-}
-.owl-width{
-    padding: 0% 5%;
-}
-.padding-top .col{
-    padding: 0px 15px;
-}
-.padding-top{
-    padding-top: 40px;
-}
-.border>div{
-    border: 1px solid #1c7cc1;
-    padding: 20px;
-    text-align: center;
-    min-height: 175px;
-    margin: 10px 0px;
-}
-.border>div:hover {
-    background: #1c7cc1;
-    color: #fff !important;
-    transition: all 0.3s ease-in-out;
-}
