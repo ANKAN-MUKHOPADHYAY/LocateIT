@@ -24,13 +24,13 @@ export class AdminAddOpsPage {
   LocationInfo : { Location_name : string, Location_city: string, Location_state: string, Location_pincode: string,Location_createdby: string, Location_relevant_name: string, Location_nearby: string} = {Location_name : '', Location_city: '', Location_state: '', Location_pincode: '',Location_createdby: '', Location_relevant_name: '', Location_nearby: ''}
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
+
+  }
 
   addNewCourseProcess(){
     console.log(this.courseDetails);
   }
-
-  }
+  
   newLocation(){
     console.log(this.LocationInfo);
   }
