@@ -45,5 +45,8 @@ export class AdminAddOpsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminAddOpsPage');
   }
+  gotoManage(){
+    this.navCtrl.push('AdminManageOpsPage');
+  }
 
 }
