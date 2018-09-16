@@ -38,7 +38,7 @@ import { InNewsModule } from '../components/in-news/in-news.module';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    TutorialsPage
+    TutorialsPage,
   ],
   providers: [
     StatusBar,

@@ -85,23 +85,23 @@
 					</div>
 				</ion-list>
 			</form>
-			<form (submit)="doSignupProcessInstitute()">
+			<form (submit)="newLocation()">
 				<ion-list class="listbg" *ngSwitchCase="'newLocation'">
 					<ion-item class="transparent">
-						<ion-input type="text" name="Iname" [(ngModel)]="userinfo.u_Iname"></ion-input>
-						<ion-label floating>Institute Name</ion-label>
+						<ion-input type="text" name="Location_name" [(ngModel)]="LocationInfo.Location_name"></ion-input>
+						<ion-label floating>Location Name</ion-label>
 					</ion-item>
 					<ion-item  class="transparent">
-						<ion-label floating>Phone Number</ion-label>
-						<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="userinfo.u_mobile"></ion-input>
+						<ion-label floating>Location City</ion-label>
+						<ion-input type="text" maxlength="10" name="Location_city" [(ngModel)]="LocationInfo.Location_city"></ion-input>
 					</ion-item>
 					<ion-item  class="transparent">
-						<ion-label floating>Alternative Number</ion-label>
-						<ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="userinfo.u_altmobile"></ion-input>
+						<ion-label floating>Location State</ion-label>
+						<ion-input type="text" maxlength="10" name="Location_state" [(ngModel)]="LocationInfo.Location_state"></ion-input>
 					</ion-item>
 					<ion-item class="transparent">
-						<ion-label floating>Email-id</ion-label>
-						<ion-input type="text" name="email" [(ngModel)]="userinfo.u_email"></ion-input>
+						<ion-label floatin>Location Pincode</ion-label>
+						<ion-input type="text" name="Location_pincode" [(ngModel)]="LocationInfo.Location_pincode"></ion-input>
 					</ion-item>
 					<div style="padding-top: 20px;" class="center">
 						<button ion-button secondary>Register</button><br><br>
