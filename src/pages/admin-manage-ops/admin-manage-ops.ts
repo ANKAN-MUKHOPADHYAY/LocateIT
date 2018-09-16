@@ -17,6 +17,7 @@ export class AdminManageOpsPage {
   info : string = "newCourse";
   infor: string ="newLocation";
   offeredLocation : any;
+  coursesOffered : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restService: HttpServiceProvider) {
   }
@@ -26,6 +27,10 @@ export class AdminManageOpsPage {
     this._restService.get('/search/alllocation').then(resp => {
       console.log(resp);
       this.offeredLocation = resp.response;
+    });
+    this._restService.get('/search/allcourses').then(resp => {
+      this.coursesOffered = resp.response;
+      console.log(this.coursesOffered);
     });
   }
 
