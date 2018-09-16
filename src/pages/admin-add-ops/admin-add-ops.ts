@@ -20,7 +20,7 @@ export class AdminAddOpsPage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restService : HttpServiceProvider) {
 
-  }
+  };
 
   addNewCourseProcess(){
     console.log(this.courseDetails);
