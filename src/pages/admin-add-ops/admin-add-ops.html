@@ -3,7 +3,7 @@
 </ion-header>
 <ion-content padding class="pageBg">
 	<div class="formview">
-		<div class="marginTp" >
+		<div class="marginTp">
 			<ion-segment [(ngModel)]="info">
 				<ion-segment-button value="newCourse">
 					Add New Course
@@ -34,39 +34,65 @@
 							<span class="errorMsg">Image Url is required!</span>
 						</div>
 					</div>
-					<ion-item  class="transparent">
+					<ion-item class="transparent">
 						<ion-label floating>Parent Category</ion-label>
 						<ion-input type="text" maxlength="10" name="parentcategory" [(ngModel)]="courseDetails.parentcategory"></ion-input>
 					</ion-item>
-					
+
 					<div style="padding-top: 20px;" class="center">
 						<button ion-button secondary [disabled]="!newCourseForm.form.valid">Add</button><br><br>
 					</div>
 				</ion-list>
 			</form>
-			<form (submit)="newLocation()">
+			<form (submit)="newLocation()" #newLocationForm="ngForm">
 				<ion-list class="listbg" *ngSwitchCase="'newLocation'">
 					<ion-item class="transparent">
-						<ion-input type="text" name="Location_name" [(ngModel)]="LocationInfo.Location_name"></ion-input>
+						<ion-input type="text" name="Location_name" [(ngModel)]="LocationInfo.Location_name" id="locName" #locName="ngModel"
+						 required></ion-input>
 						<ion-label floating>Location Name</ion-label>
 					</ion-item>
-					<ion-item  class="transparent">
-						<ion-label floating>Location City</ion-label>
-						<ion-input type="text" maxlength="10" name="Location_city" [(ngModel)]="LocationInfo.Location_city"></ion-input>
-					</ion-item>
-					<ion-item  class="transparent">
-						<ion-label floating>Location State</ion-label>
-						<ion-input type="text" maxlength="10" name="Location_state" [(ngModel)]="LocationInfo.Location_state"></ion-input>
-					</ion-item>
+					<div *ngIf="locName.errors && (locName.dirty || locName.touched)">
+						<div [hidden]="!locName.errors.required">
+							<span class="errorMsg">Location Name is required!</span>
+						</div>
+					</div>
 					<ion-item class="transparent">
-						<ion-label floatin>Location Pincode</ion-label>
-						<ion-input type="text" name="Location_pincode" [(ngModel)]="LocationInfo.Location_pincode"></ion-input>
+						<ion-label floating>Location City</ion-label>
+						<ion-input type="text" name="Location_city" [(ngModel)]="LocationInfo.Location_city" id="LocCity" #LocCity="ngModel"
+						 required></ion-input>
+					</ion-item>
+					<div *ngIf="LocCity.errors && (LocCity.dirty || LocCity.touched)">
+						<div [hidden]="!LocCity.errors.required">
+							<span class="errorMsg">Location City is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Location State</ion-label>
+						<ion-input type="text" maxlength="10" name="Location_state" [(ngModel)]="LocationInfo.Location_state" id="LocState"
+						 #LocState="ngModel" requried></ion-input>
+					</ion-item>
+					<div *ngIf="LocState.errors && (LocState.dirty || LocState.touched)">
+						<div [hidden]="!LocState.errors.required">
+							<span class="errorMsg">Location State is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Location Pincode</ion-label>
+						<ion-input type="text" name="Location_pincode" [(ngModel)]="LocationInfo.Location_pincode" id="LocPin" #LocPin="ngModel"
+						 required></ion-input>
+					</ion-item>
+					<div *ngIf="LocPin.errors && (LocPin.dirty || LocPin.touched)">
+						<div [hidden]="!LocPin.errors.required">
+							<span class="errorMsg">Location PinCode is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Location relevant name</ion-label>
+						<ion-input type="text" name="Location_relevant_name" [(ngModel)]="LocationInfo.Location_relevant_name" id="RevName"
+						 #RevName="ngModel" required></ion-input>
 					</ion-item>
 					<div style="padding-top: 20px;" class="center">
-						<button ion-button secondary>Register</button><br><br>
-					</div>
-					<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
-						<span> Already a Member? <a (click)="gotoLogin()">Login</a></span>
+						<button ion-button secondary [disabled]="!newLocationForm.form.valid">Register</button><br><br>
 					</div>
 				</ion-list>
 			</form>
