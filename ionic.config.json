@@ -1,6 +1,5 @@
 {
   "name": "locate_IT",
   "integrations": {},
-  "type": "ionic-angular",
-  "app_id": ""
+  "type": "ionic-angular"
 }
