@@ -8,6 +8,7 @@ import { TutorialsPage  } from '../pages/tutorials/tutorials';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { EnquiryhistoryPage } from '../pages/enquiryhistory/enquiryhistory';
 import { ProfilePage } from '../pages/profile/profile';
+import { AboutUsPage } from '../pages/about-us/about-us';
 
 @Component({
   templateUrl: 'app.html'
@@ -23,7 +24,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
      this.pages = [
-        { title: 'About Us', component: '' },
+        { title: 'About Us', component: AboutUsPage },
         { title: 'Create New Enquiry', component: WelcomePage },
         { title: 'Edit Profile', component: ProfilePage },
         { title: 'Enquiry Page', component: EnquiryhistoryPage },

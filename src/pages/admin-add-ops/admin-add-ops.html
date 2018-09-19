@@ -3,7 +3,7 @@
 </ion-header>
 <ion-content padding class="pageBg">
 	<div class="formview">
-		<div class="marginTp" >
+		<div class="marginTp">
 			<ion-segment [(ngModel)]="info">
 				<ion-segment-button value="newCourse">
 					Add New Course
@@ -14,80 +14,43 @@
 			</ion-segment>
 		</div>
 		<div [ngSwitch]="info">
-			<form (submit)="doSignupProcess()" #signupForm="ngForm">
+			<form (submit)="addNewCourseProcess()" #newCourseForm="ngForm">
 				<ion-list class="listbg" *ngSwitchCase="'newCourse'">
 					<ion-item class="transparent">
-						<ion-label floating>First Name</ion-label>
-						<ion-input type="text" [(ngModel)]="userinfo.u_fname" minlength="5" maxlength="30" name="fname" id="name" #name="ngModel" required></ion-input>
+						<ion-label floating>Course Name</ion-label>
+						<ion-input type="text" [(ngModel)]="courseDetails.course_name" name="fname" id="name" #name="ngModel" required></ion-input>
 					</ion-item>
 					<div *ngIf="name.errors && (name.dirty || name.touched)">
 						<div [hidden]="!name.errors.required">
-							<span class="errorMsg">User Name is required!</span>
-						</div>
-						<div [hidden]="!name.errors.minlength">
-                        <span class="errorMsg">UserName  must be at least 5 characters long.</span>
-                       </div>
-                       <div [hidden]="!name.errors.maxlength">
-                       <span class="errorMsg">UserName cannot be more than 30 characters long.</span>
-                       </div>
-					</div>
-					<ion-item class="transparent">
-						<ion-label floating>Last Name</ion-label>
-						<ion-input type="text" name="lname" [(ngModel)]="userinfo.u_lname" id="lastName" #lastName="ngModel" required></ion-input>
-					</ion-item>
-					<div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
-						<div [hidden]="!lastName.errors.required">
-							<span class="errorMsg">user lastname is required!</span>
-						</div>
-					</div>
-					<ion-item  class="transparent">
-						<ion-label floating>Phone Number</ion-label>
-						<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="userinfo.u_mobile" id="number" #number="ngModel" required></ion-input>
-					</ion-item>
-					<div *ngIf="number.errors && (number.dirty || number.touched)">
-						<div [hidden]="!number.errors.required">
-							<span class="errorMsg">Phone Number is required!</span>
-						</div>
-					</div>
-					<ion-item  class="transparent">
-						<ion-label floating>Alternative Number</ion-label>
-						<ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="userinfo.u_altmobile"></ion-input>
-					</ion-item>
-					<ion-item class="transparent">
-						<ion-label floating>Email-id</ion-label>
-						<ion-input type="text" name="email" [(ngModel)]="userinfo.u_email" id="email" #email="ngModel" required></ion-input>
-					</ion-item>
-					<div *ngIf="email.errors && (email.dirty || email.touched)">
-						<div [hidden]="!email.errors.required">
-							<span class="errorMsg">Email is required!</span>
+							<span class="errorMsg">Course Name is required!</span>
 						</div>
 					</div>
 					<ion-item class="transparent">
-						<ion-label floating>Password</ion-label>
-						<ion-input type="password" name="password" [(ngModel)]="userinfo.u_password" id="password" #password="ngModel" minlength="5" maxlength="30" ></ion-input>
+						<ion-label floating>image url</ion-label>
+						<ion-input type="text" name="lname" [(ngModel)]="courseDetails.imageurl" id="ImgUrl" #ImgUrl="ngModel" required></ion-input>
 					</ion-item>
-					<div *ngIf="password.errors && (password.dirty || password.touched)">
-                <div [hidden]="!password.errors.minlength">
-                  <span class="errorMsg">Password must be at least 5 characters long.</span>
-                </div>
-                <div [hidden]="!password.errors.maxlength">
-                 	<span class="errorMsg">Password cannot be more than 30 characters long.</span>
-                </div>
-                <!-- <div [hidden]="!password.errors.pattern">
-                  <span class="errorMsg">Must contain at least one number, uppercase, lowercase letter & at least 8 or more characters</span>
-                </div> -->
+					<div *ngIf="ImgUrl.errors && (ImgUrl.dirty || ImgUrl.touched)">
+						<div [hidden]="!ImgUrl.errors.required">
+							<span class="errorMsg">Image Url is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Parent Category</ion-label>
+						<ion-input type="text" maxlength="10" name="parentcategory" [(ngModel)]="courseDetails.parentcategory"></ion-input>
+					</ion-item>
+
+					<div style="padding-top: 20px;" class="center">
+						<button ion-button secondary [disabled]="!newCourseForm.form.valid">Add</button><br><br>
 					</div>
 					<div style="padding-top: 20px;" class="center">
-						<button ion-button secondary [disabled]="!signupForm.form.valid">Sign Up</button><br><br>
-					</div>
-					<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
-						<span> Already a Member? <a (click)="gotoLogin()">Login </a></span>
+						<p (click)="gotoManage()">Manage Courses</p>
 					</div>
 				</ion-list>
 			</form>
-			<form (submit)="doSignupProcessInstitute()">
+			<form (submit)="newLocation()" #newLocationForm="ngForm">
 				<ion-list class="listbg" *ngSwitchCase="'newLocation'">
 					<ion-item class="transparent">
+<<<<<<< HEAD
 						<ion-input type="text" name="Iname" [(ngModel)]="LocationInfo.location_name"></ion-input>
 						<ion-label floating>Location Name</ion-label>
 					</ion-item>
@@ -106,16 +69,59 @@
 					<ion-item  class="transparent">
 						<ion-label floating>Location relevant name</ion-label>
 						<ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="LocationInfo.location_relevant_name"></ion-input>
+=======
+						<ion-input type="text" name="Location_name" [(ngModel)]="LocationInfo.Location_name" id="locName" #locName="ngModel"
+						 required></ion-input>
+						<ion-label floating>Location Name</ion-label>
 					</ion-item>
+					<div *ngIf="locName.errors && (locName.dirty || locName.touched)">
+						<div [hidden]="!locName.errors.required">
+							<span class="errorMsg">Location Name is required!</span>
+						</div>
+					</div>
 					<ion-item class="transparent">
+						<ion-label floating>Location City</ion-label>
+						<ion-input type="text" name="Location_city" [(ngModel)]="LocationInfo.Location_city" id="LocCity" #LocCity="ngModel"
+						 required></ion-input>
+					</ion-item>
+					<div *ngIf="LocCity.errors && (LocCity.dirty || LocCity.touched)">
+						<div [hidden]="!LocCity.errors.required">
+							<span class="errorMsg">Location City is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Location State</ion-label>
+						<ion-input type="text" maxlength="10" name="Location_state" [(ngModel)]="LocationInfo.Location_state" id="LocState"
+						 #LocState="ngModel" requried></ion-input>
+					</ion-item>
+					<div *ngIf="LocState.errors && (LocState.dirty || LocState.touched)">
+						<div [hidden]="!LocState.errors.required">
+							<span class="errorMsg">Location State is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+						<ion-label floating>Location Pincode</ion-label>
+						<ion-input type="text" name="Location_pincode" [(ngModel)]="LocationInfo.Location_pincode" id="LocPin" #LocPin="ngModel"
+						 required></ion-input>
+>>>>>>> d67861e66e2da39fb3d0e78b37b5acaf623f438c
+					</ion-item>
+					<div *ngIf="LocPin.errors && (LocPin.dirty || LocPin.touched)">
+						<div [hidden]="!LocPin.errors.required">
+							<span class="errorMsg">Location PinCode is required!</span>
+						</div>
+					</div>
+					<ion-item class="transparent">
+<<<<<<< HEAD
 						<ion-label floating>location_nearby</ion-label>
 						<ion-input type="text" name="location_nearby" [(ngModel)]="LocationInfo.location_nearby"></ion-input>
+=======
+						<ion-label floating>Location relevant name</ion-label>
+						<ion-input type="text" name="Location_relevant_name" [(ngModel)]="LocationInfo.Location_relevant_name" id="RevName"
+						 #RevName="ngModel" required></ion-input>
+>>>>>>> d67861e66e2da39fb3d0e78b37b5acaf623f438c
 					</ion-item>
 					<div style="padding-top: 20px;" class="center">
-						<button ion-button secondary>Register</button><br><br>
-					</div>
-					<div style="text-align: center; color: #FFF; padding-bottom: 20px;">
-						<span> Already a Member? <a (click)="gotoLogin()">Login</a></span>
+						<button ion-button secondary [disabled]="!newLocationForm.form.valid">Add</button><br><br>
 					</div>
 				</ion-list>
 			</form>

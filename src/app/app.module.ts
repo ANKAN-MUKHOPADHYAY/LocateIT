@@ -6,7 +6,9 @@ import { MyApp } from './app.component';
 import { WelcomePageModule } from '../pages/welcome/welcome.module';
 import { EnquiryhistoryPageModule } from '../pages/enquiryhistory/enquiryhistory.module';
 import { ProfilePageModule } from '../pages/profile/profile.module';
-// import { TutorialsPage } from '../pages/tutorials/tutorials';
+import { AboutUsPageModule } from '../pages/about-us/about-us.module';
+import { TutorialsPage } from '../pages/tutorials/tutorials';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,6 +24,7 @@ import { InNewsModule } from '../components/in-news/in-news.module';
 @NgModule({
   declarations: [
     MyApp,
+    TutorialsPage,
   ],
   imports: [
     BrowserModule,
@@ -32,11 +35,13 @@ import { InNewsModule } from '../components/in-news/in-news.module';
     FooterModule,
     InNewsModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    AboutUsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    TutorialsPage,
   ],
   providers: [
     StatusBar,
