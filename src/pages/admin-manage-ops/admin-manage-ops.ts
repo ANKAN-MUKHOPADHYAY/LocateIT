@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 /**
  * Generated class for the AdminManageOpsPage page.
@@ -14,11 +14,13 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'admin-manage-ops.html',
 })
 export class AdminManageOpsPage {
-  info: string = "newCourse";
-  infor: string = "newLocation";
-  offeredLocation: any;
-  coursesOffered: any;
-
+  @ViewChild('search') searchBar: Searchbar;
+  info : string = "newCourse";
+  infor: string ="newLocation";
+  offeredLocation : any;
+  coursesOffered : any;
+  locations : any;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restService: HttpServiceProvider) {
   }
 
@@ -77,6 +79,25 @@ export class AdminManageOpsPage {
         this.getAllCourse();
       }
     });
+  }
+  getLocation(loc){
+  	let val = loc.target.value;
+      if (!val || !val.trim()) {
+        this.locations = [];
+        return;
+      }
+      
+      this._restService.get('/search/searchlocations/'+val).then(data => {
+        if(data.status){
+          this.offeredLocation = data.response;
+          this.focusme();
+        }
+      });
+  }
+  focusme(){ 
+    setTimeout(()=>{
+      this.searchBar.setFocus();
+    }, 1000);
   }
 }
 

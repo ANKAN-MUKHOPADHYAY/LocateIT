@@ -58,6 +58,36 @@ page-admin-manage-ops {
         background-color: #395767;
         opacity: 0.8;
         padding: 10px 10px;
+        }
+        .segment-md .segment-button.segment-activated{
+            background-color: gainsboro !important;
+        }
+        form,input,optgroup,select{
+            color:white !important;
+        }
+        .ROW{
+            font-size: 30px;
+        }
+        .errorMsg{
+            color:red;
+            padding-left: 15px;
+        }
+       
+        .ng-valid[required], .ng-valid.required  {
+        border-bottom: 2px solid #1d8209; /* green */
+        }
+        .nopad{
+            padding: 0;
+            border-radius: 5%; 
+        }
+        .ng-touched:not(form) {
+            color: #a94442; /* red */
+        }
+        .course-name{
+            background-color: #395767;
+            opacity: 0.8;
+            padding: 10px 10px;
+        }
         .disable-course{
             background-color: #a94442;
             opacity: 0.8;
@@ -79,4 +109,3 @@ page-admin-manage-ops {
            }
        }
    }
-}
