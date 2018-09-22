@@ -50,50 +50,60 @@
 			<form (submit)="newLocation()" #newLocationForm="ngForm">
 				<ion-list class="listbg" *ngSwitchCase="'newLocation'">
 					<ion-item class="transparent">
-						<ion-input type="text" name="Location_name" [(ngModel)]="LocationInfo.Location_name" id="locName" #locName="ngModel"
-						 required></ion-input>
+						<ion-input type="text" name="Iname" [(ngModel)]="LocationInfo.location_name" id="lname" #lname="ngModel" required></ion-input>
 						<ion-label floating>Location Name</ion-label>
 					</ion-item>
-					<div *ngIf="locName.errors && (locName.dirty || locName.touched)">
-						<div [hidden]="!locName.errors.required">
+					<div *ngIf="lname.errors && (lname.dirty || lname.touched)">
+						<div [hidden]="!lname.errors.required">
 							<span class="errorMsg">Location Name is required!</span>
 						</div>
 					</div>
-					<ion-item class="transparent">
+					<ion-item  class="transparent">
 						<ion-label floating>Location City</ion-label>
-						<ion-input type="text" name="Location_city" [(ngModel)]="LocationInfo.Location_city" id="LocCity" #LocCity="ngModel"
-						 required></ion-input>
-					</ion-item>
-					<div *ngIf="LocCity.errors && (LocCity.dirty || LocCity.touched)">
-						<div [hidden]="!LocCity.errors.required">
-							<span class="errorMsg">Location City is required!</span>
-						</div>
-					</div>
-					<ion-item class="transparent">
+						<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="LocationInfo.location_city" id="lcity" #lcity="ngModel" required></ion-input>
+		  </ion-item>
+		  <div *ngIf="lcity.errors && (lcity.dirty || lcity.touched)">
+			<div [hidden]="!lcity.errors.required">
+				<span class="errorMsg">Location City is required!</span>
+			</div>
+		</div>
+		         <ion-item  class="transparent">
 						<ion-label floating>Location State</ion-label>
-						<ion-input type="text" maxlength="10" name="Location_state" [(ngModel)]="LocationInfo.Location_state" id="LocState"
-						 #LocState="ngModel" requried></ion-input>
+						<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="LocationInfo.location_state" id="lstate" #lstate="ngModel"></ion-input>
+		  </ion-item>
+		  <div *ngIf="lstate.errors && (lstate.dirty || lstate.touched)">
+			<div [hidden]="!lstate.errors.required">
+				<span class="errorMsg">Location State is required!</span>
+			</div>
+		</div>
+          <ion-item  class="transparent">
+						<ion-label floating>Location Pincode</ion-label>
+						<ion-input type="text" maxlength="10" name="mobile" [(ngModel)]="LocationInfo.location_pincode" id="lpin" #lpin="ngModel"></ion-input>
+		  </ion-item>
+		  <div *ngIf="lpin.errors && (lpin.dirty || lpin.touched)">
+			<div [hidden]="!lpin.errors.required">
+				<span class="errorMsg">Location Pincode is required!</span>
+			</div>
+		</div>
+					<ion-item  class="transparent">
+						<ion-label floating>Location relevant name</ion-label>
+						<ion-input type="text" maxlength="10" name="altmobile" [(ngModel)]="LocationInfo.location_relevant_name" id="LRname" #LRname="ngModel"></ion-input>
 					</ion-item>
-					<div *ngIf="LocState.errors && (LocState.dirty || LocState.touched)">
-						<div [hidden]="!LocState.errors.required">
-							<span class="errorMsg">Location State is required!</span>
+					<div *ngIf="LRname.errors && (LRname.dirty || LRname.touched)">
+						<div [hidden]="!LRname.errors.required">
+							<span class="errorMsg">Location relevant name is required!</span>
 						</div>
 					</div>
+				
 					<ion-item class="transparent">
-						<ion-label floating>Location Pincode</ion-label>
-						<ion-input type="text" name="Location_pincode" [(ngModel)]="LocationInfo.Location_pincode" id="LocPin" #LocPin="ngModel"
-						 required></ion-input>
+						<ion-label floating>location_nearby</ion-label>
+						<ion-input type="text" name="location_nearby" [(ngModel)]="LocationInfo.location_nearby" id="Lnear" #Lnear="ngModel"></ion-input>
 					</ion-item>
-					<div *ngIf="LocPin.errors && (LocPin.dirty || LocPin.touched)">
-						<div [hidden]="!LocPin.errors.required">
+					<div *ngIf="Lnear.errors && (Lnear.dirty || Lnear.touched)">
+						 <div [hidden]="!Lnear.errors.required"> 
 							<span class="errorMsg">Location PinCode is required!</span>
 						</div>
-					</div>
-					<ion-item class="transparent">
-						<ion-label floating>Location relevant name</ion-label>
-						<ion-input type="text" name="Location_relevant_name" [(ngModel)]="LocationInfo.Location_relevant_name" id="RevName"
-						 #RevName="ngModel" required></ion-input>
-					</ion-item>
+						</div>
 					<div style="padding-top: 20px;" class="center">
 						<button ion-button secondary [disabled]="!newLocationForm.form.valid">Add</button><br><br>
 					</div>
