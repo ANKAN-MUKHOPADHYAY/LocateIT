@@ -49,12 +49,15 @@
 					<div class="label" style="padding-top: 20px;">
 						<ion-grid>
 							<ion-row>
-								<ion-col col-4 *ngFor="let l of  offeredLocation">
-									<span>{{l.LOC_LOCATION_NAME}}</span>
-
-
-									<ion-icon (click)="deleteLocation(l)" ios="ios-trash" md="md-trash"></ion-icon>
+								<ion-col col-3 *ngFor="let l of  offeredLocation">
+									<div class="course-location">
+										<span>{{l.LOC_LOCATION_NAME}}</span>
+										<span class="right">
+											<ion-icon (click)="deleteLocation(l)" ios="ios-trash" md="md-trash"></ion-icon>
+										</span>
+									</div>
 								</ion-col>
+
 							</ion-row>
 						</ion-grid>
 					</div>
