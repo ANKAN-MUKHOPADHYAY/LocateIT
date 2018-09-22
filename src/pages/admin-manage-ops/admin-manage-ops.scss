@@ -41,10 +41,14 @@ page-admin-manage-ops {
             color:red;
             padding-left: 15px;
         }
+       
         .ng-valid[required], .ng-valid.required  {
         border-bottom: 2px solid #1d8209; /* green */
         }
-        
+        .nopad{
+            padding: 0;
+            border-radius: 5%; 
+        }
         .ng-touched:not(form) {
             color: #a94442; /* red */
         }

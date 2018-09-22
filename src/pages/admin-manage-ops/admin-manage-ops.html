@@ -47,7 +47,9 @@
 			<form>
 				<ion-list class="listbg" *ngSwitchCase="'newLocation'">
 					<div class="label" style="padding-top: 20px;">
-						
+						<div class="find-location">
+							<ion-searchbar #search (ionInput)="getLocation($event)" class="nopad"></ion-searchbar>
+						</div>
 						<ion-grid>
 							<ion-row>
 								<ion-col col-4 *ngFor="let l of  offeredLocation">
