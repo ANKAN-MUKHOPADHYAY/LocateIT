@@ -18,13 +18,28 @@
 				
 				<ion-list class="listbg" *ngSwitchCase="'newCourse'">
 					<div class="label" style="padding-top: 20px;">
-						<ul class="course">
-							<li>Course Name</li>
-							<li><img src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png" width="30px"></li>
-							<li><img src="http://www.icon100.com/up/766/256/cancel_red.png" width="30px"></li>
-							<li><img src="https://vignette.wikia.nocookie.net/axel-alpha/images/3/30/Status_-_Active.png/revision/latest?cb=20150527144212" width="30px"></li>
+						<ion-grid>
+							<ion-row>
+							  <ion-col col-4 *ngFor="let c of coursesOffered">
+									<span>{{c.LOC_COURSE_NAME}}</span>
+									<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0">  
+										<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+									</span>
+									<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
+										<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
+									</span>
+									
+									<ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+								</ion-col>
+							</ion-row>
+						</ion-grid>
+						<!-- <ul class="course">
+							<li class="c-name">Course Name</li>
+							<li></li>
+							<li></li>
+							<li></li>
 
-						</ul>
+						</ul> -->
 					</div>
 					<div style="padding-top: 20px;" class="center">
 						<button ion-button secondary>Submit</button><br><br>
