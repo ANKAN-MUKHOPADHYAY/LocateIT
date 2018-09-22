@@ -48,6 +48,10 @@ page-admin-manage-ops {
         .ng-touched:not(form) {
             color: #a94442; /* red */
         }
+        ul.course li{
+            display: inline;
+            list-style: none;
+        }
         
         @media only screen
         and (max-device-width: 640px),
