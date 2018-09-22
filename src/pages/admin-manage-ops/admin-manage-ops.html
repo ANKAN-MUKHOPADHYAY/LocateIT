@@ -28,8 +28,13 @@
 									<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
 										<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
 									</span>
+<<<<<<< HEAD
 
 									<ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+=======
+									
+									<ion-icon (click)="deleteCourse(c)" ios="ios-trash" md="md-trash"></ion-icon>
+>>>>>>> 99c878f317c9a865ff578888547e371610c50e64
 								</ion-col>
 							</ion-row>
 						</ion-grid>
