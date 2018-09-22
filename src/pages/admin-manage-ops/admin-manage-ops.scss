@@ -57,12 +57,18 @@ page-admin-manage-ops {
             opacity: 0.8;
             padding: 10px 10px;
         }
+        .disable-course{
+            background-color: #a94442;
+            opacity: 0.8;
+            padding: 10px 10px;
+        }
         .right{
             float: right;
         }
         .right ion-icon{
             margin-left: 10px;
             font-size: 16px !important;
+            cursor: pointer;    
         }
         @media only screen
         and (max-device-width: 640px),
