@@ -24,11 +24,16 @@ export class AdminManageOpsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminManageOpsPage');
+    
+    this.getAllCourse();
+    this.getAllLocations();
+  }
+  
+  getAllLocations(){
     this._restService.get('/search/alllocation').then(resp => {
       console.log(resp);
       this.offeredLocation = resp.response;
     });
-    this.getAllCourse();
   }
 
   getAllCourse(){
@@ -37,6 +42,15 @@ export class AdminManageOpsPage {
       console.log(this.coursesOffered);
     });
   }
+  deleteLocation(data){
+    console.log(data);
+    this._restService.post('/admin/deleteLocation',JSON.stringify(data)).then(resp => {
+      console.log(resp);
+      if(resp.status == true){
+        this.getAllLocations();
+  }
+});
+   }
   deleteCourse(data){
     console.log(data);
     this._restService.post('/admin/deleteCourse',JSON.stringify(data)).then(resp => {
