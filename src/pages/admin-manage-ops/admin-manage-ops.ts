@@ -28,10 +28,22 @@ export class AdminManageOpsPage {
       console.log(resp);
       this.offeredLocation = resp.response;
     });
+    this.getAllCourse();
+  }
+
+  getAllCourse(){
     this._restService.get('/search/allcourses').then(resp => {
       this.coursesOffered = resp.response;
       console.log(this.coursesOffered);
     });
   }
-
+  deleteCourse(data){
+    console.log(data);
+    this._restService.post('/admin/deleteCourse',JSON.stringify(data)).then(resp => {
+      console.log(resp);
+      if(resp.status == true){
+        this.getAllCourse();
+      }
+    });
+  }
 }
