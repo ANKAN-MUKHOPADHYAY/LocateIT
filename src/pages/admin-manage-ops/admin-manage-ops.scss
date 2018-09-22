@@ -2,77 +2,81 @@ page-admin-manage-ops {
     .pageBg{
         background-image:url('../assets/imgs/Back.jpg');
         background-size:100% 100%;
-        }
-        .formview{
+   }
+    .formview{
         width: 80%;
         margin: 100px auto;
-        }
-        .marginRt{
+   }
+    .marginRt{
         margin-right: 15px;
-        }
-        .marginTp{
+   }
+    .marginTp{
         margin-top: 20px;
-        }
-        .listbg{
+   }
+    .listbg{
         background-color: rgba(0, 0, 0, 0.7) !important;
         border-radius: 5px;
-        }
-        .transparent{
+   }
+    .transparent{
         background-color: transparent !important;
         color: #FFF;
-        }
-        .item-md{
-            padding-right: 16px !important;
-        }
-        .segment-md .segment-button{
+   }
+    .item-md{
+        padding-right: 16px !important;
+   }
+    .segment-md .segment-button{
         color: #0b2759 !important;
         font-size: 1.6rem !important;
-        }
-        .segment-md .segment-button.segment-activated{
-            background-color: gainsboro !important;
-        }
-        form,input,optgroup,select{
-            color:white !important;
-        }
-        .ROW{
-            font-size: 30px;
-        }
-        .errorMsg{
-            color:red;
-            padding-left: 15px;
-        }
-        .ng-valid[required], .ng-valid.required  {
-        border-bottom: 2px solid #1d8209; /* green */
-        }
-        
-        .ng-touched:not(form) {
-            color: #a94442; /* red */
-        }
-        .course-name{
-            background-color: #395767;
+   }
+    .segment-md .segment-button.segment-activated{
+        background-color: gainsboro !important;
+   }
+    form,input,optgroup,select{
+        color:white !important;
+   }
+    .ROW{
+        font-size: 30px;
+   }
+    .errorMsg{
+        color:red;
+        padding-left: 15px;
+   }
+    .ng-valid[required], .ng-valid.required {
+        border-bottom: 2px solid #1d8209;
+       /* green */
+   }
+    .ng-touched:not(form) {
+        color: #a94442;
+       /* red */
+   }
+    .course-name{
+        background-color: #395767;
+        opacity: 0.8;
+        padding: 10px 10px;
+   }
+    .course-location{
+        background-color: #395767;
+        opacity: 0.8;
+        padding: 10px 10px;
+        .disable-course{
+            background-color: #a94442;
             opacity: 0.8;
             padding: 10px 10px;
-        }
-        .course-location{
-            background-color: #395767;
-            opacity: 0.8;
-            padding: 10px 10px;   
-        }
+       }
         .right{
             float: right;
-        }
+       }
         .right ion-icon{
             margin-left: 10px;
             font-size: 16px !important;
-        }
-        @media only screen
-        and (max-device-width: 640px),
-        only screen and (max-device-width: 667px),
-        only screen and (max-width: 480px){
-        .formview{
-        width: 90%;
-        margin: 0px auto;
-        margin-top: 20%;
-        }
-        }
+            cursor: pointer;
+       }
+        @media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){
+            .formview{
+                width: 90%;
+                margin: 0px auto;
+                margin-top: 20%;
+           }
+       }
+   }
 }
