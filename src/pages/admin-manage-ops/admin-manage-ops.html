@@ -1,80 +1,68 @@
 <ion-header>
-		<header hideBackButton="true"></header>
-	</ion-header>
-	<ion-content padding class="pageBg">
-		<div class="formview">
-			<div class="marginTp">
-				<ion-segment [(ngModel)]="info">
-					<ion-segment-button value="newCourse">
-						Manage Courses
-					</ion-segment-button>
-					<ion-segment-button value="newLocation">
-						Manage Locations
-					</ion-segment-button>
-				</ion-segment>
-			</div>
-			<div [ngSwitch]="info">
-				<form>
-	
-					<ion-list class="listbg" *ngSwitchCase="'newCourse'">
-						<div class="label" style="padding-top: 20px;">
-							<ion-grid>
-								<ion-row>
-									<ion-col col-4 *ngFor="let c of coursesOffered">
-										<div class="course-name">
-										<span>{{c.LOC_COURSE_NAME}}</span>
-										<span class="right">
-										<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0">
-											<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
-										</span>
-										<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
-											<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
-										</span>
-										<ion-icon (click)="deleteCourse(c)" ios="ios-trash" md="md-trash"></ion-icon>
-									</span>
-									</div>
-									</ion-col>
-								</ion-row>
-							</ion-grid>
-						</div>
-						<div style="padding-top: 20px;" class="center">
-							
-							<br>
-						</div>
-					</ion-list>
-				</form>
-				<form>
-					<ion-list class="listbg" *ngSwitchCase="'newLocation'">
-							<div class="label" style="padding-top: 20px;">
+	<header hideBackButton="true"></header>
+</ion-header>
+<ion-content padding class="pageBg">
+	<div class="formview">
+		<div class="marginTp">
+			<ion-segment [(ngModel)]="info">
+				<ion-segment-button value="newCourse">
+					Manage Courses
+				</ion-segment-button>
+				<ion-segment-button value="newLocation">
+					Manage Locations
+				</ion-segment-button>
+			</ion-segment>
+		</div>
+		<div [ngSwitch]="info">
+			<form>
+
+				<ion-list class="listbg" *ngSwitchCase="'newCourse'">
+					<div class="label" style="padding-top: 20px;">
 						<ion-grid>
 							<ion-row>
-								<ion-col col-4 *ngFor="let l of  offeredLocation">
-									<span>{{l.LOC_LOCATION_NAME}}</span>
-									<!-- <span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0">
-										<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
-									</span>
-									<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
-										<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
-									</span> -->
-	
-									<ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+								<ion-col col-4 *ngFor="let c of coursesOffered">
+									<div class="course-name">
+										<span>{{c.LOC_COURSE_NAME}}</span>
+										<span class="right">
+											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0">
+												<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+											</span>
+											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
+												<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
+											</span>
+											<ion-icon (click)="deleteCourse(c)" ios="ios-trash" md="md-trash"></ion-icon>
+										</span>
+									</div>
 								</ion-col>
 							</ion-row>
 						</ion-grid>
 					</div>
 					<div style="padding-top: 20px;" class="center">
-						<button ion-button secondary>Submit</button><br><br>
+
+						<br>
 					</div>
 				</ion-list>
 			</form>
+
 			<form>
 				<ion-list class="listbg" *ngSwitchCase="'newLocation'">
-					<div style="padding-top: 20px;" class="center">
-						<button ion-button secondary>Submit</button><br><br>
+					<div class="label" style="padding-top: 20px;">
+						
+						<ion-grid>
+							<ion-row>
+								<ion-col col-4 *ngFor="let l of  offeredLocation">
+									<span>{{l.LOC_LOCATION_NAME}}</span>
+
+
+									<ion-icon (click)="deleteLocation(l)" ios="ios-trash" md="md-trash"></ion-icon>
+								</ion-col>
+							</ion-row>
+						</ion-grid>
 					</div>
 				</ion-list>
 			</form>
 		</div>
-	
-	
-	</ion-content>
+	</div>
+
+
+</ion-content>
