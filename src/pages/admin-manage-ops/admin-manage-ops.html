@@ -20,8 +20,8 @@
 					<div class="label" style="padding-top: 20px;">
 						<ion-grid>
 							<ion-row>
-								<ion-col col-4 *ngFor="let c of coursesOffered">
-									<div class="course-name">
+								<ion-col col-12 col-md-6 col-lg-4 *ngFor="let c of coursesOffered">
+									<div [ngClass]="c.LOC_COURSE_ACTIVE_STATUS == 1 ? 'course-name' : 'disable-course'">
 										<span>{{c.LOC_COURSE_NAME}}</span>
 										<span class="right">
 											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0" (click)="enableCourse(c)">

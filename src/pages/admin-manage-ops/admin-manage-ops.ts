@@ -34,6 +34,7 @@ export class AdminManageOpsPage {
       console.log(resp);
       this.offeredLocation = resp.response;
     });
+    this.getAllCourse();
   }
 
   getAllCourse() {
@@ -51,7 +52,7 @@ export class AdminManageOpsPage {
       }
     });
   }
-  deleteCourse(data) {
+  deleteCourse(data){
     console.log(data);
     this._restService.post('/admin/deleteCourse', JSON.stringify(data)).then(resp => {
       console.log(resp);
