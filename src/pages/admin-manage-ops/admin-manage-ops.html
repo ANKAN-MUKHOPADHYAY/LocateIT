@@ -21,25 +21,23 @@
 						<ion-grid>
 							<ion-row>
 							  <ion-col col-4 *ngFor="let c of coursesOffered">
-									<span>{{c.LOC_COURSE_NAME}}</span>
-									<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0">  
-										<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
-									</span>
-									<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
-										<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
-									</span>
-									
-									<ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+								  	<div class="course-name">
+										<span>{{c.LOC_COURSE_NAME}}</span>
+										<span class="right">
+											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0">  
+												<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+											</span>
+											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
+												<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
+											</span>
+											
+											<ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+										</span>
+									</div>
 								</ion-col>
 							</ion-row>
 						</ion-grid>
-						<!-- <ul class="course">
-							<li class="c-name">Course Name</li>
-							<li></li>
-							<li></li>
-							<li></li>
-
-						</ul> -->
+						
 					</div>
 					<div style="padding-top: 20px;" class="center">
 						<button ion-button secondary>Submit</button><br><br>
@@ -48,7 +46,7 @@
 			</form>
 			<form>
 				<ion-list class="listbg" *ngSwitchCase="'newLocation'">
-<<<<<<< HEAD
+
 						<ion-row >
 							<ion-col col-3>
 								<div class="ROW">Location address</div>
@@ -77,12 +75,8 @@
 									</ion-col>
 								</ion-row>
 							
-=======
-					<div style="padding-top: 20px;" class="center">
-						<button ion-button secondary>Submit</button><br><br>
-					</div>
->>>>>>> d67861e66e2da39fb3d0e78b37b5acaf623f438c
-				</ion-list>
+					
+			</ion-list>
 			</form>
 		</div>
 	</div>

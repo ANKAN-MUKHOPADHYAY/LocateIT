@@ -48,16 +48,17 @@ page-admin-manage-ops {
         .ng-touched:not(form) {
             color: #a94442; /* red */
         }
-        ul.course li{
-            display: inline;
-            list-style: none;
+        .course-name{
+            background-color: #395767;
+            opacity: 0.8;
+            padding: 10px 10px;
         }
-        .course img{
-            width: 10px !important;
-            margin-left: 5px;
+        .right{
+            float: right;
         }
-        .c-name{
-            margin-right: 20px;
+        .right ion-icon{
+            margin-left: 10px;
+            font-size: 16px !important;
         }
         @media only screen
         and (max-device-width: 640px),
