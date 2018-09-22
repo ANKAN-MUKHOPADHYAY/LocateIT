@@ -24,14 +24,15 @@
 									<div class="course-name">
 										<span>{{c.LOC_COURSE_NAME}}</span>
 										<span class="right">
-											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0">
+											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0" (click)="enableCourse(c)">
 												<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
 											</span>
-											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1">
+											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1" (click)="disableCourse(c)">
 												<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
 											</span>
 											<ion-icon (click)="deleteCourse(c)" ios="ios-trash" md="md-trash"></ion-icon>
 										</span>
+									
 									</div>
 								</ion-col>
 							</ion-row>
