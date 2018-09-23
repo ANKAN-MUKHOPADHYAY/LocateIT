@@ -33,7 +33,6 @@ export class AdminManageOpsPage {
       console.log(resp);
       this.offeredLocation = resp.response;
     });
-    this.getAllCourse();
   }
 
   getAllCourse() {
@@ -44,42 +43,35 @@ export class AdminManageOpsPage {
   }
   deleteLocation(data) {
     console.log(data);
-    this._restService.post('/admin/deleteLocation', JSON.stringify(data)).then(resp => {
-      console.log(resp);
-      if (resp.status == true) {
-        this.getAllLocations();
-      }
-    });
+    this.deleteMsg = "Are you sure you want to delete "+data.LOC_LOCATION_NAME+ " location?";
+    let url = '/admin/deleteLocation';
+    this.presentConfirm(url,data);
   }
   
   
   deleteCourse(data){
     console.log(data);
     this.deleteMsg = "Are you sure you want to delete "+data.LOC_COURSE_NAME+ " course?";
-    this.presentConfirm(data);
+    let url = '/admin/deleteCourse';
+    this.presentConfirm(url,data);
   }
-  deleteCourseAjax(data){
-    this._restService.post('/admin/deleteCourse', JSON.stringify(data)).then(resp => {
-      console.log(resp);
-      if (resp.status == true) {
-        this.getAllCourse();
-      }
-    });
-  }
+  
   disableCourse(course) {
     course.job="DISABLE";
-    this.dataCall(course);
+    let url = '/admin/disableEnableCourse';
+    this.dataCall(url,course);
   }
   enableCourse(course){
     course.job="ENABLE";
-    console.log(course);
-    this.dataCall(course);
+    let url = '/admin/disableEnableCourse';
+    this.dataCall(url,course);
   }
-  dataCall(data){
-    this._restService.post('/admin/disableEnableCourse', JSON.stringify(data)).then(resp => {
+  dataCall(url,data){
+    this._restService.post(url, JSON.stringify(data)).then(resp => {
       console.log(resp);
       if (resp.status == true) {
         this.getAllCourse();
+        this.getAllLocations();
       }
     });
   }
@@ -104,7 +96,7 @@ export class AdminManageOpsPage {
   }
 
 
-  presentConfirm(data) {
+  presentConfirm(url,data) {
     let alert = this.alertCtrl.create({
       title: 'Confirm',
       message: this.deleteMsg,
@@ -119,7 +111,7 @@ export class AdminManageOpsPage {
         {
           text: 'Agree',
           handler: () => {
-            this.deleteCourseAjax(data);
+            this.dataCall(url,data);
           }
         }
       ]
