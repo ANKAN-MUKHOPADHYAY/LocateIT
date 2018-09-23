@@ -18,6 +18,8 @@ export class AdminManageOpsPage {
   locations : any;
   deleteMsg : any;
   
+
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public _restService: HttpServiceProvider, private alertCtrl: AlertController) {
   }
 
@@ -88,7 +90,24 @@ export class AdminManageOpsPage {
           this.focusme();
         }
       });
+      
   }
+  
+  getCourses(ev) {
+    console.log(ev);
+    let val = ev.target.value;
+    if (!val || !val.trim()) {
+      this.coursesOffered = [];
+      return;
+    }
+    this._restService.get('/search/searchcourses/'+val).then(data => {
+      if(data.status){
+        this.coursesOffered = data.response;
+        this.focusme();
+        console.log(this.coursesOffered);
+      }
+    });
+}
   focusme(){ 
     setTimeout(()=>{
       this.searchBar.setFocus();
@@ -118,6 +137,7 @@ export class AdminManageOpsPage {
     });
     alert.present();
   }
+  
 }
 
 

@@ -21,7 +21,7 @@ export class WelcomePage {
   focusme(){ 
     setTimeout(()=>{
       this.searchBar.setFocus();
-    }, 2000);
+    }, 1000);
   }
 
   getCourses(ev) {

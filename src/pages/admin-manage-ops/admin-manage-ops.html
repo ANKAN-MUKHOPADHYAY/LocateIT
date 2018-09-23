@@ -18,6 +18,10 @@
 
 				<ion-list class="listbg" *ngSwitchCase="'newCourse'">
 					<div class="label" style="padding-top: 20px;">
+						 
+							<div class="find-course">
+							  <ion-searchbar #search (ionInput)="getCourses($event)" placeholder="Eg:Maths,Dance,French" class="nopad">java</ion-searchbar>
+							</div>
 						<ion-grid>
 							<ion-row>
 								<ion-col col-12 col-md-6 col-lg-4 *ngFor="let c of coursesOffered">
