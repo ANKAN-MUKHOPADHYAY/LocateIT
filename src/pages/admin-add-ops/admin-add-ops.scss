@@ -45,7 +45,10 @@ border-bottom: 2px solid #1d8209; /* green */
 .ng-touched:not(form) {
 	color: #a94442; /* red */
 }
-
+.pad-g p{
+padding-bottom: 25px;
+margin: 0px;
+}
 @media only screen
 and (max-device-width: 640px),
 only screen and (max-device-width: 667px),
