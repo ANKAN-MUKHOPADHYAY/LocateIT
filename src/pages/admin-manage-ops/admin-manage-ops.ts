@@ -1,12 +1,8 @@
 import { Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
-/**
- * Generated class for the AdminManageOpsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AlertController } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -20,8 +16,9 @@ export class AdminManageOpsPage {
   offeredLocation : any;
   coursesOffered : any;
   locations : any;
+  deleteMsg : any;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _restService: HttpServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _restService: HttpServiceProvider, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -54,8 +51,14 @@ export class AdminManageOpsPage {
       }
     });
   }
+  
+  
   deleteCourse(data){
     console.log(data);
+    this.deleteMsg = "Are you sure you want to delete "+data.LOC_COURSE_NAME+ " course?";
+    this.presentConfirm(data);
+  }
+  deleteCourseAjax(data){
     this._restService.post('/admin/deleteCourse', JSON.stringify(data)).then(resp => {
       console.log(resp);
       if (resp.status == true) {
@@ -98,6 +101,30 @@ export class AdminManageOpsPage {
     setTimeout(()=>{
       this.searchBar.setFocus();
     }, 1000);
+  }
+
+
+  presentConfirm(data) {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm',
+      message: this.deleteMsg,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancelled');
+          }
+        },
+        {
+          text: 'Agree',
+          handler: () => {
+            this.deleteCourseAjax(data);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 }
 
