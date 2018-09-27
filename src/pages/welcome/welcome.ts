@@ -31,7 +31,7 @@ export class WelcomePage {
         this.currentItems = [];
         return;
       }
-      this.restService.get('/search/searchcourses/'+val).then(data => {
+      this.restService.get('/searchcourses/'+val).then(data => {
         if(data.status){
           this.currentItems = data.response;
           this.focusme();

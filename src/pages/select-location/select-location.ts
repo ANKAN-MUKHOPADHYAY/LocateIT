@@ -35,7 +35,7 @@ export class SelectLocationPage {
         this.locations = [];
         return;
       }
-      this.restService.get('/search/searchlocations/'+val).then(data => {
+      this.restService.get('/searchlocations/'+val).then(data => {
         if(data.status){
           this.locations = data.response;
           this.focusme();

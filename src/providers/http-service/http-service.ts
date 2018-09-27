@@ -13,7 +13,7 @@ import { AlertController } from 'ionic-angular';
 @Injectable()
 export class HttpServiceProvider {
 	apiUrl : any;
-	headers = new HttpHeaders({'Content-Type': 'application/json'});
+	headers = (sessionStorage.getItem('accessToken') != undefined) ? new HttpHeaders({'Content-Type': 'application/json','token': sessionStorage.getItem('accessToken')}) : new HttpHeaders({'Content-Type': 'application/json'});
 	loading : any = null;
 	title : any;
 	message : any;
@@ -41,6 +41,8 @@ export class HttpServiceProvider {
 	}
 
 	get(url:string,showLoader=true):Promise<any>{
+		this.headers = (sessionStorage.getItem('accessToken') != undefined) ? new HttpHeaders({'Content-Type': 'application/json','token': sessionStorage.getItem('accessToken')}) : new HttpHeaders({'Content-Type': 'application/json'});
+		console.log(this.headers);
 		this.showLoaderFunc(showLoader);
 		var apiUrl = this.apiUrl+url;
 		return this.http.get(apiUrl,{headers: this.headers})
@@ -59,6 +61,7 @@ export class HttpServiceProvider {
 	}
 
 	post(url:string,reqBody:string,showLoader=true):Promise<any>{
+		this.headers = (sessionStorage.getItem('accessToken') != undefined) ? new HttpHeaders({'Content-Type': 'application/json','token': sessionStorage.getItem('accessToken')}) : new HttpHeaders({'Content-Type': 'application/json'});
 		this.showLoaderFunc(showLoader);
 		var apiUrl = this.apiUrl+url;
 		return this.http.post(apiUrl,reqBody,{headers: this.headers})
