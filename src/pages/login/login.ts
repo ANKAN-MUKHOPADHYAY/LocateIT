@@ -58,8 +58,8 @@ export class LoginPage {
 		this.logininfo.device_type = this.getPlatformType();
 		this._restservice.post('/loginCandidate', JSON.stringify(this.logininfo)).then(response => {
 			console.log(response);
-			if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
-				sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
+			//if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
+				//sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
 				if (response.result.LOC_USER_TYPE === "ADMIN") {
 					this.navCtrl.push('AdminAddOpsPage');
 				} else {
@@ -76,9 +76,9 @@ export class LoginPage {
 
 					});
 				}
-			} else {
-				alert(response.message);
-			}
+			//} else {
+				//alert(response.message);
+			//}
 		});
 		/*console.log(this.loginresp);
 		if(this.loginresp.status){
