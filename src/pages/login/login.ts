@@ -16,7 +16,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 })
 export class LoginPage {
 	logininfo: { i_loginparams: string, i_password: string, device_type: string } = { i_loginparams: '', i_password: '', device_type: '' }
-	loginresp: any = {
+	/*loginresp: any = {
 		"status": true,
 		"message": "User Account Already Exist",
 		"result": {
@@ -26,7 +26,7 @@ export class LoginPage {
 	enquiryresp: any = {
 		"status": false,
 		"message": "User doesn't have any enquiry",
-	}
+	}*/
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
 	}
@@ -57,8 +57,8 @@ export class LoginPage {
 		this.logininfo.device_type = this.getPlatformType();
 		this._restservice.post('/loginCandidate', JSON.stringify(this.logininfo)).then(response => {
 			console.log(response);
-			//if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
-				//sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
+			if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
+				sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
 				if (response.result.LOC_USER_TYPE === "ADMIN") {
 					this.navCtrl.push('AdminAddOpsPage');
 				} else if(response.result.LOC_USER_TYPE === "SALESAGENT") {
@@ -77,9 +77,9 @@ export class LoginPage {
 
 					});
 				}
-			//} else {
-				//alert(response.message);
-			//}
+			} else {
+				alert(response.message);
+			}
 		});
 		/*console.log(this.loginresp);
 		if(this.loginresp.status){

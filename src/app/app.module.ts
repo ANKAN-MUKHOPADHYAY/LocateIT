@@ -20,6 +20,7 @@ import { HeaderModule } from '../components/header/header.module';
 import { FooterModule } from '../components/footer/footer.module';
 import { InNewsModule } from '../components/in-news/in-news.module';
 
+import { Chart } from 'chart.js';
 
 @NgModule({
   declarations: [
