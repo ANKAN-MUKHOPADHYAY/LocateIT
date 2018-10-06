@@ -60,7 +60,7 @@ page-admin-manage-ops {
     .course-location{
         background-color: #395767;
         opacity: 0.8;
-        padding: 10px 10px;
+        padding: 10px 10px 26px;
         }
         .segment-md .segment-button.segment-activated{
             background-color: gainsboro !important;
@@ -90,12 +90,12 @@ page-admin-manage-ops {
         .course-name{
             background-color: #395767;
             opacity: 0.8;
-            padding: 10px 10px;
+            padding: 10px 10px 26px;
         }
         .disable-course{
             background-color: #a94442;
             opacity: 0.8;
-            padding: 10px 10px;
+            padding: 10px 10px 26px;
        }
         .right{
             float: right;
@@ -107,6 +107,13 @@ page-admin-manage-ops {
             margin-left: 10px;
             font-size: 16px !important;
             cursor: pointer;
+       }
+       .width{
+        white-space: nowrap; 
+        width: 80%; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        float: left;
        }
         @media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){
             .formview{

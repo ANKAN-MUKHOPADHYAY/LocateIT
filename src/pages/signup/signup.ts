@@ -15,9 +15,10 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  
   info : string = "indiv";
 
-  userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string, u_type: string,u_password: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: '', u_type: '',u_password: ''};
+  userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string, u_type: string,u_password: string, device_type: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: '', u_type: '',u_password: '', device_type: ''};
 
   userdetail:{u_id : string, u_cid : string, u_lid : string} ={u_id : '', u_cid : '', u_lid : ''};
 
@@ -26,11 +27,13 @@ export class SignupPage {
   }
 
   doSignupProcess(data){
-    console.log(this.userinfo);
+    //console.log(this.userinfo);
+    this.userinfo.device_type = this.getPlatformType();
     this.userinfo.u_type = "Student";
-    this._restService.post('/user/adduser',JSON.stringify(this.userinfo)).then(res => {
+    this._restService.post('/adduser',JSON.stringify(this.userinfo)).then(res => {
         console.log(res);
         sessionStorage.setItem('userid',res.result.user_id);
+        //sessionStorage.setItem('accessToken', res.result.ACCESS_TOKEN);
         this.userdetail.u_id = res.result.user_id;
 
         if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
@@ -56,8 +59,16 @@ export class SignupPage {
     });
   }
 
-	// gotoLogin(){
-	// 	this.navCtrl.push('LoginPage');
-	// }
+	getPlatformType() {
+		if(navigator.userAgent.match(/mobile/i)) {
+		  return 'ANDROID';
+		} else if (navigator.userAgent.match(/iPad|Touch/i)) {
+		  return 'TABLET';
+		} else if (navigator.userAgent.match(/iPhone|iPod/i)) {
+			return 'iOS';
+		} else {
+		  return 'WEB';
+		}
+	}
 
 }

@@ -11,7 +11,7 @@ const envConstantLocal = {
 }
 
 const envConstantShared = {
-	"serverUrl" : "http://192.168.1.6:7999"
+	"serverUrl" : "http://192.168.1.11:7999"
 }
 
 if(env == "LOCAL")

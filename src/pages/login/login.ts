@@ -15,8 +15,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 	templateUrl: 'login.html',
 })
 export class LoginPage {
-	logininfo: { i_loginparams: string, i_password: string } = { i_loginparams: '', i_password: '' }
-
+	logininfo: { i_loginparams: string, i_password: string, device_type: string } = { i_loginparams: '', i_password: '', device_type: '' }
 	loginresp: any = {
 		"status": true,
 		"message": "User Account Already Exist",
@@ -24,7 +23,6 @@ export class LoginPage {
 			"user_id": 22
 		}
 	};
-
 	enquiryresp: any = {
 		"status": false,
 		"message": "User doesn't have any enquiry",
@@ -33,23 +31,38 @@ export class LoginPage {
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
 	}
 
-
 	gotoSignup() {
 		//this.navCtrl.push('SignupPage');
-
 	}
 
 	OptionSignupPage() {
 		this.navCtrl.push('OptionSignupPage');
 	}
 
+	getPlatformType() {
+		if(navigator.userAgent.match(/mobile/i)) {
+		  return 'ANDROID';
+		} else if (navigator.userAgent.match(/iPad|Touch/i)) {
+		  return 'TABLET';
+		} else if (navigator.userAgent.match(/iPhone|iPod/i)) {
+			return 'iOS';
+		} else {
+		  return 'WEB';
+		}
+	}
+
 	dologinProcess(data) {
-		console.log(this.logininfo);
-		this._restservice.post('/user/loginCandidate', JSON.stringify(this.logininfo)).then(response => {
+		//console.log(this.logininfo);
+		this.getPlatformType();
+		this.logininfo.device_type = this.getPlatformType();
+		this._restservice.post('/loginCandidate', JSON.stringify(this.logininfo)).then(response => {
 			console.log(response);
-			if (response.status) {
+			//if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
+				//sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
 				if (response.result.LOC_USER_TYPE === "ADMIN") {
 					this.navCtrl.push('AdminAddOpsPage');
+				} else if(response.result.LOC_USER_TYPE === "SALESAGENT") {
+					this.navCtrl.push('SalesAgentPage');
 				} else {
 					sessionStorage.setItem('userid', response.result.LOC_USER_ID);
 					console.log('Login Successful');
@@ -64,9 +77,9 @@ export class LoginPage {
 
 					});
 				}
-			} else {
-				alert(response.message);
-			}
+			//} else {
+				//alert(response.message);
+			//}
 		});
 		/*console.log(this.loginresp);
 		if(this.loginresp.status){

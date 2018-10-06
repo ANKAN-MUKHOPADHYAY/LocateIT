@@ -1,0 +1,48 @@
+<ion-header>
+    <header hideBackButton="true"></header>
+</ion-header>
+
+
+<ion-content padding class="innerBG">
+  <form>
+    <ion-list class="listbg">
+      <ion-row>
+      <ion-col col-6 col-lg-3 >
+        <label>Date From:</label>
+        <ion-input type="date" name="fname" id="name" class="dat" required></ion-input>
+      </ion-col>
+      <!-- <div *ngIf="name.errors && (name.dirty || name.touched)">
+        <div [hidden]="!name.errors.required">
+          <span class="errorMsg">Course Name is required!</span>
+        </div>
+      </div> -->
+      <ion-col col-6 col-lg-3 >
+        <!-- <ion-label floating>image url</ion-label> -->
+        <label>Date To:</label>
+        <ion-input type="date" name="lname" id="ImgUrl" class="dat" required></ion-input>
+      </ion-col>
+      <!-- <div *ngIf="ImgUrl.errors && (ImgUrl.dirty || ImgUrl.touched)">
+        <div [hidden]="!ImgUrl.errors.required">
+          <span class="errorMsg">Image Url is required!</span>
+        </div>
+      </div> -->
+      <ion-col col-6 col-lg-3>
+        <!-- <ion-label floating>Parent Category</ion-label> -->
+        
+        <select class="sat">
+          <option>Select City</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Mumbai">Mumbai</option>
+        </select>
+      </ion-col>
+
+      <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+        <button ion-button secondary>Proceed</button><br><br>
+      </ion-col>
+    </ion-row>
+    </ion-list>
+  </form>
+</ion-content>

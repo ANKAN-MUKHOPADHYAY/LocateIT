@@ -26,7 +26,7 @@
 							<ion-row>
 								<ion-col col-12 col-md-6 col-lg-4 *ngFor="let c of coursesOffered">
 									<div [ngClass]="c.LOC_COURSE_ACTIVE_STATUS == 1 ? 'course-name' : 'disable-course'">
-										<span>{{c.LOC_COURSE_NAME}}</span>
+										<span class="width">{{c.LOC_COURSE_NAME}}</span>
 										<span class="right">
 											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0" (click)="enableCourse(c)">
 												<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
@@ -59,7 +59,7 @@
 							<ion-row>
 								<ion-col col-12 col-md-6 col-lg-4 *ngFor="let l of  offeredLocation">
 									<div class="course-location">
-										<span>{{l.LOC_LOCATION_NAME}}</span>
+										<span class="width">{{l.LOC_LOCATION_NAME}}</span>
 										<span class="right">
 											<ion-icon (click)="deleteLocation(l)" ios="ios-trash" md="md-trash"></ion-icon>
 										</span>
