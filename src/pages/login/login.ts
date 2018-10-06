@@ -31,7 +31,6 @@ export class LoginPage {
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
 	}
 
-
 	gotoSignup() {
 		//this.navCtrl.push('SignupPage');
 	}
@@ -62,6 +61,8 @@ export class LoginPage {
 				//sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
 				if (response.result.LOC_USER_TYPE === "ADMIN") {
 					this.navCtrl.push('AdminAddOpsPage');
+				} else if(response.result.LOC_USER_TYPE === "SALESAGENT") {
+					this.navCtrl.push('SalesAgentPage');
 				} else {
 					sessionStorage.setItem('userid', response.result.LOC_USER_ID);
 					console.log('Login Successful');
