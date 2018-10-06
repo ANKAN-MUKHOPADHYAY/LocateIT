@@ -16,4 +16,9 @@ export class SalesAgentPage {
     console.log('ionViewDidLoad SalesAgentPage');
   }
 
+  doSearchProcess(){
+    console.log('Wow');
+  }
+  date : {dateto:"any",datefrom:"any",selectcity:"any"}={dateto:null,datefrom:null,selectcity:null};
+  
 }

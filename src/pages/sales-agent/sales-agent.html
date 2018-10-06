@@ -3,46 +3,70 @@
 </ion-header>
 
 
-<ion-content padding class="innerBG">
-  <form>
+<ion-content padding class="slpage">
+  <form (submit)="doSearchProcess()" #salesSearchForm="ngForm">
     <ion-list class="listbg">
       <ion-row>
       <ion-col col-6 col-lg-3 >
-        <label>Date From:</label>
-        <ion-input type="date" name="fname" id="name" class="dat" required></ion-input>
-      </ion-col>
-      <!-- <div *ngIf="name.errors && (name.dirty || name.touched)">
-        <div [hidden]="!name.errors.required">
-          <span class="errorMsg">Course Name is required!</span>
+        <label><strong>Date From:</strong></label>
+        <ion-input type="date" [(ngModel)]="datefrom" name="datefrom" id="date" #date="ngModel" class="dat" required></ion-input>
+      
+      <div *ngIf="date.errors && (date.dirty || date.touched)">
+        <div [hidden]="!date.errors.required">
+          <span class="errorMsg">From Date is required!</span>
         </div>
-      </div> -->
+      </div>
+    </ion-col>
       <ion-col col-6 col-lg-3 >
         <!-- <ion-label floating>image url</ion-label> -->
-        <label>Date To:</label>
-        <ion-input type="date" name="lname" id="ImgUrl" class="dat" required></ion-input>
-      </ion-col>
-      <!-- <div *ngIf="ImgUrl.errors && (ImgUrl.dirty || ImgUrl.touched)">
-        <div [hidden]="!ImgUrl.errors.required">
-          <span class="errorMsg">Image Url is required!</span>
+        <label><strong>Date To:</strong></label>
+        <ion-input type="date" name="dateto" [(ngModel)]="datefrom" id="dateto" #dateto="ngModel" class="dat" required></ion-input>
+      <div *ngIf="dateto.errors && (dateto.dirty || dateto.touched)">
+        <div [hidden]="!dateto.errors.required">
+          <span class="errorMsg">To Date is required!</span>
         </div>
-      </div> -->
+      </div>
+    </ion-col>
       <ion-col col-6 col-lg-3>
         <!-- <ion-label floating>Parent Category</ion-label> -->
-        
-        <select class="sat">
+        <legend><strong>Select City</strong></legend>
+        <select class="sat" name="selectcity" [(ngModel)]="datefrom" id="selectcity" #selectcity="ngModel" required>
           <option>Select City</option>
-          <option value="Bangalore">Bangalore</option>
+          <option value="Bangalore" >Bangalore</option>
           <option value="Chennai">Chennai</option>
           <option value="Hyderabad">Hyderabad</option>
           <option value="Kolkata">Kolkata</option>
           <option value="Mumbai">Mumbai</option>
         </select>
+        <div *ngIf="selectcity.errors && (selectcity.dirty || selectcity.touched)">
+          <div [hidden]="!selectcity.errors.required">
+            <span class="errorMsg">City is required!</span>
+          </div>
+        </div>
       </ion-col>
-
+      <br/>
       <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
-        <button ion-button secondary>Proceed</button><br><br>
+        <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
       </ion-col>
     </ion-row>
     </ion-list>
   </form>
+
+  <div class="listbg">
+  <ion-row>
+  <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+  <div class="lead"><strong>Total Leads</strong></div>
+  <div class="numb">950</div>
+  </ion-col>
+  <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+  <div class="lead"><strong>Relevent Leads</strong></div>
+  <div class="numb">900</div>
+  </ion-col>
+  <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+  <div class="lead"><strong>Scrapped</strong></div>
+  <div class="numb">22</div>
+  </ion-col>
+</ion-row>
+  </div>
+
 </ion-content>

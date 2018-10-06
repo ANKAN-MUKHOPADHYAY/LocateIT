@@ -7,5 +7,35 @@ page-sales-agent {
         background-color:white;
         box-shadow: 2px 2px 0px grey;
         border-radius: 5px;
+        width: 20em;
+    }
+    .slpage{
+        background-image: url('https://img.freepik.com/vector-gratis/pared-de-ladrillo-realista_1284-4683.jpg?size=626&ext=jpg');
+        background-size: 100% 100%;   
+    }
+    .numb{
+        font-size: 40px;   
+        color: #e4a839;
+    }
+    .lead{
+        font-size: 22px;
+        color: #d8d8a9;
+    }
+    .errorMsg{
+            color:red;
+            padding-left: 15px;
+    }
+    .sat{
+        width: 20em;
+        height: 45px;
+        background-color:white;
+        box-shadow: 2px 2px 0px grey;
+        border-radius: 5px;
+    }
+    .listbg{
+        margin: 15px 50px 0px 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-left: 10px;
+        
     }
 }
