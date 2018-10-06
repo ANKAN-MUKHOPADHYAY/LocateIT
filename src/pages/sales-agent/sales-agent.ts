@@ -90,4 +90,9 @@ export class SalesAgentPage {
       });
   }
 
+  doSearchProcess(){
+    console.log('Wow');
+  }
+  date : {dateto:"any",datefrom:"any",selectcity:"any"}={dateto:null,datefrom:null,selectcity:null};
+  
 }
