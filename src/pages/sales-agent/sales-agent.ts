@@ -9,18 +9,30 @@ import { Chart } from 'chart.js';
   selector: 'page-sales-agent',
   templateUrl: 'sales-agent.html',
 })
+
 export class SalesAgentPage {
   @ViewChild('barCanvas') barCanvas;
   @ViewChild('doughnutCanvas') doughnutCanvas;
 
   barChart:any;
   doughnutChart:any;
-
+  today:any;
+  yesterday:any;
+  currweek:any;
+  lastweek:any;
+  Date: any = new Date();
+  month: any = this.Date.getMonth();
+  monthlist=["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+ 
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    this.today = this.Date.getDate()+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear();
+    this.yesterday = this.Date.getDate()-1+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear();
+    this.currweek = this.Date.getDate()-6+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear()+"To"+this.today;
+    this.lastweek = this.Date.getDate()-8+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear()+"To";
     this.barChart = new Chart(this.barCanvas.nativeElement, {
 
       type: 'bar',
@@ -92,7 +104,11 @@ export class SalesAgentPage {
 
   doSearchProcess(){
     console.log('Wow');
-  }
-  date : {dateto:"any",datefrom:"any",selectcity:"any"}={dateto:null,datefrom:null,selectcity:null};
+  };
+  
+  SelectTime(){
+    
+  };
+  
   
 }

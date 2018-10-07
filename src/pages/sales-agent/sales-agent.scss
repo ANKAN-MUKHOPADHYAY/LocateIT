@@ -17,6 +17,16 @@ page-sales-agent {
         font-size: 40px;   
         color: #e4a839;
     }
+    .marginTp{
+        margin-top: 20px;
+    }
+    .segment-md .segment-button{
+        color: #0b2759 !important;
+        font-size: 1.6rem !important;
+    }
+    .segment-md .segment-button.segment-activated{
+        background-color: gainsboro !important;
+    }
     .lead{
         font-size: 22px;
         color: #d8d8a9;
@@ -32,34 +42,40 @@ page-sales-agent {
         box-shadow: 2px 2px 0px grey;
         border-radius: 5px;
     }
-    .listbg{
+    .letbg{
         margin: 15px 50px 0px 50px;
         background-color: rgba(0, 0, 0, 0.5);
-        padding-left: 10px;
-        
+        padding-left: 10px; 
     }
-
-
+    .listbg{
+        margin: 0px 50px 0px 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-left: 10px;   
+    }
     .leftChartBlock{
         box-shadow: 2px 0 15px 0;
         display: inline-block;
         vertical-align: top;
     }
-
     .rightChartBlock{
-        
         box-shadow: 2px 0 15px 0;
         display: inline-block;
         vertical-align: top;
-        
-
     }
-
     .graphHeight{
         height: 400px;
      }
-
      .graphBottom{
         margin-top: 120px;
      }
+     @media only screen
+        and (max-device-width: 640px),
+        only screen and (max-device-width: 667px),
+        only screen and (max-width: 480px){
+        .formview{
+        width: 90%;
+        margin: 0px auto;
+        margin-top: 20%;
+}
+}
 }
