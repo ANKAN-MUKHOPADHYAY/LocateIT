@@ -21,11 +21,13 @@ import { FooterModule } from '../components/footer/footer.module';
 import { InNewsModule } from '../components/in-news/in-news.module';
 
 import { Chart } from 'chart.js';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @NgModule({
   declarations: [
     MyApp,
-    TutorialsPage,
+    TutorialsPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,7 @@ import { Chart } from 'chart.js';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpServiceProvider,
-    GlobalProvider
+    GlobalProvider,
   ]
 })
 export class AppModule {}
