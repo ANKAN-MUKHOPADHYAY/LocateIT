@@ -17,9 +17,6 @@ page-sales-agent {
         font-size: 40px;   
         color: #e4a839;
     }
-    .marginTp{
-        margin-top: 20px;
-    }
     .segment-md .segment-button{
         color: #0b2759 !important;
         font-size: 1.6rem !important;
@@ -35,6 +32,21 @@ page-sales-agent {
             color:red;
             padding-left: 15px;
     }
+    .segment-button {
+        margin-left: 10px;
+        margin-right: 0;
+        text-align: center;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+    .segment-but{
+        border: 2px solid;
+        margin-left: 10px;
+    } 
     .sat{
         width: 20em;
         height: 45px;
@@ -50,7 +62,8 @@ page-sales-agent {
     .listbg{
         margin: 0px 50px 0px 50px;
         background-color: rgba(0, 0, 0, 0.5);
-        padding-left: 10px;   
+        padding-left: 10px;  
+        color: #d8d8a9 ;
     }
     .leftChartBlock{
         box-shadow: 2px 0 15px 0;

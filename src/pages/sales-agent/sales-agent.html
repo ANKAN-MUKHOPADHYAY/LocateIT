@@ -4,7 +4,7 @@
 
 
 <ion-content padding class="slpage">
-  <div class="marginTp">
+  <div class="listbg">
     <ion-segment [(ngModel)]="info">
       <ion-segment-button value="day">
         Day
@@ -24,11 +24,18 @@
   <div [ngSwitch]="info">
     <form (submit)="doSearchProcess()" #salesSearchForm="ngForm">
       <ion-list class="listbg" *ngSwitchCase="'day'">
-        <label><strong>Today:</strong></label>
-        <ion-row>      
-        <ion-col col-6 col-lg-3>Today: {{today}}</ion-col>
-          <ion-col col-6 col-lg-3>Yesterday: {{yesterday}}</ion-col>
-
+          <ion-row>   
+          <ion-segment class="segment">
+            <legend><strong>Today: </strong></legend>
+              <ion-segment-button class="segment-but" value="today">
+                  <ion-col >{{today}}</ion-col>
+              </ion-segment-button>
+              <legend><strong>Yesterday: </strong></legend>
+              <ion-segment-button class="segment-but segment-activated" value="yesterday">
+                  <ion-col >{{yesterday}}</ion-col>
+              </ion-segment-button>
+            </ion-segment>
+            
          <ion-col col-6 col-lg-3>
             <!-- <ion-label floating>Parent Category</ion-label> -->
             <legend><strong>Select City</strong></legend>
@@ -52,10 +59,18 @@
         </ion-row>
 
       </ion-list>
-      <ion-list class="listbg" *ngSwitchCase="'week'"><label><strong>Today:</strong></label>
+      <ion-list class="listbg" *ngSwitchCase="'week'">
         <ion-row>      
-        <ion-col col-6 col-lg-3>Current Week: {{currweek}}</ion-col>
-          <ion-col col-6 col-lg-3>Last Week: {{lastweek}}</ion-col>
+            <ion-segment class="segment">
+                <legend><strong>Current Week: </strong></legend>
+                  <ion-segment-button class="segment-but" value="today">
+                      <ion-col >{{currweek}}</ion-col>
+                  </ion-segment-button>
+                  <legend><strong>Last Week: </strong></legend>
+                  <ion-segment-button class="segment-but segment-activated" value="yesterday">
+                      <ion-col >{{lastweek}}</ion-col>
+                  </ion-segment-button>
+                </ion-segment>
 
          <ion-col col-6 col-lg-3>
             <!-- <ion-label floating>Parent Category</ion-label> -->
@@ -78,7 +93,40 @@
             <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
           </ion-col>
         </ion-row></ion-list>
-      <ion-list class="listbg" *ngSwitchCase="'month'"></ion-list>
+      <ion-list class="listbg" *ngSwitchCase="'month'">
+        <ion-row>      
+            <ion-segment class="segment">
+                <legend><strong>Current Month: </strong></legend>
+                  <ion-segment-button class="segment-but" value="today">
+                      <ion-col >{{currmonth}}</ion-col>
+                  </ion-segment-button>
+                  <legend><strong>Last Month: </strong></legend>
+                  <ion-segment-button class="segment-but segment-activated" value="yesterday">
+                      <ion-col >{{lastmonth}}</ion-col>
+                  </ion-segment-button>
+                </ion-segment>
+
+         <ion-col col-6 col-lg-3>
+            <!-- <ion-label floating>Parent Category</ion-label> -->
+            <legend><strong>Select City</strong></legend>
+            <select class="sat" name="selectcity" [(ngModel)]="selectcity">
+              <option selected="selected">Select City</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+            <!-- <div *ngIf="selectcity.errors && (selectcity.dirty || selectcity.touched)">
+            <div [hidden]="!selectcity.errors.required">
+              <span class="errorMsg">City is required!</span>
+            </div>
+          </div> -->
+          </ion-col>
+          <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+            <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
+          </ion-col>
+        </ion-row></ion-list>
       <ion-list class="listbg" *ngSwitchCase="'custom'">
         <ion-row>
 
