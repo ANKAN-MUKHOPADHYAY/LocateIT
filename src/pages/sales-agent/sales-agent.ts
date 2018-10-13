@@ -248,14 +248,14 @@ export class SalesAgentPage {
         // Few necessary setting options  
        this.imgWidth = 208;   
        this.pageHeight = 295;    
-       this.imgHeight = canvas.height * this.imgWidth / canvas.width;  
+       this.imgHeight = 150;//canvas.height * this.imgWidth / canvas.width;  
        this.heightLeft = this.imgHeight;  
     
         const contentDataURL = canvas.toDataURL('image/png');  
         let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF  
         var position = 0;  
         pdf.addImage(contentDataURL, 'PNG', 0, position, this.imgWidth, this.imgHeight)  
-        pdf.save('MYPdf.pdf'); // Generated PDF   
+        pdf.save('BarGraph.pdf'); // Generated PDF   
       });
   
     }
@@ -267,14 +267,14 @@ export class SalesAgentPage {
         // Few necessary setting options  
        this.imgWidth = 208;   
        this.pageHeight = 295;    
-       this.imgHeight = canvas.height * this.imgWidth / canvas.width;  
+       this.imgHeight = 100;//canvas.height * this.imgWidth / canvas.width;  
        this.heightLeft = this.imgHeight;  
     
         const contentDataURL = canvas.toDataURL('image/png')  
         let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF  
         var position = 0;  
         pdf.addImage(contentDataURL, 'PNG', 0, position, this.imgWidth, this.imgHeight)  
-        pdf.save('MYPdf.pdf'); // Generated PDF   
+        pdf.save('DoughnutGraph.pdf'); // Generated PDF   
       });
   
     }
@@ -287,37 +287,21 @@ export class SalesAgentPage {
          // Few necessary setting options  
         this.imgWidth = 208;   
         this.pageHeight = 295;    
-        this.imgHeight = canvas.height * this.imgWidth / canvas.width;  
+        this.imgHeight = 100; //canvas.height * this.imgWidth / canvas.width;  
         this.heightLeft = this.imgHeight;  
      
          const contentDataURL = canvas.toDataURL('image/png')  
          let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF  
          var position = 0;  
          pdf.addImage(contentDataURL, 'PNG', 0, position, this.imgWidth, this.imgHeight)  
-         pdf.save('MYPdf.pdf'); // Generated PDF   
+         pdf.save('lineGraph.pdf'); // Generated PDF   
        });
    
      }
 
     }
 
-    //  captureAllGraphs(){
-    //     this.data = document.getElementsByClassName("allGraph");  
-    //   html2canvas(this.data).then(canvas => {  
-    //     // Few necessary setting options  
-    //    this.imgWidth = 208;   
-    //    this.pageHeight = 295;    
-    //    this.imgHeight = canvas.height * this.imgWidth / canvas.width;  
-    //    this.heightLeft = this.imgHeight;  
-    
-    //     const contentDataURL = canvas.toDataURL('image/png');  
-    //     let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF  
-    //     var position = 0;  
-    //     pdf.addImage(contentDataURL, 'PNG', 0, position, this.imgWidth, this.imgHeight)  
-    //     pdf.save('MYPdf.pdf'); // Generated PDF   
-    //   });
-  
-    // }
+   
      
   
 
@@ -326,9 +310,5 @@ export class SalesAgentPage {
  
   
 
-// doSearchProcess(){
-//     console.log('Wow');
-//   }
-//   date : {dateto:"any",datefrom:"any",selectcity:"any"}={dateto:null,datefrom:null,selectcity:null};
 
 
