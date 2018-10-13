@@ -43,8 +43,8 @@ export class SalesAgentPage {
   ionViewDidLoad() {
     this.today = this.Date.getDate()+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear();
     this.yesterday = this.Date.getDate()-1+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear();
-    this.currweek = this.Date.getDate()-6+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear()+"To"+this.today;
-    this.lastweek = this.Date.getDate()-8+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear()+"To";
+    this.currweek = this.Date.getDate()-6+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear()+" To "+this.today;
+    this.lastweek = this.Date.getDate()-8+"-"+this.monthlist[this.month]+"-"+this.Date.getFullYear()+" To ";
     this.barChart = new Chart(this.barCanvas.nativeElement, {
 
       type: 'bar',

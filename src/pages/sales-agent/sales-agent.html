@@ -4,125 +4,247 @@
 
 
 <ion-content padding class="slpage">
-  <form (submit)="doSearchProcess()" #salesSearchForm="ngForm">
-    <ion-list class="listbg">
-      <ion-row>
+  <div class="listbg">
+    <ion-segment [(ngModel)]="info">
+      <ion-segment-button value="day">
+        Day
+      </ion-segment-button>
+      <ion-segment-button value="week">
+        Week
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        Month
+      </ion-segment-button>
+      <ion-segment-button value="custom">
+        Custom
+      </ion-segment-button>
 
-        <ion-col col-6 col-lg-3>
-          <label><strong>Date From:</strong></label>
-          <ion-input type="date" [(ngModel)]="datefrom" name="datefrom" id="date" #date="ngModel" class="dat" required></ion-input>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="info">
+    <form (submit)="doSearchProcess()" #salesSearchForm="ngForm">
+      <ion-list class="listbg" *ngSwitchCase="'day'">
+        <ion-row>
+          <ion-segment class="segment">
+            <legend><strong>Today: </strong></legend>
+            <ion-segment-button class="segment-but" value="today">
+              <ion-col>{{today}}</ion-col>
+            </ion-segment-button>
+            <legend><strong>Yesterday: </strong></legend>
+            <ion-segment-button class="segment-but segment-activated" value="yesterday">
+              <ion-col>{{yesterday}}</ion-col>
+            </ion-segment-button>
+          </ion-segment>
 
-          <div *ngIf="date.errors && (date.dirty || date.touched)">
-            <div [hidden]="!date.errors.required">
-              <span class="errorMsg">From Date is required!</span>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col col-6 col-lg-3>
-          <!-- <ion-label floating>image url</ion-label> -->
-          <label><strong>Date To:</strong></label>
-          <ion-input type="date" name="dateto" [(ngModel)]="datefrom" id="dateto" #dateto="ngModel" class="dat"
-            required></ion-input>
-          <div *ngIf="dateto.errors && (dateto.dirty || dateto.touched)">
-            <div [hidden]="!dateto.errors.required">
-              <span class="errorMsg">To Date is required!</span>
-            </div>
-          </div>
-        </ion-col>
-        <ion-col col-6 col-lg-3>
-          <!-- <ion-label floating>Parent Category</ion-label> -->
-          <legend><strong>Select City</strong></legend>
-          <select class="sat" name="selectcity" [(ngModel)]="datefrom" id="selectcity" #selectcity="ngModel" required>
-            <option>Select City</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Chennai">Chennai</option>
-            <option value="Hyderabad">Hyderabad</option>
-            <option value="Kolkata">Kolkata</option>
-            <option value="Mumbai">Mumbai</option>
-          </select>
-          <div *ngIf="selectcity.errors && (selectcity.dirty || selectcity.touched)">
+          <ion-col col-6 col-lg-3>
+            <!-- <ion-label floating>Parent Category</ion-label> -->
+            <legend><strong>Select City</strong></legend>
+            <select class="sat" name="selectcity" [(ngModel)]="selectcity">
+              <option selected="selected">Select City</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+            <!-- <div *ngIf="selectcity.errors && (selectcity.dirty || selectcity.touched)">
             <div [hidden]="!selectcity.errors.required">
               <span class="errorMsg">City is required!</span>
             </div>
-          </div>
+          </div> -->
+          </ion-col>
+          <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+            <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+      <ion-list class="listbg" *ngSwitchCase="'week'">
+        <ion-row>
+          <ion-segment class="segment">
+            <legend><strong>Current Week: </strong></legend>
+            <ion-segment-button class="segment-but" value="today">
+              <ion-col>{{currweek}}</ion-col>
+            </ion-segment-button>
+            <legend><strong>Last Week: </strong></legend>
+            <ion-segment-button class="segment-but segment-activated" value="yesterday">
+              <ion-col>{{lastweek}}</ion-col>
+            </ion-segment-button>
+          </ion-segment>
+
+          <ion-col col-6 col-lg-3>
+            <!-- <ion-label floating>Parent Category</ion-label> -->
+            <legend><strong>Select City</strong></legend>
+            <select class="sat" name="selectcity" [(ngModel)]="selectcity">
+              <option selected="selected">Select City</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+            <!-- <div *ngIf="selectcity.errors && (selectcity.dirty || selectcity.touched)">
+            <div [hidden]="!selectcity.errors.required">
+              <span class="errorMsg">City is required!</span>
+            </div>
+          </div> -->
+          </ion-col>
+          <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+            <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+      <ion-list class="listbg" *ngSwitchCase="'month'">
+        <ion-row>
+          <ion-segment class="segment">
+            <legend><strong>Current Month: </strong></legend>
+            <ion-segment-button class="segment-but" value="today">
+              <ion-col>{{currmonth}}</ion-col>
+            </ion-segment-button>
+            <legend><strong>Last Month: </strong></legend>
+            <ion-segment-button class="segment-but segment-activated" value="yesterday">
+              <ion-col>{{lastmonth}}</ion-col>
+            </ion-segment-button>
+          </ion-segment>
+
+          <ion-col col-6 col-lg-3>
+            <!-- <ion-label floating>Parent Category</ion-label> -->
+            <legend><strong>Select City</strong></legend>
+            <select class="sat" name="selectcity" [(ngModel)]="selectcity">
+              <option selected="selected">Select City</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+            <!-- <div *ngIf="selectcity.errors && (selectcity.dirty || selectcity.touched)">
+            <div [hidden]="!selectcity.errors.required">
+              <span class="errorMsg">City is required!</span>
+            </div>
+          </div> -->
+          </ion-col>
+          <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+            <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+      <ion-list class="listbg" *ngSwitchCase="'custom'">
+        <ion-row>
+          <form (submit)="doSearchProcess()" #salesSearchForm="ngForm">
+            <ion-list class="listbg">
+              <ion-row>
+                <ion-col col-6 col-lg-3>
+                  <label><strong>Date From:</strong></label>
+                  <ion-input type="date" [(ngModel)]="datefrom" name="datefrom" id="date" #date="ngModel" class="dat"
+                    required></ion-input>
+
+                  <div *ngIf="date.errors && (date.dirty || date.touched)">
+                    <div [hidden]="!date.errors.required">
+                      <span class="errorMsg">From Date is required!</span>
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col col-6 col-lg-3>
+                  <!-- <ion-label floating>image url</ion-label> -->
+                  <label><strong>Date To:</strong></label>
+                  <ion-input type="date" name="dateto" [(ngModel)]="datefrom" id="dateto" #dateto="ngModel" class="dat"
+                    required></ion-input>
+                  <div *ngIf="dateto.errors && (dateto.dirty || dateto.touched)">
+                    <div [hidden]="!dateto.errors.required">
+                      <span class="errorMsg">To Date is required!</span>
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col col-6 col-lg-3>
+                  <!-- <ion-label floating>Parent Category</ion-label> -->
+                  <legend><strong>Select City</strong></legend>
+                  <select class="sat" name="selectcity" [(ngModel)]="datefrom" id="selectcity" #selectcity="ngModel"
+                    required>
+                    <option>Select City</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                  </select>
+                  <div *ngIf="selectcity.errors && (selectcity.dirty || selectcity.touched)">
+                    <div [hidden]="!selectcity.errors.required">
+                      <span class="errorMsg">City is required!</span>
+                    </div>
+                  </div>
+                </ion-col>
+                <br />
+                <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+                  <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
+                </ion-col>
+              </ion-row>
+            </ion-list>
+          </form>
+        </ion-row>
+      </ion-list>
+      <div class="listbg">
+        <ion-row>
+          <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+            <div class="lead"><strong>Total Leads</strong></div>
+            <div class="numb">950</div>
+          </ion-col>
+          <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+            <div class="lead"><strong>Relevent Leads</strong></div>
+            <div class="numb">900</div>
+          </ion-col>
+          <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
+            <div class="lead"><strong>Scrapped</strong></div>
+            <div class="numb">22</div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </form>
+  </div>
+      <ion-row class="graphBottom">
+        <ion-col col-6 class="leftChartBlock">
+          <ion-card class="graphHeight">
+            <ion-card-header>
+              Bar Chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas id="graph1ToPdf" class="allGraph" #barCanvas></canvas>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
-        <br />
-        <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
-          <button ion-button secondary [disabled]="!salesSearchForm.form.valid">Proceed</button><br><br>
+
+        <ion-col col-6 class="rightChartBlock">
+          <ion-card class="graphHeight">
+            <ion-card-header>
+              Doughnut Chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #doughnutCanvas id="graph2ToPdf" class="allGraph"></canvas>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
       </ion-row>
-    </ion-list>
-  </form>
 
-  <div class="listbg">
-    <ion-row>
-      <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
-        <div class="lead"><strong>Total Leads</strong></div>
-        <div class="numb">950</div>
-      </ion-col>
-      <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
-        <div class="lead"><strong>Relevent Leads</strong></div>
-        <div class="numb">900</div>
-      </ion-col>
-      <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
-        <div class="lead"><strong>Scrapped</strong></div>
-        <div class="numb">22</div>
-      </ion-col>
-    </ion-row>
-  </div>
-
-
-  <ion-row class="graphBottom">
-    <ion-col col-6 class="leftChartBlock">
-      <ion-card class="graphHeight">
-        <ion-card-header>
-          Bar Chart
-        </ion-card-header>
-        <ion-card-content>
-          <canvas id="graph1ToPdf"  class="allGraph" #barCanvas></canvas>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-
-    <ion-col col-6 class="rightChartBlock">
-      <ion-card class="graphHeight">
-        <ion-card-header>
-          Doughnut Chart
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #doughnutCanvas id="graph2ToPdf" class="allGraph"></canvas>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-
-  <ion-row >
-    <ion-col col-6 class="leftChartBlock">
-      <ion-card class="graphHeight">
-      <ion-card-header>
-      Line Chart
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #lineCanvas id="graph3ToPdf" class="allGraph"></canvas>
-    </ion-card-content>
-  </ion-card>
-  </ion-col>
-
-
-<div ion-col-6>
-<div class="buttonPos1">  
-  <button (click)="captureBarGraph()" class="downloadButton">Download Bar Graph</button>  
-</div>
- <div class="buttonPos2">  
-  <button  (click)="captureDouGraph()" class="downloadButton">Download Doughnut Graph</button> 
-</div>
-<div class="buttonPos3">  
-  <button  (click)="captureLineGraph()" class="downloadButton">Download  line Graph</button> 
-</div>
-<!-- <div class="buttonPos4">  
-  <button  (click)="captureAllGraphs()" class="downloadButton">Download  all Graphs</button> 
-</div>  -->
-</div>
-</ion-row>
+      <ion-row>
+        <ion-col col-6 class="leftChartBlock">
+          <ion-card class="graphHeight">
+            <ion-card-header>
+              Line Chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #lineCanvas id="graph3ToPdf" class="allGraph"></canvas>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col ion-col-6>
+          <div class="buttonPos1">
+            <button (click)="captureBarGraph()" class="downloadButton">Download Bar Graph</button>
+          </div>
+          <div class="buttonPos2">
+            <button (click)="captureDouGraph()" class="downloadButton">Download Doughnut Graph</button>
+          </div>
+          <div class="buttonPos3">
+            <button (click)="captureLineGraph()" class="downloadButton">Download line Graph</button>
+          </div>
+        </ion-col>
+      </ion-row>
 </ion-content>
-
