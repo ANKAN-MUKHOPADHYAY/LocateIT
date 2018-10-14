@@ -59,6 +59,7 @@ export class LoginPage {
 			console.log(response);
 			if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
 				sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
+				sessionStorage.setItem('userType', response.result.LOC_USER_TYPE);
 				if (response.result.LOC_USER_TYPE === "ADMIN") {
 					this.navCtrl.push('AdminAddOpsPage');
 				} else if(response.result.LOC_USER_TYPE === "SALESAGENT") {
@@ -81,17 +82,6 @@ export class LoginPage {
 				alert(response.message);
 			}
 		});
-		/*console.log(this.loginresp);
-		if(this.loginresp.status){
-			sessionStorage.setItem('userid',this.loginresp.result.user_id);
-			console.log(this.loginresp.message);
-			if(this.enquiryresp.status == true){
-				this.navCtrl.push('MainPage');
-			} else {
-				console.log(this.enquiryresp.message);
-				console.log("create enquiry id first");
-				this.navCtrl.push('WelcomePage');
-			}
-		}*/
+	
 	}
 }

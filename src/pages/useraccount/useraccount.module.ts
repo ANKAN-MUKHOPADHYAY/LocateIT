@@ -14,7 +14,7 @@ import { InNewsModule } from '../../components/in-news/in-news.module';
     IonicPageModule.forChild(UseraccountPage),
     HeaderModule,
     FooterModule,
-    InNewsModule,
+    InNewsModule
 
   ],
 })
