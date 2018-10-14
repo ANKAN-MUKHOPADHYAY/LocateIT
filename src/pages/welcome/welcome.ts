@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 /*import { AlertController } from 'ionic-angular';*/
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { SettingsProvider } from './../../providers/settings/settings';
 
 
 @IonicPage()
@@ -12,10 +13,12 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 export class WelcomePage {
   currentItems: any;
+  selectedTheme: String;
   @ViewChild('si') searchBar: Searchbar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider) {
-    console.log(this.navCtrl);
+  constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider, private settings: SettingsProvider) {
+    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+
   }
 
   focusme(){ 
@@ -48,40 +51,12 @@ export class WelcomePage {
     });
   }
 
-  showPopup($scope, $ionicPopup) {
-    // When button is clicked, the popup will be shown...
-    $scope.showPopup = function($scope, $ionicPopup) {
-       $scope.data = {}
-     
-       // Custom popup
-       var myPopup = $ionicPopup.show({
-          template: '<input type = "text" ng-model = "data.model">',
-          title: 'Title',
-          subTitle: 'Subtitle',
-          scope: $scope,
-       
-          buttons: [
-             { text: 'Cancel' }, {
-                text: '<b>Save</b>',
-                type: 'button-positive',
-                onTap: function(e) {
-             
-                   if (!$scope.data.model) {
-                      //don't allow the user to close unless he enters model...
-                      e.preventDefault();
-                   } else {
-                      return $scope.data.model;
-                   }
-                }
-             }
-          ]
-       });
- 
-       myPopup.then(function(res) {
-          console.log('Tapped!', res);
-       });    
-    };
+  toggleAppTheme() {
+    if (this.selectedTheme === 'dark-theme') {
+      this.settings.setActiveTheme('light-theme');
+    } else {
+      this.settings.setActiveTheme('dark-theme');
+    }
+  }
 
-
-}
 }

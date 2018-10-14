@@ -13,7 +13,7 @@ import { InNewsModule } from '../../components/in-news/in-news.module';
     IonicPageModule.forChild(EnquiryhistoryPage),
     HeaderModule,
     FooterModule,
-    InNewsModule,
+    InNewsModule
   ],
 })
 export class EnquiryhistoryPageModule {}
