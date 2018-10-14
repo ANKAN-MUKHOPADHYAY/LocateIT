@@ -98,9 +98,6 @@ export class LoginPage {
 				this.presentConfirm(response.message +" Kindly register with us.");
 			}
 		});
-<<<<<<< HEAD
-	
-=======
 
 		/*console.log(this.loginresp);
 		if(this.loginresp.status){
@@ -114,6 +111,5 @@ export class LoginPage {
 				this.navCtrl.push('WelcomePage');
 			}
 		}*/
->>>>>>> 20469db6df6fd47b231323917a22638bdc502c14
 	}
 }
