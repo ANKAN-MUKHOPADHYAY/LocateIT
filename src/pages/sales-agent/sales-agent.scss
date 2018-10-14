@@ -91,10 +91,14 @@ page-sales-agent {
     }
 
      .downloadButton {
-        background-color:darkgreen;
+        background-color:white;
+        height: 20px;
+        width: 150px;
         border: none;
-        color: white;
-        padding: 16px 32px;
+        color:black;
+        border: 2px solid black;
+        font-weight: bold;
+        padding: 0px 32px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SettingsProvider } from './../providers/settings/settings';
+
 
 
 import { TutorialsPage  } from '../pages/tutorials/tutorials';
@@ -16,11 +18,14 @@ import { AboutUsPage } from '../pages/about-us/about-us';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = TutorialsPage ;
+  selectedTheme: String;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private settings: SettingsProvider) {
     this.initializeApp();
+    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+
 
     // used for an example of ngFor and navigation
      this.pages = [

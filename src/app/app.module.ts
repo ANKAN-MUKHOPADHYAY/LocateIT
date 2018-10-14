@@ -23,6 +23,7 @@ import { InNewsModule } from '../components/in-news/in-news.module';
 import { Chart } from 'chart.js';
 import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
+import { SettingsProvider } from '../providers/settings/settings';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import html2canvas from 'html2canvas';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpServiceProvider,
     GlobalProvider,
+    SettingsProvider,
   ]
 })
 export class AppModule {}
