@@ -1,6 +1,6 @@
 .dark-theme {
     ion-content {
-      background-color: #090f2f;
+      background-color: #0a3375;
       color: #fff;
     }
    
@@ -9,12 +9,13 @@
     }
     .toolbar-background  {
       border-color: #ff0fff !important;
-      background-color: #090f2f !important;
+      background-color: lightgrey!important;
     }
   
     .footer{
       border-color: #ff0fff;
-      background-color: #090f2f; 
+      background-color: lightgrey; 
+      color: black;
     }
   }  
 
