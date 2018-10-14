@@ -77,6 +77,12 @@ export class UseraccountPage {
         else{
           this.turn.mail = false;
         }
+        if(res.result.LOC_USER_SUB_MAIL == 1){
+          this.turn.theme = true;
+        }
+        else{
+          this.turn.theme = false;
+        }
         if(res.result.LOC_USER_SUB_MSG == 1){
           this.turn.msg = true;
         }
@@ -106,6 +112,12 @@ export class UseraccountPage {
     }
     else{
       this.turn.mail = 0;
+    }
+    if(this.turn.theme == true){
+      this.turn.theme =1;
+    }
+    else{
+      this.turn.main = 0;
     }
     if(this.turn.msg == true){
       this.turn.msg = 1;
