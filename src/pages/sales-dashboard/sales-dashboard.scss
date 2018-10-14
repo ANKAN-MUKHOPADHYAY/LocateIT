@@ -1,3 +1,76 @@
 page-sales-dashboard {
+    .container{
+        background-color: #273041;
+        padding: 30px 40px;
+    }
+    .background{
+        padding: 15px;
+    }
+    .container .toolbar-title.toolbar-title-md {
+        color: #fff;
+        padding: 0px;
+    }
+    
+    .content{
+        color: #fff;
+    
+    }
+    .smallimg-bottom{
+        padding-bottom: 20px;
+    }
+    .owl-col{
+        position: relative;
+    }
+    .owl-col .smallimg img{
+        position: absolute;
+        right: 0;
+        margin-top: 15px;
+    }
+    .order-o{
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#85da40+0,ceefa5+100&1+71,1+71,0+99,0+100,0+100 */
+background: -moz-linear-gradient(left, rgba(133,218,64,1) 0%, rgba(185,233,136,1) 71%, rgba(205,239,164,0) 99%, rgba(206,239,165,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(133,218,64,1) 0%,rgba(185,233,136,1) 71%,rgba(205,239,164,0) 99%,rgba(206,239,165,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(133,218,64,1) 0%,rgba(185,233,136,1) 71%,rgba(205,239,164,0) 99%,rgba(206,239,165,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#85da40', endColorstr='#00ceefa5',GradientType=1 ); /* IE6-9 */
+    }
+    .order-o{
+        border-bottom: 5px solid rgba(133,218,64,1);
+    }
+    .comment-o{
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4040da+0,a5acef+100&1+71,1+71,0+99,0+100,0+100 */
+background: -moz-linear-gradient(left, rgba(64,64,218,1) 0%, rgba(136,141,233,1) 71%, rgba(164,171,239,0) 99%, rgba(165,172,239,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(64,64,218,1) 0%,rgba(136,141,233,1) 71%,rgba(164,171,239,0) 99%,rgba(165,172,239,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(64,64,218,1) 0%,rgba(136,141,233,1) 71%,rgba(164,171,239,0) 99%,rgba(165,172,239,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4040da', endColorstr='#00a5acef',GradientType=1 ); /* IE6-9 */
+    }
+    .comment-o{
+        border-bottom: 5px solid rgba(64,64,218,1);
+    }
+    .active-o{
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b85600+0,ff9f67+100&1+0,1+22,0.7+89,0+100 */
+background: -moz-linear-gradient(left, rgba(184,86,0,1) 0%, rgba(200,102,23,1) 22%, rgba(247,151,92,0.7) 89%, rgba(255,159,103,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(184,86,0,1) 0%,rgba(200,102,23,1) 22%,rgba(247,151,92,0.7) 89%,rgba(255,159,103,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(184,86,0,1) 0%,rgba(200,102,23,1) 22%,rgba(247,151,92,0.7) 89%,rgba(255,159,103,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b85600', endColorstr='#00ff9f67',GradientType=1 ); /* IE6-9 */
 
+    }
+    .active-o{
+        border-bottom: 5px solid rgba(184,86,0,1);
+    }
+    .total-o{
+        background: -moz-linear-gradient(left, rgba(30,87,153,1) 0%, rgba(92,151,204,1) 65%, rgba(124,184,231,0) 99%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(30,87,153,1) 0%,rgba(92,151,204,1) 65%,rgba(124,184,231,0) 99%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(92,151,204,1) 65%,rgba(124,184,231,0) 99%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=1 );
+
+    }
+    .total-o{
+        border-bottom: 5px solid rgba(30,87,153,1);
+    }
+    .order-c, .total-c, .active-c, .comment-c{
+        background: #375793;
+    }
+    .diff{
+        margin-bottom: 30px;
+    }
 }

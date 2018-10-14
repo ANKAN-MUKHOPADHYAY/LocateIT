@@ -205,7 +205,11 @@
           <ion-card class="graphHeight">
             <ion-card-header>
               Bar Chart
+              <button (click)="captureBarGraph()" class="downloadButton buttonPos1">Download Bar Graph</button>
             </ion-card-header>
+            
+              
+            
             <ion-card-content>
               <canvas id="graph1ToPdf" class="allGraph" #barCanvas></canvas>
             </ion-card-content>
@@ -216,7 +220,11 @@
           <ion-card class="graphHeight">
             <ion-card-header>
               Doughnut Chart
+              <button (click)="captureDouGraph()" class="buttonPos2 downloadButton">Download Doughnut Graph</button>
             </ion-card-header>
+            
+              
+            
             <ion-card-content>
               <canvas #doughnutCanvas id="graph2ToPdf" class="allGraph"></canvas>
             </ion-card-content>
@@ -229,22 +237,25 @@
           <ion-card class="graphHeight">
             <ion-card-header>
               Line Chart
+              <button (click)="captureLineGraph()" class="buttonPos3 downloadButton">Download line Graph</button>
             </ion-card-header>
+            
+             
             <ion-card-content>
               <canvas #lineCanvas id="graph3ToPdf" class="allGraph"></canvas>
             </ion-card-content>
           </ion-card>
         </ion-col>
         <ion-col ion-col-6>
-          <div class="buttonPos1">
+          <!-- <div class="buttonPos1">
             <button (click)="captureBarGraph()" class="downloadButton">Download Bar Graph</button>
-          </div>
-          <div class="buttonPos2">
+          </div> -->
+          <!-- <div class="buttonPos2">
             <button (click)="captureDouGraph()" class="downloadButton">Download Doughnut Graph</button>
-          </div>
-          <div class="buttonPos3">
+          </div> -->
+          <!-- <div class="buttonPos3">
             <button (click)="captureLineGraph()" class="downloadButton">Download line Graph</button>
-          </div>
+          </div> -->
         </ion-col>
       </ion-row>
 </ion-content>

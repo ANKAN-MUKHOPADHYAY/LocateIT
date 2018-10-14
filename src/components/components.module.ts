@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from "ionic-angular";
-import { PromtComponent } from './promt/promt';
+import { PopupComponent } from './popup/popup';
 @NgModule({
-	declarations: [MessageComponent,
-    PromtComponent],
+	declarations: [PopupComponent],
 	imports: [IonicModule],
-	exports: [MessageComponent,
-    PromtComponent]
+	exports: [PopupComponent]
 })
 export class ComponentsModule {}
