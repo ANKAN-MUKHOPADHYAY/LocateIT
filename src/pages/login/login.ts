@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the LoginPage page.
  *
@@ -28,7 +28,7 @@ export class LoginPage {
 		"message": "User doesn't have any enquiry",
 	}*/
 
-	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
+	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider, private alertCtrl : AlertController) {
 	}
 
 	gotoSignup() {
@@ -51,6 +51,22 @@ export class LoginPage {
 		}
 	}
 
+	presentConfirm(msg) {
+		let alert = this.alertCtrl.create({
+		  title: 'Confirm',
+		  message: msg,
+		  buttons: [
+			{
+			  text: 'Ok',
+			  handler: () => {
+			  }
+			}
+		  ]
+		});
+		alert.present();
+	}
+
+
 	dologinProcess(data) {
 		//console.log(this.logininfo);
 		this.getPlatformType();
@@ -59,6 +75,7 @@ export class LoginPage {
 			console.log(response);
 			if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
 				sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
+				sessionStorage.setItem('userType', response.result.LOC_USER_TYPE);
 				if (response.result.LOC_USER_TYPE === "ADMIN") {
 					this.navCtrl.push('AdminAddOpsPage');
 				} else if(response.result.LOC_USER_TYPE === "SALESAGENT") {
@@ -78,9 +95,10 @@ export class LoginPage {
 					});
 				}
 			} else {
-				alert(response.message);
+				this.presentConfirm(response.message +" Kindly register with us.");
 			}
 		});
+
 		/*console.log(this.loginresp);
 		if(this.loginresp.status){
 			sessionStorage.setItem('userid',this.loginresp.result.user_id);

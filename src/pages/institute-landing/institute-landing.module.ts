@@ -6,6 +6,8 @@ import { InstituteComponentsModule } from '../../components/institute-components
 import { SimilarProfileModule } from '../../components/similar-profile/similar-profile.module';
 import { RecommendedInstituteModule } from '../../components/recommended-institute/recommended-institute.module';
 import { HeaderModule } from '../../components/header/header.module';
+import { FooterModule } from '../../components/footer/footer.module';
+import { InNewsModule } from '../../components/in-news/in-news.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { HeaderModule } from '../../components/header/header.module';
     SimilarProfileModule,
     RecommendedInstituteModule,
     HeaderModule,
+    FooterModule,
+    InNewsModule
   ],
 })
 export class InstituteLandingPageModule {}

@@ -6,11 +6,13 @@ import { SettingsProvider } from './../providers/settings/settings';
 
 
 
-import { TutorialsPage  } from '../pages/tutorials/tutorials';
+import { TutorialsPage } from '../pages/tutorials/tutorials';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { EnquiryhistoryPage } from '../pages/enquiryhistory/enquiryhistory';
 import { ProfilePage } from '../pages/profile/profile';
 import { AboutUsPage } from '../pages/about-us/about-us';
+import { SalesDashboardPage } from '../pages/sales-dashboard/sales-dashboard';
+import { AdminAddOpsPage } from '../pages/admin-add-ops/admin-add-ops';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,21 +22,47 @@ export class MyApp {
   rootPage: any = TutorialsPage ;
   selectedTheme: String;
 
+  
+
+  
+  NormalView: Array<{ title: string, component: any }>;
+  SalesView: Array<{ title: string, component: any }>;
+  AdminView: Array<{ title: string, component: any }>;
+
+
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private settings: SettingsProvider) {
+    
     this.initializeApp();
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
 
 
     // used for an example of ngFor and navigation
-     this.pages = [
-        { title: 'About Us', component: AboutUsPage },
-        { title: 'Create New Enquiry', component: WelcomePage },
-        { title: 'Edit Profile', component: ProfilePage },
-        { title: 'Enquiry Page', component: EnquiryhistoryPage },
-        
-     ];
+    this.NormalView = [
+      { title: 'About Us', component: AboutUsPage },
+      { title: 'Create New Enquiry', component: WelcomePage },
+      { title: 'Edit Profile', component: ProfilePage },
+      { title: 'Enquiry Page', component: EnquiryhistoryPage }
+    ];
+
+    this.SalesView = [
+      { title: 'About Us', component: AboutUsPage },
+      { title: 'Dashboard', component: SalesDashboardPage },
+      { title: 'Edit Profile', component: ProfilePage }
+    ];
+
+
+    this.AdminView = [
+      { title: 'About Us', component: AboutUsPage },
+      { title: 'Edit Profile', component: ProfilePage },
+      { title: 'Admin Dashboard', component: AdminAddOpsPage }
+    ];
+
+    this.pages = this.NormalView;
+    if(sessionStorage.getItem('userType') === "SALESAGENT"){
+      this.pages = this.SalesView;
+    }
   }
 
   initializeApp() {

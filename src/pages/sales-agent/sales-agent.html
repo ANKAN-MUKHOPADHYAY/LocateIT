@@ -23,7 +23,7 @@
   </div>
   <div [ngSwitch]="info">
     <form (submit)="doSearchProcess()" #salesSearchForm="ngForm">
-      <ion-list class="listbg" *ngSwitchCase="'day'">
+      <ion-list class="listbg-o" *ngSwitchCase="'day'">
         <ion-row>
           <ion-segment class="segment">
             <legend><strong>Today: </strong></legend>
@@ -58,7 +58,8 @@
           </ion-col>
         </ion-row>
       </ion-list>
-      <ion-list class="listbg" *ngSwitchCase="'week'">
+
+      <ion-list class="listbg-o" *ngSwitchCase="'week'">
         <ion-row>
           <ion-segment class="segment">
             <legend><strong>Current Week: </strong></legend>
@@ -93,7 +94,7 @@
           </ion-col>
         </ion-row>
       </ion-list>
-      <ion-list class="listbg" *ngSwitchCase="'month'">
+      <ion-list class="listbg-o" *ngSwitchCase="'month'">
         <ion-row>
           <ion-segment class="segment">
             <legend><strong>Current Month: </strong></legend>
@@ -128,10 +129,10 @@
           </ion-col>
         </ion-row>
       </ion-list>
-      <ion-list class="listbg" *ngSwitchCase="'custom'">
-        <ion-row>
+      <ion-list class="listbg-o" *ngSwitchCase="'custom'">
+       
           <form (submit)="doSearchProcess()" #salesSearchForm="ngForm">
-            <ion-list class="listbg">
+            <ion-list>
               <ion-row>
                 <ion-col col-6 col-lg-3>
                   <label><strong>Date From:</strong></label>
@@ -180,9 +181,10 @@
               </ion-row>
             </ion-list>
           </form>
-        </ion-row>
+        
       </ion-list>
-      <div class="listbg">
+
+      <div class="listbg-p">
         <ion-row>
           <ion-col col-6 col-lg-3 style="padding-top: 20px;" class="center">
             <div class="lead"><strong>Total Leads</strong></div>
@@ -258,4 +260,8 @@
           </div> -->
         </ion-col>
       </ion-row>
+      <div class="footer">
+        <in-news></in-news>
+        <footer></footer>
+      </div>
 </ion-content>
