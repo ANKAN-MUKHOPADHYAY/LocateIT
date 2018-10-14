@@ -1,0 +1,75 @@
+.heading{
+	color: 	#00008B;
+	font-size: 40px;
+	text-align: center;
+	font-family: verdana;
+}
+
+.imgclass{
+	display: inline-block;
+}
+
+.vl {
+    border-left: 1px solid grey;
+    height: 300px;
+    position: absolute;
+    margin-top: 150px;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+    display: inline-block;
+}
+
+.mailList{
+	margin-left: 275px;
+	margin-top: 50px;
+	display: inline-block;
+	vertical-align: top;
+	
+}
+
+
+.mailText{
+color: black;
+font-size: 30px;
+display: inline-block;
+vertical-align: top;
+
+}
+
+
+.lists{
+
+}
+
+ul {
+	list-style-type: none;
+}
+
+.listDisplay {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+.zipclass{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.savebuttton{
+	display: inline-block;
+	vertical-align: top;
+	background-color: blue; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 500px;
+}
