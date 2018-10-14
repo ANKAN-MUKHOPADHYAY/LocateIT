@@ -106,18 +106,24 @@ page-sales-agent {
     }
     
     .buttonPos1{
-        margin: 80px 0 0 80px;
         display: inline-block; 
+        vertical-align: top;
+        float: right;
+        border-radius: 50%;
     }
 
     .buttonPos2{
-        margin: 80px 0 0 80px;
         display: inline-block;
         vertical-align: top;
+        float: right;
+        border-radius: 50%;
     }
 
     .buttonPos3{
-        margin: 120px 0 0 80px;
+       vertical-align: top;
+       display: inline-block;
+       float: right;
+       border-radius: 50%;
     }
      @media only screen
         and (max-device-width: 640px),
