@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the SignupPage page.
@@ -17,12 +18,13 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 export class SignupPage {
   
   info : string = "indiv";
+  //msg : string;
 
   userinfo : { u_fname : string, u_lname: string, u_Iname: string, u_mobile: string,u_altmobile: string, u_email: string, u_type: string,u_password: string, device_type: string} = { u_fname : '', u_lname: '', u_Iname:'', u_mobile: '',u_altmobile: '', u_email: '', u_type: '',u_password: '', device_type: ''};
 
   userdetail:{u_id : string, u_cid : string, u_lid : string} ={u_id : '', u_cid : '', u_lid : ''};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _restService: HttpServiceProvider) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public navParams: NavParams, public _restService: HttpServiceProvider) {
     console.log(this.navParams);
   }
 
@@ -31,9 +33,9 @@ export class SignupPage {
     this.userinfo.device_type = this.getPlatformType();
     this.userinfo.u_type = "Student";
     this._restService.post('/adduser',JSON.stringify(this.userinfo)).then(res => {
-        console.log(res);
+      if(res.status){
         sessionStorage.setItem('userid',res.result.user_id);
-        //sessionStorage.setItem('accessToken', res.result.ACCESS_TOKEN);
+        sessionStorage.setItem('accessToken', res.result.ACCESS_TOKEN);
         this.userdetail.u_id = res.result.user_id;
 
         if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
@@ -50,12 +52,15 @@ export class SignupPage {
         } else {
           this.navCtrl.push('WelcomePage');
         }
+      } else {
+        this.presentConfirm(res.message+" Kindly Login which your credentials", "useLogin");
+      }
     });
   }
   gotoLogin(){
     this.navCtrl.push('LoginPage',{
       selectedCourse : this.navParams.data.selectedCourse,
-          selectedLocation: this.navParams.data.selectedLocation
+      selectedLocation: this.navParams.data.selectedLocation
     });
   }
 
@@ -69,6 +74,24 @@ export class SignupPage {
 		} else {
 		  return 'WEB';
 		}
-	}
+  }
+  
+  presentConfirm(msg,next) {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm',
+      message: msg,
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            if(next == "useLogin"){
+              this.gotoLogin();
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 
 }
