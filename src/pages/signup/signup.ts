@@ -33,7 +33,7 @@ export class SignupPage {
     this._restService.post('/adduser',JSON.stringify(this.userinfo)).then(res => {
         console.log(res);
         sessionStorage.setItem('userid',res.result.user_id);
-        //sessionStorage.setItem('accessToken', res.result.ACCESS_TOKEN);
+        sessionStorage.setItem('accessToken', res.result.ACCESS_TOKEN);
         this.userdetail.u_id = res.result.user_id;
 
         if(this.navParams.data.hasOwnProperty('selectedLocation') && this.navParams.data.hasOwnProperty('selectedCourse')){
