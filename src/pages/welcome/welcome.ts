@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Searchbar } from 'ionic-angular';
 /*import { AlertController } from 'ionic-angular';*/
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
-import { SettingsProvider } from './../../providers/settings/settings';
+
 
 
 @IonicPage()
@@ -13,11 +13,11 @@ import { SettingsProvider } from './../../providers/settings/settings';
 
 export class WelcomePage {
   currentItems: any;
-  selectedTheme: String;
+  
   @ViewChild('si') searchBar: Searchbar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider, private settings: SettingsProvider) {
-    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+  constructor(public navCtrl: NavController, public navParams: NavParams, public restService: HttpServiceProvider) {
+    
 
   }
 
@@ -51,12 +51,6 @@ export class WelcomePage {
     });
   }
 
-  toggleAppTheme() {
-    if (this.selectedTheme === 'dark-theme') {
-      this.settings.setActiveTheme('light-theme');
-    } else {
-      this.settings.setActiveTheme('dark-theme');
-    }
-  }
+  
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { SettingsProvider } from './../../providers/settings/settings';
 
 
 /**
@@ -30,6 +31,7 @@ export class UseraccountPage {
   current_username : any;
   new_firstname:any;
   new_lastname:any;
+  selectedTheme: String;
   userData: any = {
     user_currentpassword: "",
     user_newpassword: "",
@@ -43,7 +45,8 @@ export class UseraccountPage {
    };
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider, private settings: SettingsProvider) {
+    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
   }
 
   notify(event){
@@ -156,4 +159,11 @@ export class UseraccountPage {
        console.log(resp);
      });
    }
+   toggleAppTheme() {
+    if (this.selectedTheme === 'dark-theme') {
+      this.settings.setActiveTheme('light-theme');
+    } else {
+      this.settings.setActiveTheme('dark-theme');
+    }
+  }
  }
