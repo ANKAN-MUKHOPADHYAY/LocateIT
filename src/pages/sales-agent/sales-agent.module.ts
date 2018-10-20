@@ -3,7 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { SalesAgentPage } from './sales-agent';
 import { HeaderModule } from '../../components/header/header.module';
 import { FooterModule } from '../../components/footer/footer.module';
-import { InNewsModule } from '../../components/in-news/in-news.module';
+//import { InNewsModule } from '../../components/in-news/in-news.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { InNewsModule } from '../../components/in-news/in-news.module';
     IonicPageModule.forChild(SalesAgentPage),
     HeaderModule,
     FooterModule,
-    InNewsModule
+    //InNewsModule
   ],
 })
 export class SalesAgentPageModule {}
