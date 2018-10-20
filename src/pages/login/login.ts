@@ -16,6 +16,9 @@ import { AlertController } from 'ionic-angular';
 })
 export class LoginPage {
 	logininfo: { i_loginparams: string, i_password: string, device_type: string } = { i_loginparams: '', i_password: '', device_type: '' }
+	turn: any = {
+		theme:""
+	};
 	/*loginresp: any = {
 		"status": true,
 		"message": "User Account Already Exist",
@@ -82,6 +85,7 @@ export class LoginPage {
 					this.navCtrl.push('SalesAgentPage');
 				} else {
 					sessionStorage.setItem('userid', response.result.LOC_USER_ID);
+					sessionStorage.setItem('theme', '0');
 					console.log('Login Successful');
 					this._restservice.get('/user/userenquiries/' + response.result.LOC_USER_ID).then(resp => {
 						console.log(resp);
@@ -91,7 +95,6 @@ export class LoginPage {
 						} else {
 							this.navCtrl.push('WelcomePage');
 						}
-
 					});
 				}
 			} else {

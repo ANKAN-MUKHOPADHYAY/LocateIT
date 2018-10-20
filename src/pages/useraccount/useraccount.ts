@@ -17,13 +17,14 @@ import { SettingsProvider } from './../../providers/settings/settings';
   templateUrl: 'useraccount.html',
 })
 export class UseraccountPage {
-  turn: any = {
-    uid: "",
-    mail: "",
-    msg: "",
-    call: "",
-    active: ""
-  };
+    turn: any = {
+      uid: "",
+      mail: "",
+      msg: "",
+      call: "",
+      active: "",
+      theme: ""
+    };
 
   change: boolean = true;
   //res: any = {"status":true,"result":{"user_id":79,"user_first_name":"ALOO","user_last_name":"GOBI","user_mobile_number":4141414141,"user_altmobile_number":4141414141,"user_email":"ALOO.GOBI@GMAIL.COM","user_type":"Student","active_status":1,"uniqueid":6,"username":"ALOO_GOBI","subscribe_message":0,"subscribe_call":0,"subscribe_mail":0,"attr1":null}};
@@ -57,6 +58,7 @@ export class UseraccountPage {
     console.log('ionViewDidLoad UseraccountPage');
     this._restservice.get('/user/userinfo/'+sessionStorage.getItem('userid')).then( res => {
       console.log(sessionStorage.getItem('userid'));
+      
       if(res.status == true){
         console.log(res.status);
         this.current_username = res.result.LOC_USERNAME;
@@ -80,11 +82,11 @@ export class UseraccountPage {
         else{
           this.turn.mail = false;
         }
-        if(res.result.LOC_USER_SUB_MAIL == 1){
-          this.turn.theme = true;
+        if(this.turn.theme == "0"){
+          this.turn.theme = false;
         }
         else{
-          this.turn.theme = false;
+          this.turn.theme = true;
         }
         if(res.result.LOC_USER_SUB_MSG == 1){
           this.turn.msg = true;
@@ -117,10 +119,10 @@ export class UseraccountPage {
       this.turn.mail = 0;
     }
     if(this.turn.theme == true){
-      this.turn.theme =1;
+      this.turn.theme = 1;
     }
     else{
-      this.turn.main = 0;
+      this.turn.theme = 0;
     }
     if(this.turn.msg == true){
       this.turn.msg = 1;
@@ -160,10 +162,12 @@ export class UseraccountPage {
      });
    }
    toggleAppTheme() {
-    if (this.selectedTheme === 'dark-theme') {
+    if (this.turn.theme == 0) {
       this.settings.setActiveTheme('light-theme');
+      sessionStorage.setItem('theme',"1");
     } else {
       this.settings.setActiveTheme('dark-theme');
+      sessionStorage.setItem('theme',"0");
     }
   }
  }
