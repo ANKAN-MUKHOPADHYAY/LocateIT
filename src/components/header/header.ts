@@ -14,6 +14,7 @@ export class HeaderComponent {
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public _restservice: HttpServiceProvider) {
     if(sessionStorage.getItem('userid') != undefined || sessionStorage.getItem('userid') != null){
       this._restservice.get('/user/userinfo/'+sessionStorage.getItem('userid')).then( resp => {
+        console.log('--------------------------');
         console.log(resp);
         this.userinfo = resp.result;
         this.loggedIn = true;  

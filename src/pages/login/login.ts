@@ -79,13 +79,13 @@ export class LoginPage {
 			if (response.status && response.result.hasOwnProperty('ACCESS_TOKEN')) {
 				sessionStorage.setItem('accessToken', response.result.ACCESS_TOKEN);
 				sessionStorage.setItem('userType', response.result.LOC_USER_TYPE);
+				sessionStorage.setItem('userid', response.result.LOC_USER_ID);
 				if (response.result.LOC_USER_TYPE === "ADMIN") {
 					this.navCtrl.push('AdminAddOpsPage');
 				} else if(response.result.LOC_USER_TYPE === "SALESAGENT") {
 					this.navCtrl.push('SalesAgentPage');
 				} else {
-					sessionStorage.setItem('userid', response.result.LOC_USER_ID);
-					sessionStorage.setItem('theme', '0');
+					//sessionStorage.setItem('theme', '0');
 					console.log('Login Successful');
 					this._restservice.get('/user/userenquiries/' + response.result.LOC_USER_ID).then(resp => {
 						console.log(resp);

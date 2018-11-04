@@ -29,12 +29,15 @@
 										<span class="width">{{c.LOC_COURSE_NAME}}</span>
 										<span class="right">
 											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 0" (click)="enableCourse(c)">
-												<ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+												<!-- <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon> -->
+												<img src="http://icons.iconarchive.com/icons/bokehlicia/captiva/256/checkbox-icon.png" height="20px;" />
 											</span>
 											<span *ngIf="c.LOC_COURSE_ACTIVE_STATUS === 1" (click)="disableCourse(c)">
-												<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon>
+												<!-- <ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon> -->
+												<img src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/minus-2-icon-18-256.png" height="20px" />
 											</span>
-											<ion-icon (click)="deleteCourse(c)" ios="ios-trash" md="md-trash"></ion-icon>
+											<!-- <ion-icon (click)="deleteCourse(c)" ios="ios-trash" md="md-trash"></ion-icon> -->
+											<img (click)="deleteCourse(c)" src="https://www.materialui.co/materialIcons/action/delete_white_192x192.png" height="20px" />
 										</span>
 									
 									</div>
@@ -61,7 +64,8 @@
 									<div class="course-location">
 										<span class="width">{{l.LOC_LOCATION_NAME}}</span>
 										<span class="right">
-											<ion-icon (click)="deleteLocation(l)" ios="ios-trash" md="md-trash"></ion-icon>
+											<!-- <ion-icon (click)="deleteLocation(l)" ios="ios-trash" md="md-trash"></ion-icon> -->
+											<img (click)="deleteLocation(l)" src="https://www.materialui.co/materialIcons/action/delete_white_192x192.png" height="20px" />
 										</span>
 									</div>
 								</ion-col>

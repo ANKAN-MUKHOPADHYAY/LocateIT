@@ -13,7 +13,7 @@ export class SettingsProvider {
   private theme: BehaviorSubject<String>;
 
   constructor(public http: HttpClient) {
-    this.theme = new BehaviorSubject('light-theme');
+    //this.theme = new BehaviorSubject('light-theme');
   }
 
   setActiveTheme(val) {
