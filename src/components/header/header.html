@@ -1,6 +1,6 @@
 <ion-navbar [hideBackButton]="hideBackButton">
   <button ion-button menuToggle>
-    <ion-icon name="menu"></ion-icon>
+    <ion-icon ios="ios-menu" md="md-menu"></ion-icon>
   </button>
   <ion-title></ion-title>
   <div class="applogo">
@@ -13,7 +13,7 @@
   <div *ngIf="loggedIn" style="float: right;margin-right: 30px;">
     <ion-item>
       <ion-avatar item-start>
-        <img src="https://lh3.googleusercontent.com/-j24QJ2j8uAM/AAAAAAAAAAI/AAAAAAAAABI/tn8VzCQnFZo/s640/photo.jpg">
+        <img src="https://mbtskoudsalg.com/images/blank-profile-picture-png-4.png">
       </ion-avatar>
       <ion-label id="userName">{{userinfo.LOC_USERNAME}}</ion-label>
       <ion-select [(ngModel)]="toppings" interface="popover">
