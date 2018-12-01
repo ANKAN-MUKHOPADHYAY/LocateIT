@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SettingsProvider } from './../providers/settings/settings';
+//import { SettingsProvider } from './../providers/settings/settings';
 
 
 
@@ -32,10 +32,10 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private settings: SettingsProvider) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     
     this.initializeApp();
-    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+    //this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
 
 
     // used for an example of ngFor and navigation
