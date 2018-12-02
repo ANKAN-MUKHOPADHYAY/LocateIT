@@ -20,4 +20,8 @@ export class FooterComponent {
     this.text = 'Hello World';
   }
 
+  gotoPrivacy(){
+  	this.navCtrl.push('PrivacyPage');
+  }
+
 }
