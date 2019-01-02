@@ -30,7 +30,7 @@ export class LoginPage {
 		"status": false,
 		"message": "User doesn't have any enquiry",
 	}*/
-
+FB : any;
 	constructor(public navCtrl: NavController, public navParams: NavParams, public _restservice: HttpServiceProvider, private alertCtrl : AlertController) {
 	}
 

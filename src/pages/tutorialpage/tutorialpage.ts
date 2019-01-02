@@ -17,6 +17,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 export class TutorialpagePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  public _restservice: HttpServiceProvider) {
+    
   }
 
   ionViewDidLoad() {
