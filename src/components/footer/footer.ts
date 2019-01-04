@@ -19,4 +19,7 @@ export class FooterComponent {
   gotoprivacy(){
     this.navCtrl.push('PrivacyPolicyPage');
   }
+  gotoAboutUs(){
+    this.navCtrl.push('AboutUsPage');
+  }
 }

@@ -20,5 +20,13 @@ page-about-us {
         color: #fff !important;
         transition: all 0.3s ease-in-out;
     }
+   
+    @media only screen and (max-width : 720px){
+		.head{
+            text-align: center;
+        }
+        
+	
+	}
 }
 

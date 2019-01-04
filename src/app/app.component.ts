@@ -47,44 +47,35 @@ export class MyApp {
         //const browser = this.iab.create('https://ionicframework.com/');
         //browser.show();
       }
-      
           // alert('Device Model: '+this.device.model);
           // alert('Manufacturar: '+this.device.manufacturer);
           // alert('Serial No: ' +this.device.serial);
           // alert('UUID: '+this.device.uuid);
     });
-    
-    
-    
-    
     this.NormalView = [
       { title: 'About Us', component: AboutUsPage },
       { title: 'Create New Enquiry', component: WelcomePage },
       { title: 'Terms & Conditions', component: TermsConditionsPage },
       { title: 'Privacy Policy', component: PrivacyPolicyPage }
     ];
-
     this.SalesView = [
       { title: 'About Us', component: AboutUsPage },
       { title: 'Dashboard', component: SalesDashboardPage },
       { title: 'Edit Profile', component: ProfilePage }
     ];
-
-
     this.AdminView = [
       { title: 'About Us', component: AboutUsPage },
       { title: 'Edit Profile', component: ProfilePage },
       { title: 'Admin Dashboard', component: AdminAddOpsPage }
     ];
-
     this.pages = this.NormalView;
     if(sessionStorage.getItem('userType') === "SALESAGENT"){
       this.pages = this.SalesView;
     }
-
+  
     this._restservice.get('/user/userinfo/' + sessionStorage.getItem('userid')).then( res => {
        if(res.status == true){
-        this.LoginView = [
+        this.pages = this.LoginView = [
           { title: 'About Us', component: AboutUsPage },
           { title: 'Create New Enquiry', component: WelcomePage },
           { title: 'Edit Profile', component: ProfilePage },
@@ -93,9 +84,7 @@ export class MyApp {
           { title: 'Privacy Policy', component: PrivacyPolicyPage }
         ];
        }
-     });
-      
-    
+     });  
   }
 
   initializeApp() {
